@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="No receipt for this page | Nittany AI" description="This address was never collected. Go back to how the engine works or the results.">
+<section class="nf">
+  <p class="eyebrow">404 · not collected</p>
+  <h1 data-split data-intro>No receipt for this page.</h1>
+  <p class="sub">Nothing on this site appears without its evidence, including addresses. This one was never collected.</p>
+  <p class="links">
+    <a class="cta" href="/results/">Results <span class="arr" aria-hidden="true">&rarr;</span></a>
+    <a class="cta" href="/">How it works <span class="arr" aria-hidden="true">&rarr;</span></a>
+  </p>
+  <p class="mono slip" aria-hidden="true">status · quarantined</p>
+</section>
+</Base>
+<style>
+  .nf { padding: clamp(64px, 12vw, 160px) 0 40px; max-width: 60ch; position: relative; }
+  .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .slip { display: inline-block; margin-top: 40px; font-size: 12.5px; padding: 3px 10px; border: 1.5px solid var(--quarantined); color: var(--quarantined); rotate: -2deg; border-radius: 2px; }
+</style>

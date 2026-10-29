@@ -1,0 +1,124 @@
+---
+// Fig 1: the chain-of-custody sorting machine (anatomy kit). The SVG is built here at build time
+// from the run data; live.js moves it inside onPage().
+import './kit/iso.css';
+import pipe from '../../../data/pipeline.json';
+import runs from '../../../data/runs.json';
+import { buildCustody } from './figure.mjs';
+const { plate } = buildCustody({ pipe, runs });
+
+// the seven numbered stations, in the figure's order; every count is from the run data
+const n = (x: number) => x.toLocaleString('en-US');
+const fid = pipe.fidelity;
+const feeding = pipe.collectors.filter((c) => c.claims > 0);
+const steps = [
+  ['Collect', `${feeding.length} of ${pipe.collectors.length} collectors returned ${n(pipe.documents)} public documents (${feeding.map((c) => c.name).join(', ')}). The shut chutes found nothing this run.`],
+  ['Extract', `A model reads each document and writes short claims, each tied to the exact quote it came from: ${n(pipe.claims)} claims, about ${Math.round(pipe.claims / pipe.documents)} per document.`],
+  ['Gate', 'Before any model checks anything, fixed rules throw out boilerplate (legal disclaimers, page furniture) and pages that never loaded.'],
+  ['Quote check', `A model from a second provider confirms the quote really is in the source, word for word or as a faithful paraphrase. ${n(fid.substring + fid.entailed)} kept, ${n(fid.unsupported)} thrown out.`],
+  ['Fact check', `A third, independent model asks whether the claim only says what the quote says. ${n(pipe.factConfirmed)} confirmed. ${n(pipe.overreachHigh)} read too much in: the quote is kept and the guess dropped. ${n(pipe.overreachMed)} kept but flagged uncertain.`],
+  ['Judge', `One model scores each company on the rubric from verified, recent claims only; a second, from another provider, records any disagreement. ${n(pipe.verified)} verified claims, ${n(runs.totals.scored)} companies scored.`],
+  ['Outbox', 'The results wait for a person to read them. Nothing is sent automatically: 0 messages sent.'],
+];
+---
+<div class="cm iso" data-theme="light" data-reveal>
+  <Fragment set:html={plate} />
+  <ol class="cm-steps" aria-label="The seven stations">
+    {steps.map(([name, body], i) => (
+      <li><button type="button" class="cm-step" data-cm-step={i + 1}>
+        <span class="cm-step-n" aria-hidden="true">{i + 1}</span>
+        <span class="cm-step-t"><strong>{name}</strong> {body}</span>
+      </button></li>
+    ))}
+  </ol>
+</div>
+
+<script>
+  import { onPage, prefersReducedMotion } from '../../../engine';
+  import { mountCustody } from './live.js';
+  onPage(() => {
+    const root = document.querySelector<HTMLElement>('.cm');
+    if (!root) return;
+    return mountCustody(root, { reduced: prefersReducedMotion() });
+  });
+</script>
+
+<style is:global>
+  /* anatomy tokens mapped to the site palette, scoped to the figure (light first, the site's dark set below) */
+  .cm.iso[data-theme] {
+    --anatomy-page: var(--ground); --anatomy-card: var(--raised); --anatomy-paper: var(--raised);
+    --anatomy-text: var(--muted); --anatomy-strong: var(--ink); --anatomy-muted: var(--faint);
+    --anatomy-face: #ffffff; --anatomy-top: #ffffff;
+    --anatomy-shade-0: #dcdcd9; --anatomy-shade-1: #e5e5e2; --anatomy-shade-2: #ededea; --anatomy-shade-3: #f4f4f1;
+    --anatomy-lit-top: #dfe8fb; --anatomy-lit-shade: #c4d4f5;
+    --anatomy-hi: #1d2024; --anatomy-mid: #85888e; --anatomy-lo: #b3b5b9; --anatomy-faint: #d6d7d9;
+    --anatomy-lit: var(--accent); --anatomy-dot: #3a3d42; --anatomy-halo: #8a8a80; --anatomy-halo-opacity: .32;
+    --anatomy-green: var(--verified); --cm-amber: var(--quarantined);
+    --anatomy-mono: var(--mono);
+    --cm-glass: #eef0f2; --cm-window: #1d2024; --cm-digits: #f4f4f1; --cm-pile: #dcdcd9;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cm.iso[data-theme] {
+    --anatomy-face: #24262b; --anatomy-top: #26282d;
+    --anatomy-shade-0: #141518; --anatomy-shade-1: #17191c; --anatomy-shade-2: #1b1d21; --anatomy-shade-3: #1f2125;
+    --anatomy-lit-top: #2c3a5c; --anatomy-lit-shade: #222d47;
+    --anatomy-hi: #d6d8dc; --anatomy-mid: #6f737a; --anatomy-lo: #464a51; --anatomy-faint: #2f3237;
+    --anatomy-dot: #e6e7ea; --anatomy-halo: #000; --anatomy-halo-opacity: .8;
+    --cm-glass: #15171a; --cm-window: #0c0d0f; --cm-digits: #d6d8dc; --cm-pile: #2c2f35;
+  }}
+  :root[data-theme="dark"] .cm.iso[data-theme] {
+    --anatomy-face: #24262b; --anatomy-top: #26282d;
+    --anatomy-shade-0: #141518; --anatomy-shade-1: #17191c; --anatomy-shade-2: #1b1d21; --anatomy-shade-3: #1f2125;
+    --anatomy-lit-top: #2c3a5c; --anatomy-lit-shade: #222d47;
+    --anatomy-hi: #d6d8dc; --anatomy-mid: #6f737a; --anatomy-lo: #464a51; --anatomy-faint: #2f3237;
+    --anatomy-dot: #e6e7ea; --anatomy-halo: #000; --anatomy-halo-opacity: .8;
+    --cm-glass: #15171a; --cm-window: #0c0d0f; --cm-digits: #d6d8dc; --cm-pile: #2c2f35;
+  }
+  .cm { margin-top: 36px; }
+  .cm .iso-figure { margin: 0; }
+  .cm .iso-plate { box-shadow: 0 0 0 1px var(--line); border-radius: 0; padding: 56px 20px 52px; }
+  .cm .iso-plate-corner { font-size: 11px; text-transform: none !important; letter-spacing: .02em !important; }
+  .cm .iso-legend { color: var(--muted); font-size: 13px; }
+  .cm .iso-caption { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+  .cm-stage { touch-action: pan-y; outline: none; }
+  .cm-stage:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+  .cm .cm-glass { fill: var(--cm-glass); }
+  .cm .cm-level { fill: var(--anatomy-hi); opacity: .55; }
+  .cm .cm-window { fill: var(--cm-window); }
+  .cm .cm-digits { fill: var(--cm-digits); font-family: var(--mono); }
+  .cm .cm-seal .iso-top, .cm .cm-seal .iso-shade { fill: var(--verified-soft); }
+  .cm .cm-tag { will-change: transform; }
+  .cm .cm-pile > .iso-top { fill: var(--cm-pile); }
+  .cm .cm-amber > .iso-top { fill: var(--quarantined-soft); }
+  .cm .cm-amber > .iso-edge { stroke: var(--quarantined); }
+  .cm .cm-chute > .iso-top { fill: var(--anatomy-shade-3); }
+  /* callouts in the drawing: numbered stations and what each bin holds */
+  .cm .cm-leader { fill: none; stroke: var(--anatomy-mid); stroke-width: .7; }
+  .cm .cm-dot-end { fill: var(--anatomy-mid); }
+  .cm .cm-marker circle { fill: var(--anatomy-strong); transition: fill .3s; }
+  .cm .cm-num { fill: var(--anatomy-card); font: 600 9.5px var(--anatomy-mono); }
+  .cm .cm-label { fill: var(--anatomy-strong); font: 500 11px var(--anatomy-mono); paint-order: stroke; stroke: var(--anatomy-card); stroke-width: 3px; stroke-linejoin: round; }
+  .cm .cm-small { fill: var(--anatomy-text); font-size: 9.5px; font-weight: 400; }
+  .cm .cm-marker { transform-box: fill-box; transform-origin: center; transition: transform .3s; }
+  .cm .cm-callout.is-on .cm-marker circle { fill: var(--anatomy-lit); }
+  .cm .cm-callout.is-on .cm-marker { transform: scale(1.18); }
+  .cm .cm-callout.is-on .cm-leader { stroke: var(--anatomy-lit); stroke-width: 1; }
+  /* the step list under the card */
+  .cm-steps { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2px 28px; counter-reset: none; }
+  .cm-step { display: flex; gap: 12px; align-items: flex-start; width: 100%; text-align: left; background: none; border: 0; border-top: 1px solid var(--line); padding: 12px 0; color: var(--muted); font: inherit; font-size: 14px; line-height: 1.5; cursor: pointer; transition: color .25s; }
+  .cm-step strong { color: var(--ink); font-weight: 600; }
+  .cm-step-n { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--raised); font: 600 11px var(--mono); transition: background .3s, transform .3s; }
+  .cm-step:hover .cm-step-n, .cm-step:focus-visible .cm-step-n { transform: scale(1.12); }
+  .cm-step:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cm-step.is-on { color: var(--ink); }
+  .cm-step.is-on .cm-step-n { background: var(--accent); }
+  @media (prefers-reduced-motion: reduce) { .cm .cm-marker, .cm-step-n { transition: none; } }
+  @media (max-width: 560px) {
+    /* the drawing shrinks to ~45%: keep the numbers (scaled up), drop the words (the list carries them) */
+    .cm .cm-label, .cm .cm-binlabel { display: none; }
+    .cm .cm-marker { transform: scale(1.9); }
+    .cm .cm-callout.is-on .cm-marker { transform: scale(2.2); }
+    .cm .iso-plate { padding: 44px 0 72px; overflow: hidden; }
+    .cm .iso-plate .iso-svg { width: 110%; margin-left: -5%; }
+    .cm .iso-plate-corners { inset: 16px 12px; }
+  }
+</style>

@@ -1,0 +1,103 @@
+---
+import Base from '../layouts/Base.astro';
+import runs from '../data/runs.json';
+import matches from '../data/matches.json';
+import pipe from '../data/pipeline.json';
+const { ranked, pending, totals, generatedAt } = runs;
+const fac = (cid: string) => (matches.companies as Record<string, { matches: { name: string }[]; matchCount: number }>)[cid];
+---
+<Base title="Results: 16 companies scored with their receipts | Nittany AI" description="Nittany AI run of October 26 and 27, 2026: 13 companies scored with verified evidence, 3 not scored, and matching Penn State faculty.">
+<header class="head">
+  <p class="eyebrow" data-reveal data-intro>Run of October 26 and 27, 2026 · evidence stamped {generatedAt}</p>
+  <h1 data-split data-intro>Thirteen companies scored, three waiting, all with their receipts.</h1>
+  <p class="sub" data-reveal data-intro data-delay="0.2">The bar is the judge's final score on a 1 to 10 rubric. Open a row for its chain of custody: the newest verified evidence, the judge's five dimensions in its own words, and the Penn State faculty whose research topics match the company's investments.</p>
+</header>
+
+<dl class="totals mono" data-reveal data-intro data-delay="0.3">
+  <div><dt>scored</dt><dd>{totals.scored}</dd></div>
+  <div><dt>not scored, retry scheduled</dt><dd>{totals.pending}</dd></div>
+  <div><dt>source documents</dt><dd>{pipe.documents.toLocaleString()}</dd></div>
+  <div><dt>claims extracted</dt><dd>{pipe.claims.toLocaleString()}</dd></div>
+  <div><dt>claims verified</dt><dd>{totals.verified.toLocaleString()}</dd></div>
+  <div><dt>uncapped scores</dt><dd>{totals.uncapped}</dd></div>
+</dl>
+
+<div class="cols mono" aria-hidden="true"><span>#</span><span>company</span><span>PSU faculty match</span><span>score</span></div>
+<ol class="board">
+  {ranked.map((r, i) => {
+    const f = fac(r.cid);
+    return (
+    <li>
+      <a class="lrow row" href={`/dossier/${r.cid}/`}>
+        <span class="mono n">{i + 1}</span>
+        <span class="who">
+          <span class="name">{r.name}</span>
+          <span class="mono meta">{r.ticker} · {r.area}</span>
+          <span class="mono meta">{r.verified} verified of {r.ev.toLocaleString()} claims · {r.fresh} in the last 90 days{r.verified === 0 && <span class="warn"> · scored without verified evidence, read as a placeholder</span>}</span>
+        </span>
+        <span class="mono fac">{f && f.matchCount ? <>{f.matchCount} matched · <span class="top">{f.matches[0].name}</span></> : <span class="none">no faculty on file for these topics</span>}</span>
+        <span class="score">
+          <span class="mono val">{r.score!.toFixed(1)}<span class="arr" aria-hidden="true"> &rarr;</span></span>
+          <span class={`badge ${r.capped ? 'b-prov' : 'b-strong'}`}>{r.capped ? 'capped' : 'uncapped'}</span>
+        </span>
+        <span class="track" aria-hidden="true"><span class={r.capped ? 'fill' : 'fill ok'} style={`width:${r.score! * 10}%`} /></span>
+      </a>
+    </li>
+  );})}
+</ol>
+
+<section class="pending">
+  <h2 data-split>Not scored that day, and why</h2>
+  <p class="sub">Extraction for these three was rate-limited out of the provider pool. No score exists, so none is shown. The documents were collected and the retry runs at the next provider reset.</p>
+  <ul>
+    {pending.map((r) => (
+      <li><a class="lrow prow" href={`/dossier/${r.cid}/`}>
+        <span class="name">{r.name}</span>
+        <span class="mono meta">{r.ticker} · {r.area} · {r.ev.toLocaleString()} claims extracted</span>
+        <span class="badge b-wait">not scored <span class="arr" aria-hidden="true">&rarr;</span></span>
+      </a></li>
+    ))}
+  </ul>
+</section>
+<p class="mono foot">Each dossier shows the 25 most recent verified claims; the complete set stays in the engine's database. A capped score means the fresh evidence window was thin at scoring time, not that the company is uninteresting.</p>
+</Base>
+
+<style>
+  .head { padding: clamp(40px, 7vw, 88px) 0 0; }
+  .head h1 { max-width: 16ch; }
+  .totals { display: flex; flex-wrap: wrap; gap: 0; margin: 36px 0 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+  .totals div { flex: 1 1 150px; padding: 12px 16px 12px 0; }
+  .totals dt { font-size: 12px; color: var(--muted); }
+  .totals dd { margin: 2px 0 0; font-size: 22px; font-weight: 500; }
+  .cols { display: grid; grid-template-columns: 40px minmax(0, 2fr) minmax(0, 1.3fr) 120px; gap: 16px; padding: 28px 18px 8px 22px; font-size: 11.5px; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid var(--ink); }
+  .cols span:last-child { text-align: right; }
+  .board, .pending ul { list-style: none; margin: 0; padding: 0; }
+  .row { display: grid; grid-template-columns: 40px minmax(0, 2fr) minmax(0, 1.3fr) 120px; gap: 4px 16px; align-items: baseline; }
+  .n { color: var(--faint); font-size: 12px; }
+  .who { display: grid; gap: 2px; }
+  .name { font-weight: 600; font-size: 19px; letter-spacing: -.01em; }
+  .meta { color: var(--faint); font-size: 12px; }
+  .meta .warn { color: var(--quarantined); }
+  .fac { font-size: 12.5px; color: var(--muted); }
+  .fac .top { color: var(--ink); }
+  .fac .none { color: var(--faint); }
+  .score { display: grid; justify-items: end; gap: 6px; }
+  .val { font-size: 22px; font-weight: 500; }
+  .track { grid-column: 2 / -1; height: 3px; background: var(--line); margin-top: 10px; position: relative; }
+  .fill { position: absolute; inset: 0 auto 0 0; background: var(--accent); }
+  .fill.ok { background: var(--verified); }
+  .pending { margin-top: 72px; }
+  .pending ul { margin-top: 20px; border-top: 1px solid var(--ink); }
+  .prow { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+  .prow .badge { margin-left: auto; }
+  .foot { color: var(--faint); font-size: 12px; margin-top: 28px; max-width: 90ch; }
+  @media (max-width: 760px) {
+    .cols { display: none; }
+    .board { border-top: 1px solid var(--ink); margin-top: 28px; }
+    .row { grid-template-columns: 28px minmax(0, 1fr) auto; }
+    .fac { grid-column: 2 / 3; grid-row: 2; }
+    .score { grid-row: 1 / 3; grid-column: 3; }
+    .track { grid-column: 2 / -1; }
+    .name { font-size: 17px; }
+  }
+</style>

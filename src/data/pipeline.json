@@ -1,0 +1,119 @@
+{
+ "collectors": [
+  {
+   "key": "filings",
+   "name": "SEC filings",
+   "what": "SEC EDGAR 10-K, 10-Q and 8-K text, scoped by company",
+   "docs": 1871,
+   "claims": 11262,
+   "verified": 5725
+  },
+  {
+   "key": "news_rss",
+   "name": "News",
+   "what": "Company newsrooms and Google News RSS, resolved to the real publisher",
+   "docs": 170,
+   "claims": 311,
+   "verified": 283
+  },
+  {
+   "key": "openalex",
+   "name": "Publications",
+   "what": "OpenAlex papers co-authored by company and university researchers",
+   "docs": 60,
+   "claims": 260,
+   "verified": 251
+  },
+  {
+   "key": "linkedin_company_employees",
+   "name": "LinkedIn",
+   "what": "Company employee pages, read-only, rate-capped",
+   "docs": 10,
+   "claims": 34,
+   "verified": 7
+  },
+  {
+   "key": "catalyst",
+   "name": "Market catalysts",
+   "what": "Stock moves and earnings dates. Timing only, never evidence of research need",
+   "docs": 23,
+   "claims": 36,
+   "verified": 36
+  },
+  {
+   "key": "careers",
+   "name": "Job boards",
+   "what": "Greenhouse and Lever postings; PhD and research roles signal a need",
+   "docs": 0,
+   "claims": 0,
+   "verified": 0
+  },
+  {
+   "key": "uspto",
+   "name": "Patents",
+   "what": "Patent filings by assignee",
+   "docs": 0,
+   "claims": 0,
+   "verified": 0
+  },
+  {
+   "key": "innovation",
+   "name": "Grants and SBIR",
+   "what": "Federal innovation awards",
+   "docs": 0,
+   "claims": 0,
+   "verified": 0
+  },
+  {
+   "key": "psu",
+   "name": "Penn State engagement",
+   "what": "Licensing, sponsorship and partnership announcements",
+   "docs": 0,
+   "claims": 0,
+   "verified": 0
+  },
+  {
+   "key": "social",
+   "name": "Social",
+   "what": "Company and executive posts on X",
+   "docs": 0,
+   "claims": 0,
+   "verified": 0
+  }
+ ],
+ "untagged": {
+  "docs": 256,
+  "claims": 596,
+  "verified": 532
+ },
+ "documents": 2326,
+ "claims": 12499,
+ "kind": {
+  "fact": 12316,
+  "implication": 183
+ },
+ "fidelity": {
+  "substring": 7566,
+  "entailed": 2916,
+  "unsupported": 2004
+ },
+ "overreachHigh": 4931,
+ "overreachMed": 553,
+ "factConfirmed": 2196,
+ "entailedUnchecked": 2782,
+ "verified": 6834,
+ "stale": 7726,
+ "corroborated": 267,
+ "signals": {
+  "earnings_soon": 12,
+  "fresh_high": 1,
+  "fresh_low": 4,
+  "momentum_6mo": 3,
+  "week_move": 6
+ },
+ "fields": [
+  46,
+  10
+ ],
+ "alumni": 2
+}

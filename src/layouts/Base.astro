@@ -1,0 +1,67 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '@fontsource-variable/outfit';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
+import '../styles/global.css';
+interface Props { title?: string; description?: string }
+const {
+  title = 'Chain of Custody | Nittany AI',
+  description = 'How the Nittany AI engine turns public company signals into verified, evidence-backed research matches with Penn State faculty.',
+} = Astro.props;
+const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site).href;
+const nav = [
+  { href: '/', label: 'How it works' },
+  { href: '/results/', label: 'Results' },
+  { href: '/faculty/', label: 'Faculty match' },
+];
+const current = (href: string) => (href === '/' ? path === '/' : path.startsWith(href) || (href === '/results/' && path.startsWith('/dossier/')));
+---
+<!doctype html>
+<html lang="en" transition:animate="none">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <meta name="theme-color" content="#fafaf8" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={new URL('/og.png', Astro.site).href} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Nittany AI: Chain of Custody', url: new URL('/', Astro.site).href, description })} />
+  <script is:inline>
+    document.documentElement.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');
+  </script>
+  <ViewTransitions fallback="swap" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="curtain" transition:persist="curtain" aria-hidden="true"><div class="curtain__panel"><span class="curtain__stamp">custody transferred</span></div></div>
+  <header class="wrap site-head">
+    <a class="brand" href="/">Nittany&nbsp;AI <span class="mono">/ chain of custody</span></a>
+    <nav aria-label="Main">
+      {nav.map((n) => <a class="draw" href={n.href} aria-current={current(n.href) ? 'page' : undefined}>{n.label}</a>)}
+    </nav>
+    <span class="stamp mono head-stamp">nothing is sent by any code path</span>
+  </header>
+  <main id="main" class="wrap" tabindex="-1">
+    <slot />
+  </main>
+  <footer class="wrap site-foot">
+    <p class="mono">Nittany AI matchmaking engine · snapshot of the October 26 and 27, 2026 run · drafts only, a person sends</p>
+    <p class="mono"><a href="/">How it works</a> · <a href="/results/">Results</a> · <a href="/faculty/">Faculty match</a></p>
+  </footer>
+  <script>
+    import { start } from '../engine/astro';
+    start();
+  </script>
+</body>
+</html>

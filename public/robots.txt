@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nittany-ai.example.invalid/sitemap-index.xml

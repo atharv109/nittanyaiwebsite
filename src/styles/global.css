@@ -1,0 +1,150 @@
+/* Chain of Custody design system — see website/DESIGN.md */
+:root {
+  color-scheme: light;
+  --ground: #fafaf8;
+  --raised: #ffffff;
+  --ink: #101214;
+  --muted: #5a5f66;
+  --faint: #6f737a;
+  --line: #e2e2df;
+  --line-strong: #c8c8c4;
+  --accent: #2360d6;
+  --accent-soft: #e9eefb;
+  --verified: #086b43;
+  --verified-soft: #e3f1ea;
+  --quarantined: #9a4a00;
+  --quarantined-soft: #f7ecdf;
+  --cat1: #2360d6; --cat2: #b45309; --cat3: #0e7e60; --cat4: #0e7490;
+  --cat5: #be4a78; --cat6: #1d4ed8; --cat7: #4b5563; --cat8: #6d28d9;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --gutter: clamp(16px, 2vw, 32px);
+  --e-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --ground: #121316; --raised: #1a1c20; --ink: #f1f2f4; --muted: #a4a8ae; --faint: #8b8f96;
+  --line: #27292e; --line-strong: #3a3d43; --accent: #7ea3ee; --accent-soft: #171d2a;
+  --verified: #3ecf8e; --verified-soft: #12251b; --quarantined: #e0a35e; --quarantined-soft: #2a2016;
+}}
+:root[data-theme="dark"] { color-scheme: dark;
+  --ground: #121316; --raised: #1a1c20; --ink: #f1f2f4; --muted: #a4a8ae; --faint: #8b8f96;
+  --line: #27292e; --line-strong: #3a3d43; --accent: #7ea3ee; --accent-soft: #171d2a;
+  --verified: #3ecf8e; --verified-soft: #12251b; --quarantined: #e0a35e; --quarantined-soft: #2a2016; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { font-family: 'Outfit Variable', system-ui, sans-serif; background: var(--ground); }
+body { margin: 0; background: var(--ground); color: var(--ink); font-size: 16.5px; line-height: 1.55;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-block: 0 56px; overflow-x: clip;
+  -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#main:focus { outline: none; }
+.skip { position: fixed; left: 8px; top: 8px; z-index: 200; background: var(--ink); color: var(--ground); padding: 8px 16px; translate: 0 -200%; }
+.skip:focus-visible { translate: none; }
+.wrap { max-width: 1120px; margin: 0 auto; }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin: 0; }
+h1 { font-weight: 600; font-size: clamp(34px, 5.2vw, 64px); letter-spacing: -.035em; line-height: 1.0; margin: 12px 0 0; text-wrap: balance; }
+h2 { font-weight: 600; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -.02em; line-height: 1.15; margin: 0; }
+h3 { font-weight: 600; font-size: 17px; letter-spacing: -.01em; margin: 0; }
+p { text-wrap: pretty; }
+.sub { color: var(--muted); max-width: 62ch; margin: 14px 0 0; }
+.stamp { display: inline-block; font-family: var(--mono); font-size: 12px; padding: 2px 10px; border: 1px solid var(--line-strong); color: var(--muted); border-radius: 2px; }
+.badge { display: inline-block; font-family: var(--mono); font-size: 12px; padding: 3px 10px; border-radius: 2px; white-space: nowrap; }
+.b-strong { background: var(--verified-soft); color: var(--verified); }
+.b-prov { background: var(--accent-soft); color: var(--accent); }
+.b-wait { background: var(--quarantined-soft); color: var(--quarantined); }
+.chip { font-family: var(--mono); font-size: 12px; color: var(--muted); border: 1px solid var(--line); padding: 1px 8px; border-radius: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
+
+/* Header / footer */
+.site-head { display: flex; align-items: baseline; gap: 10px 28px; flex-wrap: wrap; padding: 22px 0 14px; border-bottom: 1px solid var(--line); }
+.brand { color: var(--ink); text-decoration: none; font-weight: 600; letter-spacing: -.01em; }
+.brand .mono { color: var(--faint); font-weight: 400; font-size: 12px; }
+.site-head nav { display: flex; gap: 6px 22px; flex-wrap: wrap; }
+.head-stamp { margin-left: auto; }
+.site-foot { border-top: 1px solid var(--line); margin-top: 72px; padding-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.site-foot p { margin: 0; font-size: 12px; color: var(--faint); }
+.site-foot a { color: var(--muted); }
+
+/* Nav: underline draws on hover, the current page keeps it */
+.draw { color: var(--ink); text-decoration: none; display: inline-block; padding: 6px 0;
+  background: linear-gradient(currentColor 0 0) left bottom / 0% 1px no-repeat;
+  transition: background-size .45s var(--e-out); }
+.draw[aria-current="page"] { background-size: 100% 1px; }
+.draw:focus-visible { background-size: 100% 1px; }
+@media (hover: hover) { .draw:hover { background-size: 100% 1px; } }
+
+/* Inline links: underline at rest, it rises into a highlight band on hover/focus */
+.inline, main p a:not([class]), main li a:not([class]), .site-foot a, .tag-foot a {
+  text-decoration: none; background: linear-gradient(var(--accent-soft) 0 0) left bottom / 100% 1px no-repeat;
+  box-shadow: inset 0 -1px 0 currentColor; transition: background-size .4s var(--e-out); }
+.inline:focus-visible, main p a:not([class]):focus-visible, main li a:not([class]):focus-visible, .site-foot a:focus-visible, .tag-foot a:focus-visible { background-size: 100% 100%; }
+@media (hover: hover) { .inline:hover, main p a:not([class]):hover, main li a:not([class]):hover, .site-foot a:hover, .tag-foot a:hover { background-size: 100% 100%; } }
+.brand .mono { display: inline-block; transition: translate .45s var(--e-out), color .3s; }
+.brand:focus-visible .mono { translate: 4px 0; color: var(--accent); }
+@media (hover: hover) { .brand:hover .mono { translate: 4px 0; color: var(--accent); } }
+
+/* Primary CTA: ink floods up from the bottom edge like a stamp being pressed */
+.cta { position: relative; isolation: isolate; overflow: clip; display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 18px; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; font-weight: 600;
+  transition: color .35s var(--e-out); }
+.cta::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--ink);
+  clip-path: inset(100% 0 0 0); transition: clip-path .45s var(--e-out); }
+.cta .arr { display: inline-block; transition: translate .45s var(--e-out); }
+.cta:focus-visible, .cta:active { color: var(--ground); }
+.cta:focus-visible::before, .cta:active::before { clip-path: inset(0 0 0 0); }
+@media (hover: hover) { .cta:hover { color: var(--ground); } .cta:hover::before { clip-path: inset(0 0 0 0); } .cta:hover .arr { translate: 6px 0; } }
+
+/* Ledger row (results + faculty lists): a custody rule draws down the left edge, arrow travels */
+.lrow { position: relative; display: block; color: inherit; text-decoration: none; padding: 16px 18px 14px 22px; border-bottom: 1px solid var(--line); }
+.lrow::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent);
+  transform-origin: top; scale: 1 0; transition: scale .45s var(--e-out); }
+.lrow .arr { display: inline-block; color: var(--faint); transition: translate .45s var(--e-out), color .3s; }
+.lrow:focus-visible::before { scale: 1 1; }
+.lrow:focus-visible .arr { translate: 6px 0; color: var(--accent); }
+@media (hover: hover) { .lrow:hover::before { scale: 1 1; } .lrow:hover { background: var(--raised); } .lrow:hover .arr { translate: 6px 0; color: var(--accent); } }
+
+/* Curtain (page transition sheet). GSAP owns its transform. */
+#curtain { position: fixed; inset: 0; z-index: 150; pointer-events: none; visibility: hidden; overflow: hidden; }
+.curtain__panel { position: absolute; inset: 0; background: var(--ground); border-top: 1px solid var(--line-strong); }
+
+/* Reveals: hidden only when JS + motion are both on */
+.motion [data-split], .motion [data-reveal] { visibility: hidden; }
+.split-line { padding-bottom: .08em; margin-bottom: -.08em; }
+
+@media (max-width: 720px) {
+  .head-stamp { margin-left: 0; }
+  body { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Tap targets: links in footers, link lists and evidence meta rows get >=24px of height */
+.site-foot a, .unmatched a, .step-foot a, .fac-gap a, main li .mono a { display: inline-block; padding-block: 5px; }
+
+/* Critic pass 1 */
+/* Inline links: a visible band, not a faint wash */
+.inline, main p a:not([class]), main li a:not([class]), .site-foot a, .tag-foot a {
+  background-image: linear-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 0 0); }
+.tag-foot a { display: inline-block; padding-block: 5px; }
+/* Brand and the current nav item answer too: underline draws under the brand, thickens on the current page */
+.brand { background: linear-gradient(currentColor 0 0) left bottom / 0% 1px no-repeat; transition: background-size .45s var(--e-out); padding-block: 4px; }
+.brand:focus-visible { background-size: 100% 1px; }
+.draw[aria-current="page"]:focus-visible { background-size: 100% 3px; }
+@media (hover: hover) { .brand:hover { background-size: 100% 1px; } .draw[aria-current="page"]:hover { background-size: 100% 3px; } }
+.draw { transition: background-size .45s var(--e-out); }
+/* Page turn: an ink sheet carrying a custody stamp, not a blank flash */
+.curtain__panel { background: var(--ink); border-top: 0; display: grid; place-items: center; }
+.curtain__stamp { font-family: var(--mono); font-size: 13px; color: var(--ground); border: 1.5px solid currentColor; padding: 4px 12px; rotate: -2deg; border-radius: 2px; }
+/* Topic grid counts stack instead of wrapping mid-phrase */
+.nums > span { display: block; }
+.brand:focus-visible { outline-offset: 6px; }
+@media (max-width: 720px) {
+  .site-head { gap: 4px 18px; padding: 14px 0 10px; }
+  .head-stamp { display: none; } /* the footer and every page repeat it; the phone needs the room */
+  .site-head nav { width: 100%; }
+}
+.score .val .arr { margin-left: 4px; }

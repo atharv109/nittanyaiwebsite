@@ -1,0 +1,409 @@
+---
+import Base from '../layouts/Base.astro';
+import runs from '../data/runs.json';
+import matches from '../data/matches.json';
+import pipe from '../data/pipeline.json';
+import walk from '../data/walk.json';
+import CustodyMachine from '../components/figures/custody-machine/CustodyMachine.astro';
+
+// The full pipeline, stage by stage. Every number is from the run database (scripts/gen_pipeline.py).
+const n = (x: number) => x.toLocaleString();
+const sig = Object.values(pipe.signals).reduce((a, b) => a + b, 0);
+const stages = [
+  { name: 'Extract and infer', reads: 'the text of each collected document', writes: 'a claim, its verbatim excerpt, what it implies, an uncertainty grade and an event date',
+    rows: [[`${n(pipe.documents)} documents read`, pipe.documents], [`${n(pipe.claims)} claims written`, pipe.claims], [`${n(pipe.kind.implication ?? 0)} labeled as inference, not stated fact`, pipe.kind.implication ?? 0]] },
+  { name: 'Normalize', reads: 'every claim', writes: 'one record per event: deduplicated, dated, linked to contradictions',
+    rows: [[`claim words must overlap the source text by 60%, or the claim is dropped`, 0], [`${n(pipe.corroborated)} events found at more than one URL`, pipe.corroborated], [`${n(pipe.stale)} older than 24 months, marked stale`, pipe.stale]] },
+  { name: 'Check the quote', reads: 'the claim and the fetched source', writes: 'a fidelity verdict, stamped with the provider that gave it',
+    rows: [[`${n(pipe.fidelity.substring)} found word for word in the source`, pipe.fidelity.substring], [`${n(pipe.fidelity.entailed)} paraphrases accepted by a second provider`, pipe.fidelity.entailed], [`${n(pipe.fidelity.unsupported)} not supported, not verified`, pipe.fidelity.unsupported]] },
+  { name: 'Fact or inference', reads: 'the claim and the source, by a provider other than the extractor', writes: 'whether the source states it or the model inferred it',
+    rows: [[`${n(pipe.factConfirmed)} confirmed as stated`, pipe.factConfirmed], [`${n(pipe.overreachMed)} overreach at medium or low confidence: kept, uncertainty raised`, pipe.overreachMed], [`${n(pipe.overreachHigh)} overreach at high confidence: quote kept as fact, the inference dropped`, pipe.overreachHigh]] },
+  { name: 'Verified', reads: 'all verdicts', writes: 'the evidence the judge is allowed to see',
+    rows: [[`${n(pipe.verified)} claims verified`, pipe.verified]] },
+  { name: 'Judge', reads: 'verified claims only', writes: 'five dimension scores, each citing evidence; the final number is computed in code',
+    rows: [[`${runs.totals.scored} companies scored, ${runs.totals.uncapped} uncapped; capped at 6.0 without partner evidence`, 0]] },
+  { name: 'Investment fields', reads: 'verified claims', writes: 'what each company is investing in now, each field citing its evidence',
+    rows: [[`${pipe.fields[0]} fields across ${pipe.fields[1]} companies`, 0]] },
+  { name: 'Signals', reads: 'market data and LinkedIn snapshots', writes: 'timing events: is now the moment, never whether they want partners',
+    rows: [[`${sig} events, ${pipe.signals.earnings_soon ?? 0} of them earnings within 10 days`, 0]] },
+  { name: 'People', reads: 'alumni lists and the faculty handoff', writes: 'PSU alumni routes and faculty matches, each with a citeable link',
+    rows: [[`${pipe.alumni} alumni records; faculty matched on the Faculty match page`, 0]] },
+];
+
+// The custody walk follows two real verified claims from the snapshot (scripts/gen_walk.py), plus
+// the faculty they lead to (matches.json). Every stamp below is read from those files at build time.
+const companiesMatched = Object.values(matches.companies).filter((c) => c.matches.length).length;
+const confWord = (c: string | null) => ({ med: 'medium' } as Record<string, string>)[c ?? ''] ?? c;
+const sourceLabel = (s: string) => pipe.collectors.find((c) => c.key === s)?.name ?? 'untagged source';
+const ticker = (cid: string) => runs.ranked.find((r) => r.cid === cid)?.ticker;
+const byScore = <T extends { score: number }>(xs: T[]) => [...xs].sort((a, b) => b.score - a.score);
+
+// Tag A: a Tesla SEC filing whose quote is real but whose implication the fact check caught as overreach.
+const ta = walk.tesla, tc = ta.claim, tm = matches.companies.tsla;
+const tTop = byScore(tm.matches)[0];
+if (!tTop) throw new Error('custody walk: Tesla has no faculty matches');
+const tBy = tc.verifiedBy.join(', ') || 'provider not recorded';
+// Tag B: a Bloom Energy claim that feeds an investment field, its need topic, and a researcher on that topic.
+const ba = walk.bloom, bc = ba.claim, bm = matches.companies['bloom-energy'];
+// The best researcher on the need topic itself (the company's overall top six can all sit on another topic).
+const bTopic = bm.topByTopic?.[ba.topic];
+const bHit = bTopic && { m: bTopic, t: bTopic.terms.find((t) => t.need.toLowerCase().includes(ba.field.name.toLowerCase())) ?? bTopic.terms[0] };
+if (!bHit) throw new Error(`custody walk: no Bloom Energy match on "${ba.topic}"`);
+const { m: bTop, t: bTerm } = bHit;
+
+type Station = { key: string; stamp: string; amber?: boolean; title: string; body: string };
+const walks: { id: string; letter: string; label: string; company: string; tick?: string; source: string;
+  excerpt: string; url: string; stations: Station[] }[] = [
+  { id: 'a', letter: 'A', label: 'An inference caught', company: tm.name, tick: ticker('tsla'), source: sourceLabel(tc.source),
+    excerpt: tc.excerpt, url: tc.url, stations: [
+    { key: 'fetched', stamp: `fetched · ${tc.published} · ${tc.host}`, title: 'Downloaded from the SEC',
+      body: `The filings collector took this document from ${tc.host}. The filing is dated ${tc.published}; the purchase it reports closed on ${tc.eventDate}.` },
+    { key: 'quote', stamp: `quote found · ${tc.fidelity}`, title: 'The sentence is in the filing',
+      body: `The fidelity check came back "${tc.fidelity}": the excerpt appears in the downloaded text exactly as quoted.` },
+    { key: 'verified', stamp: `verified · ${tBy}`, title: 'The checker is named',
+      body: `The record names ${tBy} as the provider that checked this claim, so an audit can see which model vouched for it.` },
+    { key: 'inference', stamp: `overreach · uncertainty raised to ${tc.uncertainty}`, amber: true, title: 'Real quote, guessed meaning',
+      body: `The extractor added: "${tc.implication}" The fact check called that overreach at ${confWord(tc.factCheckConfidence)} confidence. The filing reports a share purchase; joint technology work is the model's reading. The claim stays, one step less certain.` },
+    { key: 'judge', stamp: `admitted · 1 of ${ta.company.verified}`, title: 'The judge treats it as a deal',
+      body: `It reached the judge with ${ta.company.verified - 1} other verified Tesla claims. ${ta.judge.citedIn.length ? `The judge cited the purchase under ${ta.judge.citedIn.join(' and ')} as commercial activity, not research engagement.` : 'The judge did not rest any dimension on the purchase.'} Tesla scored ${ta.judge.score.toFixed(1)}${ta.judge.capped ? ', capped' : ''}.` },
+    { key: 'faculty', stamp: `faculty · ${tTop.name}, via needs`, title: 'Researchers come from needs, not this claim',
+      body: `${tTop.name} tops Tesla's Penn State list on the topic "${tTop.terms[0].topic}". ${ta.needs.citingClaim === 0 ? `None of Tesla's ${ta.needs.total} tagged needs cites this claim, so it moved no researcher up or down.` : `${ta.needs.citingClaim} of Tesla's ${ta.needs.total} tagged needs cite this claim.`}` },
+    { key: 'held', stamp: 'drafted · not sent', amber: true, title: 'Staff decide',
+      body: `Tesla's dossier and any draft wait for a person to read them. The engine has no way to send either.` },
+  ] },
+  { id: 'b', letter: 'B', label: 'One claim to a researcher', company: bm.name, tick: ticker('bloom-energy'), source: sourceLabel(bc.source),
+    excerpt: bc.excerpt, url: bc.url, stations: [
+    { key: 'fetched', stamp: `fetched · ${bc.published} · ${sourceLabel(bc.source)}`, title: 'A link with no collector tag',
+      body: `The headline arrived through a ${bc.host} link dated ${bc.published}. Its record names no collector, so the tag says "${sourceLabel(bc.source)}" instead of guessing.` },
+    { key: 'quote', stamp: `quote found · ${bc.fidelity}`, title: 'The headline is the quote',
+      body: `Fidelity came back "${bc.fidelity}": the whole headline sits inside the fetched text.` },
+    bc.factCheck === 'fact'
+      ? { key: 'fact', stamp: `stated fact · ${confWord(bc.factCheckConfidence)} confidence`, title: 'The source says it outright',
+          body: `The fact check found the claim stated in the source, not inferred. ${bc.verifiedBy.length ? `The provider was ${bc.verifiedBy.join(', ')}.` : 'No provider name was stored with this verdict, so none is shown.'}` }
+      : { key: 'fact', stamp: 'fact kept · inference dropped', amber: true, title: 'The headline stays, the reading goes',
+          body: `The extractor read more into it${bc.droppedInference ? `: "${bc.droppedInference}"` : ''}. The fact check called that overreach at ${confWord(bc.factCheckConfidence)} confidence, so the reading was removed and only the headline itself counts as evidence.` },
+    { key: 'field', stamp: `feeds · ${ba.field.name} (${ba.field.claims} claims)`, title: 'It backs an investment field',
+      body: `"${ba.field.name}" is one of the areas ${bm.name} is putting money into now. ${bc.copies > 1 && bc.copies === ba.field.claims ? `The field cites ${ba.field.claims} claims, all copies of this one headline at different links, so it rests on thin evidence.` : `The field cites ${ba.field.claims} claims, and this is one of them.`}` },
+    { key: 'topic', stamp: `need topic · ${ba.topic}`, title: 'The field becomes a research topic',
+      body: `That field maps to "${ba.topic}", one of the ${bm.needTopics.length} need topics Penn State faculty are matched against for ${bm.name}.` },
+    { key: 'matched', stamp: `matched · ${bTop.name}`, title: 'A researcher who works on it',
+      body: `${bTop.name} has ${bTerm!.topicPapers} papers under "${bTerm!.oaLabel}", the top-scoring ${bm.name} match on this topic.` },
+    { key: 'held', stamp: 'drafted · not sent', amber: true, title: 'The introduction waits',
+      body: `A note to ${bTop.name} can be drafted, not sent. Whether ${bTop.name} wants industry work is for staff to ask.` },
+  ] },
+];
+
+const rules = [
+  ['A claim must quote its source', 'Most of a claim’s words must exist inside the collected document text, or the claim is dropped, loudly. The model cannot invent a quote.'],
+  ['A second provider verifies', 'The verifier is a different provider from the extractor, and its name is stamped on the record.'],
+  ['The judge sees only survivors', 'Five rubric dimensions, each forced to cite evidence. A second judge records dissent. The final number is arithmetic, not a model’s opinion.'],
+  ['Old evidence gets worse, never fresher', 'Documents outside the recency window are graded down. A date known only to the year is stored at year precision, so something old cannot pass as current.'],
+  ['People claims need a link', 'A PSU alumni or faculty claim exists only with a citeable URL. Availability and openness to industry are never inferred.'],
+  ['Failures stay visible', 'Rate-limited runs, quarantined claims and missing sources appear exactly as they landed. Missing is reported as missing.'],
+];
+---
+<Base title="Chain of Custody | how the Nittany AI matchmaking engine works">
+<section class="hero">
+  <div>
+    <p class="eyebrow" data-reveal data-intro>For PSU Corporate Engagement</p>
+    <h1 data-split data-intro>Every number here carries its receipt.</h1>
+    <p class="sub" data-reveal data-intro data-delay="0.25">The engine reads public signals about companies, keeps only the claims it can prove from a source, scores what survives, and points to Penn State researchers who work on the same problems. It never contacts anyone.</p>
+    <p class="hero-ctas" data-reveal data-intro data-delay="0.35">
+      <a class="cta" href="/results/">Open the results <span class="arr" aria-hidden="true">&rarr;</span></a>
+      <a class="inline" href="#walk">Follow two claims through the engine</a>
+    </p>
+  </div>
+  <dl class="ledger mono" data-reveal data-intro data-delay="0.15" aria-label="Snapshot totals">
+    <div><dt>source documents read</dt><dd>{pipe.documents.toLocaleString()}</dd></div>
+    <div><dt>claims extracted</dt><dd>{pipe.claims.toLocaleString()}</dd></div>
+    <div><dt>claims verified</dt><dd>{runs.totals.verified.toLocaleString()}</dd></div>
+    <div><dt>companies scored</dt><dd>{runs.totals.scored} <small>of {runs.totals.scored + runs.totals.pending}</small></dd></div>
+    <div><dt>companies with a PSU faculty match</dt><dd>{companiesMatched} <small>of {runs.totals.scored + runs.totals.pending}</small></dd></div>
+    <div class="zero"><dt>messages sent</dt><dd>0</dd></div>
+  </dl>
+</section>
+
+<section id="walk" class="walk" aria-labelledby="walk-h">
+  <div class="walk-head">
+    <p class="eyebrow">The custody walk</p>
+    <h2 id="walk-h">Two real claims from the October run, stamped at every hand-off.</h2>
+  </div>
+  <div class="tabs" role="tablist" aria-label="Pick a claim to follow">
+    {walks.map((w, i) => (
+      <button class="tab" type="button" role="tab" id={`tab-${w.id}`} aria-controls={`walk-${w.id}`}
+        aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>
+        <span class="tab-k mono">{w.letter} · {w.company}</span><span class="tab-l">{w.label}</span>
+      </button>
+    ))}
+  </div>
+  {walks.map((w, i) => (
+    <div class="walk-grid" id={`walk-${w.id}`} role="tabpanel" aria-labelledby={`tab-${w.id}`} data-walk hidden={i !== 0}>
+      <div class="stage-wrap">
+        <article class="tag" data-stage data-state={w.stations.length - 1} aria-label={`Claim tag with ${w.stations.length} custody stamps`}>
+          <header class="tag-head mono"><span>{w.company}{w.tick && ` · ${w.tick}`}</span><span>{w.source}</span></header>
+          <p class="tag-quote">&ldquo;{w.excerpt}&rdquo;</p>
+          <ol class="slots">
+            {w.stations.map((s, j) => (
+              <li class="slot" data-slot={j} data-tone={s.amber ? 'amber' : undefined}><span class="slot-k mono">{s.key}</span><span class="slot-v mono">{s.stamp}</span></li>
+            ))}
+          </ol>
+          <footer class="tag-foot mono"><a href={w.url} target="_blank" rel="noopener">open the source document</a></footer>
+        </article>
+      </div>
+      <ol class="chapters">
+        {w.stations.map((s, j) => (
+          <li class="chapter" data-chapter={j}>
+            <p class="mono ch-n">{s.key}</p>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  ))}
+</section>
+
+<section class="pipe" aria-labelledby="pipe-h">
+  <p class="eyebrow">The whole engine</p>
+  <h2 id="pipe-h" data-split>Those two claims were among {n(pipe.claims)}. Here is where all of them came from and where they went.</h2>
+
+  <CustodyMachine />
+
+  <h3 class="pipe-sub">Ten collectors, no model in any of them</h3>
+  <p class="sub">Collectors only download and stamp the source. Five returned data this run; the others are shown at zero rather than hidden.</p>
+  <div class="tbl-wrap">
+    <table class="coll mono">
+      <caption class="sr-only">Documents, claims and verified claims per collector</caption>
+      <thead><tr><th scope="col">collector</th><th scope="col">what it takes</th><th scope="col">documents</th><th scope="col">claims</th><th scope="col">verified</th></tr></thead>
+      <tbody>
+        {pipe.collectors.map((c) => (
+          <tr class={c.claims ? '' : 'zero'}>
+            <th scope="row">{c.name}</th><td class="what">{c.what}</td>
+            <td>{c.claims ? n(c.docs) : 'none this run'}</td><td>{c.claims ? n(c.claims) : ''}</td><td>{c.claims ? n(c.verified) : ''}</td>
+          </tr>
+        ))}
+        <tr class="untag"><th scope="row">Untagged</th><td class="what">Records written before source tagging existed</td><td>{n(pipe.untagged.docs)}</td><td>{n(pipe.untagged.claims)}</td><td>{n(pipe.untagged.verified)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="pipe-sub">From claim to score</h3>
+  <ol class="stages">
+    {stages.map((s) => (
+      <li class="stage" data-reveal>
+        <div class="st-head"><h4>{s.name}</h4><p class="mono io">reads {s.reads} · writes {s.writes}</p></div>
+        <ul class="st-rows">
+          {s.rows.map(([label, v]) => (
+            <li>
+              <span class="mono">{label}</span>
+              {(v as number) > 0 && <span class="bar" aria-hidden="true"><span style={`width:${Math.max(0.6, (v as number) / pipe.claims * 100).toFixed(1)}%`} /></span>}
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ol>
+  <p class="mono gap">Known gap: {n(pipe.entailedUnchecked)} paraphrases were accepted by the quote check but never got the fact-or-inference check, so none of them count as verified. Bars are drawn against all {n(pipe.claims)} claims.</p>
+</section>
+
+<section class="rules" aria-labelledby="rules-h">
+  <h2 id="rules-h" data-split>Six rules the whole engine runs on</h2>
+  <dl>
+    {rules.map(([k, v]) => (<div class="rule-row" data-reveal><dt>{k}</dt><dd>{v}</dd></div>))}
+  </dl>
+</section>
+
+<section class="band" data-reveal>
+  <div>
+    <h2>Pick a company, then see who at Penn State fits.</h2>
+    <p class="sub">Every company has a dossier with its evidence, the judge's reasoning, and the faculty whose research topics match what the company is investing in.</p>
+  </div>
+  <p class="band-ctas">
+    <a class="cta" href="/results/">Results <span class="arr" aria-hidden="true">&rarr;</span></a>
+    <a class="cta" href="/faculty/">Faculty match <span class="arr" aria-hidden="true">&rarr;</span></a>
+  </p>
+</section>
+</Base>
+
+<style>
+  .hero { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 32px 64px; align-items: end; padding: clamp(48px, 9vw, 112px) 0 56px; border-bottom: 1px solid var(--line); }
+  .hero h1 { max-width: 13ch; }
+  .hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin: 30px 0 0; }
+  .inline { color: var(--ink); }
+  .ledger { margin: 0; border-top: 1px solid var(--ink); }
+  .ledger div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .ledger dt { color: var(--muted); font-size: 12.5px; }
+  .ledger dd { margin: 0; font-size: 20px; font-weight: 500; color: var(--ink); }
+  .ledger small { font-size: 12px; color: var(--faint); }
+  .ledger .zero dd { color: var(--verified); }
+
+  .walk { padding: 72px 0 24px; }
+  .walk-head { max-width: 34ch; }
+  .walk-head h2 { margin-top: 10px; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 0 32px; margin-top: 28px; border-bottom: 1px solid var(--line); }
+  .tab { position: relative; display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; min-height: 44px;
+    padding: 10px 0 12px; border: 0; background: none; font: inherit; font-weight: 600; color: var(--muted); text-align: left; cursor: pointer; transition: color .3s; }
+  .tab-k { font-size: 11.5px; font-weight: 400; color: var(--faint); display: inline-block; transition: translate .45s var(--e-out), color .3s; }
+  .tab::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: currentColor;
+    transform-origin: left; scale: 0 1; transition: scale .45s var(--e-out); }
+  .tab[aria-selected="true"] { color: var(--ink); }
+  .tab[aria-selected="true"]::after { height: 3px; scale: 1 1; }
+  .tab:focus-visible::after { scale: 1 1; }
+  .tab:focus-visible .tab-k { translate: 4px 0; color: var(--accent); }
+  @media (hover: hover) { .tab:hover { color: var(--ink); } .tab:hover::after { scale: 1 1; } .tab:hover .tab-k { translate: 4px 0; color: var(--accent); } }
+  .walk-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; margin-top: 36px; }
+  .walk-grid[hidden] { display: none; }
+  :global(html:not(.js)) .tabs { display: none; }
+  :global(html:not(.js)) .walk-grid[hidden] { display: grid; }
+  .stage-wrap { position: relative; }
+  .tag { position: sticky; top: 14vh; background: var(--raised); border: 1px solid var(--line-strong); padding: 22px 24px 18px; }
+  .tag-head { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--faint); padding-bottom: 12px; border-bottom: 1px dashed var(--line-strong); }
+  .tag-quote { font-size: clamp(20px, 2.1vw, 26px); font-weight: 500; letter-spacing: -.015em; line-height: 1.2; margin: 18px 0 20px; }
+  .slots { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .slot { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--line); }
+  .slot-k { font-size: 11.5px; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; }
+  .slot-v { justify-self: start; font-size: 12.5px; padding: 3px 10px; border: 1.5px solid var(--verified); color: var(--verified); border-radius: 2px; rotate: -1.2deg; }
+  .slot[data-tone="amber"] .slot-v { border-color: var(--quarantined); color: var(--quarantined); }
+  .tag-foot { margin-top: 14px; font-size: 12px; }
+  .chapters { list-style: none; margin: 0; padding: 0; }
+  .chapter { min-height: 30vh; padding: 4vh 0; border-top: 1px solid var(--line); }
+  .chapter:last-child { min-height: 26vh; }
+  .ch-n { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin: 0 0 8px; }
+  .chapter p:last-child { color: var(--muted); max-width: 46ch; }
+
+  .pipe { padding: 88px 0 0; }
+  .pipe > h2 { max-width: 28ch; margin-top: 10px; }
+  .pipe-sub { margin-top: 44px; font-size: 19px; }
+  .tbl-wrap { overflow-x: auto; margin-top: 18px; border-top: 1px solid var(--ink); }
+  .coll { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .coll th, .coll td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+  .coll thead th { font-weight: 400; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
+  .coll tbody th { font-family: 'Outfit Variable', sans-serif; font-weight: 600; font-size: 15px; white-space: nowrap; }
+  .coll td:nth-child(n+3) { text-align: right; white-space: nowrap; color: var(--ink); }
+  .coll thead th:nth-child(n+3) { text-align: right; }
+  .coll .what { color: var(--muted); max-width: 46ch; }
+  .coll .zero th, .coll .zero td { color: var(--faint); }
+  .coll .zero td:nth-child(3) { color: var(--quarantined); }
+  .coll .untag th { font-weight: 500; color: var(--muted); }
+  .stages { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--ink); }
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 8px 40px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .st-head h4 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+  .io { margin: 4px 0 0; font-size: 12px; color: var(--faint); max-width: 44ch; }
+  .st-rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .st-rows .mono { font-size: 12.5px; color: var(--ink); }
+  .bar { display: block; height: 3px; background: var(--line); margin-top: 4px; }
+  .bar span { display: block; height: 100%; background: var(--accent); }
+  .gap { font-size: 12px; color: var(--quarantined); margin-top: 14px; max-width: 90ch; }
+
+  .rules { padding: 72px 0 0; }
+  .rules dl { margin: 28px 0 0; border-top: 1px solid var(--ink); }
+  .rule-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 8px 48px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .rule-row dt { font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+  .rule-row dd { margin: 0; color: var(--muted); max-width: 60ch; }
+
+  .band { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px 48px; margin-top: 88px; padding: 36px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  .band h2 { max-width: 22ch; }
+  .band-ctas { display: flex; gap: 12px; margin: 0; flex-wrap: wrap; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-top: 40px; }
+    .walk-grid { grid-template-columns: 1fr; gap: 0; }
+    .stage-wrap { display: contents; } /* sticky needs the whole walk as its containing block */
+    .tag { top: 8px; padding: 14px 16px 12px; z-index: 2; box-shadow: 0 -8px 0 8px var(--ground), 0 14px 18px -10px var(--ground); }
+    .tag-quote { font-size: 17px; margin: 12px 0 12px; }
+    .slot { grid-template-columns: 80px 1fr; padding: 5px 0; }
+    .slot-v { font-size: 11.5px; padding: 2px 8px; }
+    .tag-foot { display: none; }
+    .chapter { min-height: 30vh; padding: 22px 0; }
+    .rule-row { grid-template-columns: 1fr; }
+    .stage { grid-template-columns: 1fr; }
+    .coll .what { display: none; }
+    .coll thead th:nth-child(2) { display: none; }
+    .coll th, .coll td { padding-right: 8px; font-size: 11.5px; }
+    .coll tbody th { white-space: normal; font-size: 14px; }
+  }
+
+  /* Stamps: with motion on, a slot is blank until its chapter is reached, then lands. */
+  :global(html.motion) .slot-v { opacity: 0; scale: 1.25; transition: opacity .18s ease, scale .32s var(--e-out); }
+  :global(html.motion) .slot.on .slot-v { opacity: 1; scale: 1; }
+  :global(html.motion) .slot:not(.on) .slot-k { color: var(--faint); }
+
+  /* Phone: the tag collapses to the quote and a row of stamps so the chapters keep the screen. */
+  @media (max-width: 860px) {
+    .tag-head { display: none; }
+    .tag-quote { font-size: 15.5px; margin: 0 0 10px; }
+    .slots { display: flex; flex-wrap: wrap; gap: 6px; border: 0; }
+    .slot { display: block; padding: 0; border: 0; }
+    .slot-k { display: none; }
+    :global(html.motion) .slot:not(.on) .slot-v { display: none; }
+    :global(html.motion) .slot:not(.on) .slot-k { display: inline-block; font-size: 11px; padding: 2px 8px; border: 1px dashed var(--line-strong); border-radius: 2px; }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { onPage, prefersReducedMotion } from '../engine';
+
+  // Custody walk driver: one variable (the reached station) sets every stamp on the active tag.
+  // Switching tabs swaps the panel and rebuilds the scroll triggers for its chapters.
+  onPage(() => {
+    const panels = gsap.utils.toArray<HTMLElement>('[data-walk]');
+    const tabs = gsap.utils.toArray<HTMLButtonElement>('[role="tab"]');
+    const list = document.querySelector<HTMLElement>('[role="tablist"]');
+    if (!panels.length || !list) return;
+    let triggers: ScrollTrigger[] = [];
+
+    const drive = (panel: HTMLElement) => {
+      triggers.forEach((t) => t.kill());
+      triggers = [];
+      const stage = panel.querySelector<HTMLElement>('[data-stage]')!;
+      const slots = gsap.utils.toArray<HTMLElement>('[data-slot]', stage);
+      const chapters = gsap.utils.toArray<HTMLElement>('[data-chapter]', panel);
+      const set = (n: number) => {
+        stage.dataset.state = String(n);
+        slots.forEach((s, i) => s.classList.toggle('on', i <= n));
+      };
+      if (prefersReducedMotion()) return set(slots.length - 1);
+      triggers = chapters.map((ch, i) => ScrollTrigger.create({
+        trigger: ch, start: 'top 62%', end: 'bottom 62%',
+        onEnter: () => set(i), onEnterBack: () => set(i), onLeaveBack: () => set(i - 1),
+      }));
+      ScrollTrigger.refresh();
+      set(chapters.filter((ch) => ch.getBoundingClientRect().top < innerHeight * 0.62).length - 1);
+    };
+
+    const select = (tab: HTMLButtonElement, focus = false) => {
+      let active = panels[0];
+      tabs.forEach((t) => {
+        const on = t === tab, panel = document.getElementById(t.getAttribute('aria-controls')!)!;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        panel.hidden = !on;
+        if (on) active = panel;
+      });
+      if (focus) tab.focus();
+      drive(active);
+    };
+    const onClick = (e: Event) => {
+      const tab = (e.target as HTMLElement).closest<HTMLButtonElement>('[role="tab"]');
+      if (tab && tab.getAttribute('aria-selected') !== 'true') select(tab);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      const i = tabs.indexOf(document.activeElement as HTMLButtonElement);
+      if (i < 0) return;
+      const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+      if (next === undefined) return;
+      e.preventDefault();
+      select(tabs[(next + tabs.length) % tabs.length], true);
+    };
+    list.addEventListener('click', onClick);
+    list.addEventListener('keydown', onKey);
+    drive(panels.find((p) => !p.hidden) ?? panels[0]);
+    return () => {
+      list.removeEventListener('click', onClick);
+      list.removeEventListener('keydown', onKey);
+      triggers.forEach((t) => t.kill());
+    };
+  });
+</script>

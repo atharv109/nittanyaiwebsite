@@ -1,0 +1,225 @@
+---
+import Base from '../../layouts/Base.astro';
+import runs from '../../data/runs.json';
+import matches from '../../data/matches.json';
+export function getStaticPaths() {
+  return runs.ranked.concat(runs.pending).map((r) => ({ params: { cid: r.cid } }));
+}
+const all = runs.ranked.concat(runs.pending);
+const { cid } = Astro.params;
+const r = all.find((x) => x.cid === cid);
+const prev = all[all.indexOf(r) - 1], next = all[all.indexOf(r) + 1];
+const stamp = (t) => (t ? t : 'undated');
+const scoreColor = r.capped ? 'var(--accent)' : 'var(--verified)';
+const segTotal = Object.values(r.bySource).reduce((a, x) => a + x.total, 0);
+const segList = Object.entries(r.bySource).filter(([s, v]) => v.total > 0).map(([s, v]) => [s, { ...v, label: v.label || 'untagged source' }]);
+const fm = matches.companies[cid];
+// Some excerpts were stored with HTML entities already encoded; decode the common ones once.
+const clean = (s) => s && s.replace(/&amp;/g, '&').replace(/&[lr]dquo;/g, '"').replace(/&[lr]squo;|&#39;/g, "'");
+const dissent = r.dissent ? JSON.parse(r.dissent).map((d) => `${d.dim}: ${d.scores.join(' vs ')}`).join(', ') : null;
+// The same headline is often extracted from several URLs; show it once with its count.
+const evidence = Object.values(r.evidence.reduce((acc, e) => { const k = (e.excerpt || e.implication || '').toLowerCase().trim(); (acc[k] ??= { ...e, copies: 0 }).copies++; return acc; }, {}));
+---
+<Base title={`${r.name}: chain of custody | Nittany AI`} description={`${r.name} (${r.ticker}) in the Nittany AI October 2026 run: ${r.score != null ? `judge score ${r.score.toFixed(1)} of 10` : 'not scored yet'}, ${r.verified} verified claims, and matching Penn State faculty.`}>
+<p class="eyebrow" style="margin-top:40px">Chain of custody · scored {stamp(runs.generatedAt)} · nothing was sent by any code path</p>
+<h1 data-split data-intro>{r.name}</h1>
+<p class="sub">{r.ticker} · {r.area} {r.score != null ? '' : ' · queued for retry'}</p>
+
+<div class="dz">
+  <aside style="background:var(--raised);border:1px solid var(--line);padding:20px 16px;text-align:center">
+    {r.score != null && (
+      <svg width="120" height="120" viewBox="0 0 100 100" role="img" aria-label={`Judge score ${r.score.toFixed(1)} of 10, ${r.capped ? 'capped' : 'uncapped'}`}>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="var(--line)" stroke-width="10" />
+        <circle cx="50" cy="50" r="40" fill="none" stroke={scoreColor} stroke-width="10" stroke-linecap="round"
+          stroke-dasharray={`${(2 * Math.PI * 40 * r.score / 10).toFixed(1)} 999`} stroke-dashoffset="0"
+          transform="rotate(-90 50 50)" />
+        <text x="50" y="58" text-anchor="middle" font-size="30" font-family="'Outfit Variable',sans-serif" font-weight="600" fill="var(--ink)">{r.score.toFixed(1)}</text>
+      </svg>
+    )}
+    {r.score == null && <div class="badge b-wait" style="padding:12px">queued</div>}
+    <div class="mono" style="color:var(--muted);font-size:12px;margin-top:8px;line-height:1.8">
+      <div><b style="color:var(--ink);font-size:15px">{r.ev.toLocaleString()}</b> collected</div>
+      <div><b style="color:var(--ink);font-size:15px">{r.verified}</b> verified</div>
+      <div><b style="color:var(--ink);font-size:15px">{r.fresh}</b> fresh (90d)</div>
+      <div><b style="color:var(--ink);font-size:15px">{r.score != null ? r.score.toFixed(1) : 'n/a'}</b> of 10</div>
+    </div>
+  </aside>
+  <div>
+    <section style="border-top:1px solid var(--line);padding-top:14px">
+      <h2 class="eyebrow">What the judge inferred: five dimensions, verbatim</h2>
+      <div class="dims">
+        {r.dims.length === 0 && <p style="color:var(--muted);font-size:14px">No judge run completed for this company yet.</p>}
+        {r.dims.map(d => (
+          <div>
+            <div style="display:flex;gap:10px;align-items:baseline">
+              <b style="font-size:14.5px">{d.dim}</b><span class="mono" style="color:var(--muted);font-size:12px">{d.score} / 5</span>
+            </div>
+            <div class="bar-track" style="height:3px;background:var(--line);position:relative;margin-top:7px">
+              <div style={`position:absolute;inset:0 auto 0 0;background:var(--accent);width:${d.score / 5 * 100}%`} />
+            </div>
+            <p style="color:var(--muted);font-size:13px;margin:8px 0 16px;max-width:70ch">{d.justification}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section style="border-top:1px solid var(--line);padding-top:14px;margin-top:4px">
+      <h2 class="eyebrow">Sources the collectors brought back</h2>
+      <div style="margin-top:12px">
+        <div class="segbar" role="img" aria-label={segList.map(([s, v]) => `${v.label} ${v.total}`).join(', ')} style="display:flex;height:14px">
+          {segList.map(([s, v], i) => (
+            <div style={`height:14px;width:${(v.total / (segTotal || 1) * 100).toFixed(1)}%;background:var(--cat${(i % 8) + 1})`} title={`${v.label}: ${v.verified} of ${v.total} verified`} />
+          ))}
+        </div>
+        <div class="mono" style="display:flex;gap:6px 18px;flex-wrap:wrap;margin-top:8px;color:var(--muted);font-size:11.5px">
+          {segList.map(([s, v], i) => (
+            <span><span style={`display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--cat${(i % 8) + 1});margin-right:6px`} />{v.label} {v.verified}/{v.total}</span>
+          ))}
+        </div>
+      </div>
+      <p class="mono" style="color:var(--faint);font-size:11px;margin-top:8px">Each source shows verified of collected.</p>
+    </section>
+
+    <section style="border-top:1px solid var(--line);padding-top:14px;margin-top:4px">
+      <h2 class="eyebrow">Evidence stream: newest verified claims</h2>
+      <ul style="list-style:none;margin:12px 0 0;padding:0 0 0 20px;border-left:1px solid var(--line)">
+        {evidence.map((e, i) => (
+          <li style="position:relative;padding:12px 0 10px">
+            <span style="position:absolute;left:-24px;top:18px;width:7px;height:7px;border-radius:50%;background:var(--accent)" />
+            <div class="mono" style="display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;color:var(--faint);font-size:11px">
+              <span style="background:var(--raised);border:1px solid var(--line);padding:1px 8px;color:var(--muted)">{e.source || 'untagged source'}</span>
+              <span>{stamp(e.date)}</span>{e.copies > 1 && <span>× {e.copies} copies</span>}
+              {e.verifiedBy.length ? <span style="color:var(--verified)">&#10003; verified · {e.verifiedBy.join(', ')}</span> : <span class="badge b-wait">verified · provider not recorded</span>}
+              {e.url && e.url.startsWith('http') && <a href={e.url} target="_blank" rel="noopener">source<span class="sr-only"> for claim {i + 1}: {e.source || "untagged source"}, {stamp(e.date)}</span></a>}
+            </div>
+            {e.implication && <p style="margin:6px 0 0;font-size:14px">{clean(e.implication)}</p>}
+            {e.excerpt && <p style="margin:8px 0 0;background:var(--ground);border-left:2px solid var(--line-strong);padding:7px 13px;color:var(--muted);font-size:13px">&ldquo;{clean(e.excerpt)}&rdquo;</p>}
+          </li>
+        ))}
+      </ul>
+      <p class="mono" style="color:var(--faint);font-size:11px;margin-top:10px">Top {r.evidence.length} of {r.verified} verified claims (newest first). The full set stays in the engine's database.</p>
+      <details style="margin-top:10px">
+        <summary class="mono" style="cursor:pointer;color:var(--accent);font-size:12px">view as table (screen-reader + copy friendly)</summary>
+        <div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:12px;margin-top:10px">
+          <thead><tr>{['source', 'date', 'verified by', 'inference', 'quote'].map(h => <th class="mono" style="text-align:left;border-bottom:1px solid var(--line);padding:5px 9px">{h}</th>)}</tr></thead>
+          <tbody>{evidence.map(e => (
+            <tr>{[e.source || 'untagged source', stamp(e.date), e.verifiedBy.length ? e.verifiedBy.join(', ') : 'provider not recorded', e.implication, e.excerpt].map(cell => (
+              <td style="text-align:left;border-bottom:1px solid var(--line);padding:5px 9px;vertical-align:top">{cell}</td>))}</tr>
+          ))}</tbody>
+        </table></div>
+      </details>
+    </section>
+
+    <section style="border-top:1px solid var(--line);padding-top:14px;margin-top:4px">
+      <h2 class="eyebrow">Final call</h2>
+      {r.score == null ? (
+        <p style="color:var(--muted);font-size:14px;margin-top:12px">Rate-limited out before extraction could run. Nothing scored exists yet; the retry is scheduled.</p>
+      ) : (
+        <div style="background:var(--raised);border:1px solid var(--line);padding:16px 20px;font-size:14.5px;max-width:80ch;margin-top:12px">
+          <b>Final {r.score.toFixed(1)} / 10</b>. {r.capped
+            ? 'The judge capped this composite: thin recency or single-source corroboration at scoring time. A capped score beside a large evidence base means the fresh window was thin, not that the company is uninteresting.'
+            : 'No cap: the judge found concrete external-partner evidence on file at scoring time.'}
+          {dissent && <div class="mono" style="color:var(--muted);font-size:12.5px;margin-top:10px">Second judge disagreed on {dissent} (out of 5)</div>}
+        </div>
+      )}
+    </section>
+
+    {r.fields.length > 0 && (
+      <section style="border-top:1px solid var(--line);padding-top:14px;margin-top:4px">
+        <h2 class="eyebrow">Finalized research fields</h2>
+        <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
+          {r.fields.map(f => <span class="chip"><b style="color:var(--ink)">{f.name}</b> {f.date}</span>)}
+        </div>
+      </section>
+    )}
+
+    <section id="faculty" style="border-top:1px solid var(--line);padding-top:14px;margin-top:4px">
+      <h2 class="eyebrow">PSU faculty whose research topics match this company's investments</h2>
+      {fm && fm.matches.length > 0 ? (
+        <>
+          <p class="fac-lede">{fm.matchCount} Penn State {fm.matchCount === 1 ? 'researcher works' : 'researchers work'} on topics {r.name} is investing in. Ranked by topic overlap; the arithmetic is under each name.</p>
+          <ol class="fac-list">
+            {fm.matches.map((f) => (
+              <li class="fac-item">
+                <div class="fac-top">
+                  <a class="fac-name inline" href={`https://openalex.org/${f.id}`} target="_blank" rel="noopener">{f.name}</a>
+                  <span class="mono fac-score">match {f.score.toFixed(3)}</span>
+                </div>
+                <p class="mono fac-meta">
+                  h-index {f.hIndex ?? 'n/a'} · {f.works5y} works since 2022 · last published {f.lastPub ?? 'n/a'}
+                  {!f.active && <span class="badge b-wait">no recent publications</span>}
+                  {f.industryCollabs != null && <> · {f.industryCollabs} industry co-affiliations</>}
+                  · department {f.department ?? 'not on file'}
+                </p>
+                <details>
+                  <summary class="mono">why this match</summary>
+                  <ul class="terms mono">
+                    {f.terms.map((t) => (
+                      <li><b>{t.topic}</b>: need weight {t.needWeight} × strength {t.strength}/5 × depth {t.depth} ({t.topicPapers} papers on the topic) × activity {t.activity} = {t.term.toFixed(3)}<br /><span>{t.need}</span></li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ))}
+          </ol>
+        </>
+      ) : (
+        <p class="fac-lede">{fm ? 'No Penn State author in the faculty dataset is tagged with this company’s topics yet.' : 'This company has no tagged research needs in the handoff, so it cannot be matched to faculty yet.'}</p>
+      )}
+      {fm && fm.unmatchedTopics.length > 0 && (
+        <p class="mono fac-gap">No faculty on file for: {fm.unmatchedTopics.join(' · ')}. <a href="/faculty/#missing">What is missing</a></p>
+      )}
+      <p class="mono fac-gap">Openness to industry, conflicts and availability are never inferred. Check before reaching out.</p>
+    </section>
+
+    {r.alumni.length > 0 && (
+      <section style="border-top:1px solid var(--line);padding-top:14px;margin-top:4px">
+        <h2 class="eyebrow">PSU alumni routes: every scored input behind the decision (fail-closed)</h2>
+        {r.alumni.map(a => (
+          <div style="border-left:2px solid var(--accent);padding:2px 0 2px 16px;margin-top:16px">
+            <div style="font-weight:600;font-size:15px">{a.name}</div>
+            <div class="mono" style="color:var(--faint);font-size:11.5px;margin:2px 0 10px">{a.role} · route: {a.route} · relevance {a.total}/20 · area: {a.area}</div>
+            {Object.entries(a.dims).map(([k, v]) => (
+              <div>
+                <div style="display:flex;gap:10px;align-items:baseline"><b style="font-size:13px">{k.replace(/_/g, ' ')}</b><span class="mono" style="color:var(--muted);font-size:11.5px">{v.score} / 5</span></div>
+                <div style="height:3px;background:var(--line);margin-top:6px;position:relative"><div style={`position:absolute;inset:0 auto 0 0;background:var(--accent);width:${v.score / 5 * 100}%`} /></div>
+                <p style="color:var(--muted);font-size:12.5px;margin:6px 0 14px">{v.justification}</p>
+              </div>
+            ))}
+          </div>
+        ))}
+      </section>
+    )}
+
+    <div style="display:flex;justify-content:space-between;margin-top:34px;padding-top:14px;border-top:1px solid var(--line)">
+      {prev ? <a href={`/dossier/${prev.cid}/`}>&larr; {prev.name}</a> : <span />}
+      <a href="/results/">all companies</a>
+      {next ? <a href={`/dossier/${next.cid}/`}>{next.name} &rarr;</a> : <span />}
+    </div>
+  </div>
+</div>
+</Base>
+<style>
+  .dz { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 32px; }
+  .dz > aside { position: sticky; top: 24px; }
+  .dims { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 34px; margin-top: 14px; }
+  .fac-lede { color: var(--muted); font-size: 14.5px; margin: 12px 0 0; max-width: 70ch; }
+  .fac-list { list-style: none; margin: 14px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .fac-item { padding: 14px 0 12px; border-bottom: 1px solid var(--line); }
+  .fac-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .fac-name { font-weight: 600; font-size: 17px; color: var(--ink); }
+  .fac-score { color: var(--accent); font-size: 13px; }
+  .fac-meta { color: var(--faint); font-size: 12px; margin: 4px 0 6px; }
+  .fac-meta .badge { margin-left: 6px; }
+  details summary { cursor: pointer; color: var(--accent); font-size: 12.5px; width: fit-content; }
+  .terms { list-style: none; margin: 8px 0 0; padding: 0 0 0 14px; border-left: 2px solid var(--line-strong); font-size: 12px; color: var(--muted); }
+  .terms li { padding: 4px 0; }
+  .terms b { color: var(--ink); font-weight: 500; }
+  .terms span { color: var(--faint); }
+  .fac-gap { color: var(--faint); font-size: 12px; margin: 10px 0 0; }
+  @media (max-width: 760px) {
+    .dz { grid-template-columns: 1fr; gap: 20px; }
+    .dz > aside { position: static; display: flex; gap: 20px; align-items: center; text-align: left !important; }
+    .dims { grid-template-columns: 1fr; }
+  }
+</style>

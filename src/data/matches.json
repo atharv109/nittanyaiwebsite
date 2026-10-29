@@ -1,0 +1,2618 @@
+{
+ "source": {
+  "needs": "company_needs.real.jsonl",
+  "faculty": "faculty_profiles.real.jsonl",
+  "needCount": 23,
+  "facultyCount": 2519,
+  "synthetic": false
+ },
+ "nulls": {
+  "department": 2519,
+  "active_grants": 2519,
+  "patents": 2519,
+  "prior_industry_collabs": 2319,
+  "open_to_industry": 2519
+ },
+ "inactiveFaculty": 1151,
+ "copubLinked": 19,
+ "coverage": [
+  {
+   "id": "T001",
+   "label": "Photonic and fiber-optic materials",
+   "faculty": 68,
+   "companies": [
+    "corning"
+   ]
+  },
+  {
+   "id": "T002",
+   "label": "Solid oxide fuel cells",
+   "faculty": 99,
+   "companies": [
+    "bloom-energy"
+   ]
+  },
+  {
+   "id": "T003",
+   "label": "Battery electrode materials",
+   "faculty": 152,
+   "companies": [
+    "tsla"
+   ]
+  },
+  {
+   "id": "T004",
+   "label": "Advanced ceramics processing",
+   "faculty": 152,
+   "companies": []
+  },
+  {
+   "id": "T005",
+   "label": "Semiconductor packaging",
+   "faculty": 34,
+   "companies": [
+    "air-products"
+   ]
+  },
+  {
+   "id": "T006",
+   "label": "Additive manufacturing of metals",
+   "faculty": 99,
+   "companies": []
+  },
+  {
+   "id": "T007",
+   "label": "Machine learning for materials discovery",
+   "faculty": 102,
+   "companies": [
+    "amazon",
+    "corning"
+   ]
+  },
+  {
+   "id": "T008",
+   "label": "Grid-scale energy storage",
+   "faculty": 49,
+   "companies": [
+    "bloom-energy",
+    "googl"
+   ]
+  },
+  {
+   "id": "T009",
+   "label": "Hydrogen production and electrolysis",
+   "faculty": 105,
+   "companies": [
+    "air-products"
+   ]
+  },
+  {
+   "id": "T010",
+   "label": "Carbon capture sorbents",
+   "faculty": 67,
+   "companies": []
+  },
+  {
+   "id": "T011",
+   "label": "Power electronics (SiC/GaN)",
+   "faculty": 112,
+   "companies": [
+    "bloom-energy"
+   ]
+  },
+  {
+   "id": "T012",
+   "label": "Industrial robotics and vision",
+   "faculty": 0,
+   "companies": []
+  },
+  {
+   "id": "T013",
+   "label": "Predictive maintenance analytics",
+   "faculty": 81,
+   "companies": [
+    "deere"
+   ]
+  },
+  {
+   "id": "T014",
+   "label": "Polymer composites",
+   "faculty": 37,
+   "companies": []
+  },
+  {
+   "id": "T015",
+   "label": "Biomedical sensors",
+   "faculty": 47,
+   "companies": []
+  },
+  {
+   "id": "T016",
+   "label": "Medical device materials",
+   "faculty": 93,
+   "companies": []
+  },
+  {
+   "id": "T017",
+   "label": "Drug delivery systems",
+   "faculty": 40,
+   "companies": []
+  },
+  {
+   "id": "T018",
+   "label": "Computational fluid dynamics",
+   "faculty": 103,
+   "companies": []
+  },
+  {
+   "id": "T019",
+   "label": "Combustion and gas turbines",
+   "faculty": 36,
+   "companies": []
+  },
+  {
+   "id": "T020",
+   "label": "Nuclear materials and fuels",
+   "faculty": 96,
+   "companies": []
+  },
+  {
+   "id": "T021",
+   "label": "Quantum sensing",
+   "faculty": 83,
+   "companies": [
+    "corning",
+    "ibm"
+   ]
+  },
+  {
+   "id": "T022",
+   "label": "Edge AI hardware",
+   "faculty": 97,
+   "companies": []
+  },
+  {
+   "id": "T023",
+   "label": "Cybersecurity for industrial control",
+   "faculty": 37,
+   "companies": [
+    "googl"
+   ]
+  },
+  {
+   "id": "T024",
+   "label": "Water treatment membranes",
+   "faculty": 91,
+   "companies": []
+  },
+  {
+   "id": "T025",
+   "label": "Precision agriculture sensing",
+   "faculty": 90,
+   "companies": [
+    "deere"
+   ]
+  },
+  {
+   "id": "T026",
+   "label": "Autonomous vehicle perception",
+   "faculty": 57,
+   "companies": [
+    "deere"
+   ]
+  },
+  {
+   "id": "T027",
+   "label": "Thermal management systems",
+   "faculty": 96,
+   "companies": []
+  },
+  {
+   "id": "T028",
+   "label": "Rare-earth recycling",
+   "faculty": 83,
+   "companies": []
+  },
+  {
+   "id": "T029",
+   "label": "Wireless communications (5G/6G)",
+   "faculty": 40,
+   "companies": []
+  },
+  {
+   "id": "T030",
+   "label": "Supply chain optimization",
+   "faculty": 46,
+   "companies": [
+    "amazon",
+    "tsla"
+   ]
+  },
+  {
+   "id": "T031",
+   "label": "Glass science and strengthening",
+   "faculty": 108,
+   "companies": [
+    "corning"
+   ]
+  },
+  {
+   "id": "T032",
+   "label": "Thin-film coatings",
+   "faculty": 99,
+   "companies": []
+  },
+  {
+   "id": "T033",
+   "label": "Acoustic and vibration engineering",
+   "faculty": 100,
+   "companies": []
+  },
+  {
+   "id": "T034",
+   "label": "Human-robot interaction",
+   "faculty": 75,
+   "companies": []
+  },
+  {
+   "id": "T035",
+   "label": "Natural language processing for documents",
+   "faculty": 10,
+   "companies": []
+  },
+  {
+   "id": "T036",
+   "label": "Synthetic biology",
+   "faculty": 91,
+   "companies": []
+  },
+  {
+   "id": "T037",
+   "label": "Geothermal and subsurface energy",
+   "faculty": 49,
+   "companies": []
+  },
+  {
+   "id": "T038",
+   "label": "Solar cell materials",
+   "faculty": 54,
+   "companies": [
+    "corning"
+   ]
+  },
+  {
+   "id": "T039",
+   "label": "Corrosion science",
+   "faculty": 97,
+   "companies": []
+  },
+  {
+   "id": "T040",
+   "label": "Microfluidics",
+   "faculty": 97,
+   "companies": []
+  }
+ ],
+ "companies": {
+  "air-products": {
+   "name": "Air Products and Chemicals, Inc.",
+   "needTopics": [
+    "Hydrogen production and electrolysis",
+    "Semiconductor packaging"
+   ],
+   "unmatchedTopics": [],
+   "matches": [
+    {
+     "id": "A5100434847",
+     "name": "Qing Wang",
+     "department": null,
+     "score": 0.84,
+     "hIndex": 123,
+     "works5y": 413,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.07,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 91,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in coal gasification technology acquisition."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.07,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 91,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in green hydrogen projects."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.07,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 91,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in hydrogen liquefaction."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.07,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 91,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in syngas joint venture."
+      }
+     ]
+    },
+    {
+     "id": "A5041204959",
+     "name": "Raymond E. Schaak",
+     "department": null,
+     "score": 0.84,
+     "hIndex": 81,
+     "works5y": 93,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.12,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 43,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in coal gasification technology acquisition."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.12,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 43,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in green hydrogen projects."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.12,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 43,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in hydrogen liquefaction."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.12,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 43,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in syngas joint venture."
+      }
+     ]
+    },
+    {
+     "id": "A5031735060",
+     "name": "Michael  John Janik",
+     "department": null,
+     "score": 0.84,
+     "hIndex": 67,
+     "works5y": 76,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.4,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 130,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in coal gasification technology acquisition."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.4,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 130,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in green hydrogen projects."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.4,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 130,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in hydrogen liquefaction."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.4,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 130,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in syngas joint venture."
+      }
+     ]
+    },
+    {
+     "id": "A5006211396",
+     "name": "Hongtao Sun",
+     "department": null,
+     "score": 0.84,
+     "hIndex": 39,
+     "works5y": 73,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.12,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 17,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in coal gasification technology acquisition."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.12,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 17,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in green hydrogen projects."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.12,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 17,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in hydrogen liquefaction."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.12,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 17,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in syngas joint venture."
+      }
+     ]
+    },
+    {
+     "id": "A5042026322",
+     "name": "Nelson Yaw Dzade",
+     "department": null,
+     "score": 0.84,
+     "hIndex": 42,
+     "works5y": 65,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.18,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 37,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in coal gasification technology acquisition."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.18,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 37,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in green hydrogen projects."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.18,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 37,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in hydrogen liquefaction."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.18,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 37,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in syngas joint venture."
+      }
+     ]
+    },
+    {
+     "id": "A5043303205",
+     "name": "Derek M. Hall",
+     "department": null,
+     "score": 0.84,
+     "hIndex": 16,
+     "works5y": 61,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.22,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 27,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in coal gasification technology acquisition."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.22,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 27,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in green hydrogen projects."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.22,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 27,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in hydrogen liquefaction."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.22,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 27,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in syngas joint venture."
+      }
+     ]
+    }
+   ],
+   "topByTopic": {
+    "Semiconductor packaging": {
+     "id": "A5101625701",
+     "name": "Bo Pan",
+     "department": null,
+     "score": 0.0238,
+     "hIndex": 5,
+     "works5y": 7,
+     "lastPub": 2025,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Semiconductor packaging",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.11,
+       "oaLabel": "Electronic Packaging and Soldering Technologies",
+       "depth": 0.198,
+       "topicPapers": 2,
+       "activity": 1.0,
+       "term": 0.0238,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in semiconductor gases supply."
+      }
+     ]
+    },
+    "Hydrogen production and electrolysis": {
+     "id": "A5100434847",
+     "name": "Qing Wang",
+     "department": null,
+     "score": 0.84,
+     "hIndex": 123,
+     "works5y": 413,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.07,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 91,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in coal gasification technology acquisition."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.07,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 91,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in green hydrogen projects."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.07,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 91,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in hydrogen liquefaction."
+      },
+      {
+       "topic": "Hydrogen production and electrolysis",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.07,
+       "oaLabel": "Electrocatalysts for Energy Conversion",
+       "depth": 1.0,
+       "topicPapers": 91,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Air Products and Chemicals, Inc. shows current investment activity in syngas joint venture."
+      }
+     ]
+    }
+   },
+   "matchCount": 80,
+   "inactiveCount": 58
+  },
+  "amazon": {
+   "name": "Amazon.com, Inc.",
+   "needTopics": [
+    "Machine learning for materials discovery",
+    "Supply chain optimization"
+   ],
+   "unmatchedTopics": [],
+   "matches": [
+    {
+     "id": "A5100462392",
+     "name": "Zi‐Kui Liu",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 94,
+     "works5y": 267,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.17,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 173,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Amazon.com, Inc. shows current investment activity in artificial intelligence (openai investment) (spend: $15.0 billion)."
+      }
+     ]
+    },
+    {
+     "id": "A5077401838",
+     "name": "Adri C. T. van Duin",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 117,
+     "works5y": 207,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.25,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 215,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Amazon.com, Inc. shows current investment activity in artificial intelligence (openai investment) (spend: $15.0 billion)."
+      }
+     ]
+    },
+    {
+     "id": "A5076627740",
+     "name": "Shun‐Li Shang",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 66,
+     "works5y": 144,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.17,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 76,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Amazon.com, Inc. shows current investment activity in artificial intelligence (openai investment) (spend: $15.0 billion)."
+      }
+     ]
+    },
+    {
+     "id": "A5048839338",
+     "name": "Allison M. Beese",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 44,
+     "works5y": 106,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.16,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 32,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Amazon.com, Inc. shows current investment activity in artificial intelligence (openai investment) (spend: $15.0 billion)."
+      }
+     ]
+    },
+    {
+     "id": "A5100664786",
+     "name": "Zhilong Wang",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 40,
+     "works5y": 97,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.2,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 44,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Amazon.com, Inc. shows current investment activity in artificial intelligence (openai investment) (spend: $15.0 billion)."
+      }
+     ]
+    },
+    {
+     "id": "A5054166011",
+     "name": "Tuhin Mukherjee",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 32,
+     "works5y": 64,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.16,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 16,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Amazon.com, Inc. shows current investment activity in artificial intelligence (openai investment) (spend: $15.0 billion)."
+      }
+     ]
+    }
+   ],
+   "topByTopic": {
+    "Supply chain optimization": {
+     "id": "A5050434501",
+     "name": "Abdullah Konak",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 30,
+     "works5y": 61,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Supply chain optimization",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.12,
+       "oaLabel": "Facility Location and Emergency Management",
+       "depth": 1.0,
+       "topicPapers": 21,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Amazon.com, Inc. shows current investment activity in e-commerce fulfillment and logistics."
+      }
+     ]
+    },
+    "Machine learning for materials discovery": {
+     "id": "A5100462392",
+     "name": "Zi‐Kui Liu",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 94,
+     "works5y": 267,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.17,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 173,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Amazon.com, Inc. shows current investment activity in artificial intelligence (openai investment) (spend: $15.0 billion)."
+      }
+     ]
+    }
+   },
+   "matchCount": 101,
+   "inactiveCount": 47
+  },
+  "bloom-energy": {
+   "name": "Bloom Energy",
+   "needTopics": [
+    "Grid-scale energy storage",
+    "Power electronics (SiC/GaN)",
+    "Solid oxide fuel cells"
+   ],
+   "unmatchedTopics": [],
+   "matches": [
+    {
+     "id": "A5020881331",
+     "name": "Joan Marie Redwing",
+     "department": null,
+     "score": 1.24,
+     "hIndex": 76,
+     "works5y": 149,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 3,
+     "terms": [
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.7,
+       "strength": 5,
+       "facultyWeight": 0.18,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 105,
+       "activity": 1.0,
+       "term": 0.7,
+       "need": "Bloom Energy shows current investment activity in ai data center power generation for oracle and other partners."
+      },
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.9,
+       "strength": 3,
+       "facultyWeight": 0.18,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 105,
+       "activity": 1.0,
+       "term": 0.54,
+       "need": "Bloom Energy shows current investment activity in dc-native 800v power systems."
+      }
+     ]
+    },
+    {
+     "id": "A5022728913",
+     "name": "Aman Haque",
+     "department": null,
+     "score": 1.24,
+     "hIndex": 42,
+     "works5y": 85,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.7,
+       "strength": 5,
+       "facultyWeight": 0.18,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 47,
+       "activity": 1.0,
+       "term": 0.7,
+       "need": "Bloom Energy shows current investment activity in ai data center power generation for oracle and other partners."
+      },
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.9,
+       "strength": 3,
+       "facultyWeight": 0.18,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 47,
+       "activity": 1.0,
+       "term": 0.54,
+       "need": "Bloom Energy shows current investment activity in dc-native 800v power systems."
+      }
+     ]
+    },
+    {
+     "id": "A5050260295",
+     "name": "Sergei P. Stepanoff",
+     "department": null,
+     "score": 1.24,
+     "hIndex": 16,
+     "works5y": 53,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.7,
+       "strength": 5,
+       "facultyWeight": 0.31,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 17,
+       "activity": 1.0,
+       "term": 0.7,
+       "need": "Bloom Energy shows current investment activity in ai data center power generation for oracle and other partners."
+      },
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.9,
+       "strength": 3,
+       "facultyWeight": 0.31,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 17,
+       "activity": 1.0,
+       "term": 0.54,
+       "need": "Bloom Energy shows current investment activity in dc-native 800v power systems."
+      }
+     ]
+    },
+    {
+     "id": "A5088760104",
+     "name": "Sukwon Choi",
+     "department": null,
+     "score": 1.24,
+     "hIndex": 30,
+     "works5y": 49,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 4,
+     "terms": [
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.7,
+       "strength": 5,
+       "facultyWeight": 0.66,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 82,
+       "activity": 1.0,
+       "term": 0.7,
+       "need": "Bloom Energy shows current investment activity in ai data center power generation for oracle and other partners."
+      },
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.9,
+       "strength": 3,
+       "facultyWeight": 0.66,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 82,
+       "activity": 1.0,
+       "term": 0.54,
+       "need": "Bloom Energy shows current investment activity in dc-native 800v power systems."
+      }
+     ]
+    },
+    {
+     "id": "A5052487101",
+     "name": "Nahid Sultan Al‐Mamun",
+     "department": null,
+     "score": 1.24,
+     "hIndex": 9,
+     "works5y": 40,
+     "lastPub": 2025,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.7,
+       "strength": 5,
+       "facultyWeight": 0.53,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 23,
+       "activity": 1.0,
+       "term": 0.7,
+       "need": "Bloom Energy shows current investment activity in ai data center power generation for oracle and other partners."
+      },
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.9,
+       "strength": 3,
+       "facultyWeight": 0.53,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 23,
+       "activity": 1.0,
+       "term": 0.54,
+       "need": "Bloom Energy shows current investment activity in dc-native 800v power systems."
+      }
+     ]
+    },
+    {
+     "id": "A5030302953",
+     "name": "Rongming Chu",
+     "department": null,
+     "score": 1.24,
+     "hIndex": 31,
+     "works5y": 37,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 3,
+     "terms": [
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.7,
+       "strength": 5,
+       "facultyWeight": 0.84,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 123,
+       "activity": 1.0,
+       "term": 0.7,
+       "need": "Bloom Energy shows current investment activity in ai data center power generation for oracle and other partners."
+      },
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.9,
+       "strength": 3,
+       "facultyWeight": 0.84,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 123,
+       "activity": 1.0,
+       "term": 0.54,
+       "need": "Bloom Energy shows current investment activity in dc-native 800v power systems."
+      }
+     ]
+    }
+   ],
+   "topByTopic": {
+    "Power electronics (SiC/GaN)": {
+     "id": "A5020881331",
+     "name": "Joan Marie Redwing",
+     "department": null,
+     "score": 1.24,
+     "hIndex": 76,
+     "works5y": 149,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 3,
+     "terms": [
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.7,
+       "strength": 5,
+       "facultyWeight": 0.18,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 105,
+       "activity": 1.0,
+       "term": 0.7,
+       "need": "Bloom Energy shows current investment activity in ai data center power generation for oracle and other partners."
+      },
+      {
+       "topic": "Power electronics (SiC/GaN)",
+       "needWeight": 0.9,
+       "strength": 3,
+       "facultyWeight": 0.18,
+       "oaLabel": "Silicon Carbide Semiconductor Technologies",
+       "depth": 1.0,
+       "topicPapers": 105,
+       "activity": 1.0,
+       "term": 0.54,
+       "need": "Bloom Energy shows current investment activity in dc-native 800v power systems."
+      }
+     ]
+    },
+    "Solid oxide fuel cells": {
+     "id": "A5051345860",
+     "name": "Chao‐Yang Wang",
+     "department": null,
+     "score": 0.72,
+     "hIndex": 84,
+     "works5y": 30,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Solid oxide fuel cells",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.52,
+       "oaLabel": "Advancements in Solid Oxide Fuel Cells",
+       "depth": 1.0,
+       "topicPapers": 137,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Bloom Energy shows current investment activity in fuel cell production and capacity expansion (spend: $2.6 Billion)."
+      },
+      {
+       "topic": "Solid oxide fuel cells",
+       "needWeight": 0.6,
+       "strength": 4,
+       "facultyWeight": 0.52,
+       "oaLabel": "Advancements in Solid Oxide Fuel Cells",
+       "depth": 1.0,
+       "topicPapers": 137,
+       "activity": 1.0,
+       "term": 0.48,
+       "need": "Bloom Energy shows current investment activity in onsite power solutions collaboration with hitachi in japan."
+      }
+     ]
+    },
+    "Grid-scale energy storage": {
+     "id": "A5100706364",
+     "name": "Donghai Wang",
+     "department": null,
+     "score": 0.6,
+     "hIndex": 89,
+     "works5y": 69,
+     "lastPub": 2025,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Grid-scale energy storage",
+       "needWeight": 0.6,
+       "strength": 5,
+       "facultyWeight": 0.15,
+       "oaLabel": "Advanced battery technologies research",
+       "depth": 1.0,
+       "topicPapers": 50,
+       "activity": 1.0,
+       "term": 0.6,
+       "need": "Bloom Energy shows current investment activity in ai data center power generation for oracle and other partners."
+      }
+     ]
+    }
+   },
+   "matchCount": 139,
+   "inactiveCount": 120
+  },
+  "corning": {
+   "name": "Corning Incorporated",
+   "needTopics": [
+    "Glass science and strengthening",
+    "Machine learning for materials discovery",
+    "Photonic and fiber-optic materials",
+    "Quantum sensing",
+    "Solar cell materials"
+   ],
+   "unmatchedTopics": [],
+   "matches": [
+    {
+     "id": "A5049000751",
+     "name": "John V. Badding",
+     "department": null,
+     "score": 1.08,
+     "hIndex": 47,
+     "works5y": 12,
+     "lastPub": 2025,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Glass science and strengthening",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.1,
+       "oaLabel": "Glass properties and applications",
+       "depth": 1.0,
+       "topicPapers": 30,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Corning Incorporated shows current investment activity in automotive glass solutions."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.34,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 104,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in display (optical) technology."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.34,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 104,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in fiber optics / optical communications."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.34,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 104,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Corning Incorporated shows current investment activity in quantum communications / photonics."
+      }
+     ]
+    },
+    {
+     "id": "A5026209470",
+     "name": "Amy Van Newkirk",
+     "department": null,
+     "score": 1.0464,
+     "hIndex": 11,
+     "works5y": 5,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Glass science and strengthening",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.16,
+       "oaLabel": "Glass properties and applications",
+       "depth": 0.72,
+       "topicPapers": 7,
+       "activity": 1.0,
+       "term": 0.0864,
+       "need": "Corning Incorporated shows current investment activity in automotive glass solutions."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.82,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 37,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in display (optical) technology."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.82,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 37,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in fiber optics / optical communications."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.82,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 37,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Corning Incorporated shows current investment activity in quantum communications / photonics."
+      }
+     ]
+    },
+    {
+     "id": "A5101655795",
+     "name": "Shizhuo Yin",
+     "department": null,
+     "score": 0.96,
+     "hIndex": 24,
+     "works5y": 15,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.26,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 69,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in display (optical) technology."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.26,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 69,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in fiber optics / optical communications."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.26,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 69,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Corning Incorporated shows current investment activity in quantum communications / photonics."
+      }
+     ]
+    },
+    {
+     "id": "A5073418379",
+     "name": "Federico Scurti",
+     "department": null,
+     "score": 0.9504,
+     "hIndex": 10,
+     "works5y": 20,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.3,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 0.99,
+       "topicPapers": 10,
+       "activity": 1.0,
+       "term": 0.3564,
+       "need": "Corning Incorporated shows current investment activity in display (optical) technology."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.3,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 0.99,
+       "topicPapers": 10,
+       "activity": 1.0,
+       "term": 0.3564,
+       "need": "Corning Incorporated shows current investment activity in fiber optics / optical communications."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.3,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 0.99,
+       "topicPapers": 10,
+       "activity": 1.0,
+       "term": 0.2376,
+       "need": "Corning Incorporated shows current investment activity in quantum communications / photonics."
+      }
+     ]
+    },
+    {
+     "id": "A5019594623",
+     "name": "Mengyi Wang",
+     "department": null,
+     "score": 0.5002,
+     "hIndex": 19,
+     "works5y": 9,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 4,
+       "facultyWeight": 0.22,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 0.792,
+       "topicPapers": 8,
+       "activity": 1.0,
+       "term": 0.3802,
+       "need": "Corning Incorporated shows current investment activity in artificial intelligence / ai connectivity."
+      },
+      {
+       "topic": "Glass science and strengthening",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.53,
+       "oaLabel": "Glass properties and applications",
+       "depth": 1.0,
+       "topicPapers": 19,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Corning Incorporated shows current investment activity in automotive glass solutions."
+      }
+     ]
+    },
+    {
+     "id": "A5100462392",
+     "name": "Zi‐Kui Liu",
+     "department": null,
+     "score": 0.48,
+     "hIndex": 94,
+     "works5y": 267,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 4,
+       "facultyWeight": 0.17,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 173,
+       "activity": 1.0,
+       "term": 0.48,
+       "need": "Corning Incorporated shows current investment activity in artificial intelligence / ai connectivity."
+      }
+     ]
+    }
+   ],
+   "topByTopic": {
+    "Machine learning for materials discovery": {
+     "id": "A5100462392",
+     "name": "Zi‐Kui Liu",
+     "department": null,
+     "score": 0.48,
+     "hIndex": 94,
+     "works5y": 267,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Machine learning for materials discovery",
+       "needWeight": 0.6,
+       "strength": 4,
+       "facultyWeight": 0.17,
+       "oaLabel": "Machine Learning in Materials Science",
+       "depth": 1.0,
+       "topicPapers": 173,
+       "activity": 1.0,
+       "term": 0.48,
+       "need": "Corning Incorporated shows current investment activity in artificial intelligence / ai connectivity."
+      }
+     ]
+    },
+    "Solar cell materials": {
+     "id": "A5011964884",
+     "name": "Bed Poudel",
+     "department": null,
+     "score": 0.36,
+     "hIndex": 40,
+     "works5y": 62,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 4,
+     "terms": [
+      {
+       "topic": "Solar cell materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.11,
+       "oaLabel": "Perovskite Materials and Applications",
+       "depth": 1.0,
+       "topicPapers": 14,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in solar energy / photovoltaic."
+      }
+     ]
+    },
+    "Glass science and strengthening": {
+     "id": "A5039807477",
+     "name": "John C. Mauro",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 64,
+     "works5y": 160,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 3,
+     "terms": [
+      {
+       "topic": "Glass science and strengthening",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.75,
+       "oaLabel": "Glass properties and applications",
+       "depth": 1.0,
+       "topicPapers": 469,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Corning Incorporated shows current investment activity in automotive glass solutions."
+      }
+     ]
+    },
+    "Photonic and fiber-optic materials": {
+     "id": "A5101655795",
+     "name": "Shizhuo Yin",
+     "department": null,
+     "score": 0.96,
+     "hIndex": 24,
+     "works5y": 15,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.26,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 69,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in display (optical) technology."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 3,
+       "facultyWeight": 0.26,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 69,
+       "activity": 1.0,
+       "term": 0.36,
+       "need": "Corning Incorporated shows current investment activity in fiber optics / optical communications."
+      },
+      {
+       "topic": "Photonic and fiber-optic materials",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.26,
+       "oaLabel": "Photonic Crystal and Fiber Optics",
+       "depth": 1.0,
+       "topicPapers": 69,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Corning Incorporated shows current investment activity in quantum communications / photonics."
+      }
+     ]
+    },
+    "Quantum sensing": {
+     "id": "A5022157274",
+     "name": "Sanju Gupta",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 29,
+     "works5y": 34,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Quantum sensing",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.29,
+       "oaLabel": "Diamond and Carbon-based Materials Research",
+       "depth": 1.0,
+       "topicPapers": 57,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Corning Incorporated shows current investment activity in quantum communications / photonics."
+      }
+     ]
+    }
+   },
+   "matchCount": 208,
+   "inactiveCount": 182
+  },
+  "deere": {
+   "name": "Deere & Company",
+   "needTopics": [
+    "Autonomous vehicle perception",
+    "Precision agriculture sensing",
+    "Predictive maintenance analytics"
+   ],
+   "unmatchedTopics": [],
+   "matches": [
+    {
+     "id": "A5100624503",
+     "name": "Yiqi Zhang",
+     "department": null,
+     "score": 0.14,
+     "hIndex": 20,
+     "works5y": 77,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Autonomous vehicle perception",
+       "needWeight": 0.7,
+       "strength": 1,
+       "facultyWeight": 0.25,
+       "oaLabel": "Autonomous Vehicle Technology and Safety",
+       "depth": 1.0,
+       "topicPapers": 30,
+       "activity": 1.0,
+       "term": 0.14,
+       "need": "Deere & Company shows current investment activity in intelligent mobile equipment technologies."
+      }
+     ]
+    },
+    {
+     "id": "A5074171950",
+     "name": "Xianbiao Hu",
+     "department": null,
+     "score": 0.14,
+     "hIndex": 23,
+     "works5y": 59,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Autonomous vehicle perception",
+       "needWeight": 0.7,
+       "strength": 1,
+       "facultyWeight": 0.16,
+       "oaLabel": "Autonomous Vehicle Technology and Safety",
+       "depth": 1.0,
+       "topicPapers": 18,
+       "activity": 1.0,
+       "term": 0.14,
+       "need": "Deere & Company shows current investment activity in intelligent mobile equipment technologies."
+      }
+     ]
+    },
+    {
+     "id": "A5003487011",
+     "name": "Asok Ray",
+     "department": null,
+     "score": 0.14,
+     "hIndex": 47,
+     "works5y": 27,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Predictive maintenance analytics",
+       "needWeight": 0.7,
+       "strength": 1,
+       "facultyWeight": 0.12,
+       "oaLabel": "Machine Fault Diagnosis Techniques",
+       "depth": 1.0,
+       "topicPapers": 98,
+       "activity": 1.0,
+       "term": 0.14,
+       "need": "Deere & Company shows current investment activity in service advisor advanced diagnostic tools."
+      }
+     ]
+    },
+    {
+     "id": "A5002048870",
+     "name": "Sean Brennan",
+     "department": null,
+     "score": 0.14,
+     "hIndex": 24,
+     "works5y": 25,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Autonomous vehicle perception",
+       "needWeight": 0.7,
+       "strength": 1,
+       "facultyWeight": 0.13,
+       "oaLabel": "Autonomous Vehicle Technology and Safety",
+       "depth": 1.0,
+       "topicPapers": 24,
+       "activity": 1.0,
+       "term": 0.14,
+       "need": "Deere & Company shows current investment activity in intelligent mobile equipment technologies."
+      }
+     ]
+    },
+    {
+     "id": "A5002144384",
+     "name": "Issam Abu-Mahfouz",
+     "department": null,
+     "score": 0.14,
+     "hIndex": 12,
+     "works5y": 23,
+     "lastPub": 2025,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Predictive maintenance analytics",
+       "needWeight": 0.7,
+       "strength": 1,
+       "facultyWeight": 0.33,
+       "oaLabel": "Machine Fault Diagnosis Techniques",
+       "depth": 1.0,
+       "topicPapers": 19,
+       "activity": 1.0,
+       "term": 0.14,
+       "need": "Deere & Company shows current investment activity in service advisor advanced diagnostic tools."
+      }
+     ]
+    },
+    {
+     "id": "A5060630141",
+     "name": "Karl M. Reichard",
+     "department": null,
+     "score": 0.14,
+     "hIndex": 18,
+     "works5y": 21,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Predictive maintenance analytics",
+       "needWeight": 0.7,
+       "strength": 1,
+       "facultyWeight": 0.22,
+       "oaLabel": "Machine Fault Diagnosis Techniques",
+       "depth": 1.0,
+       "topicPapers": 38,
+       "activity": 1.0,
+       "term": 0.14,
+       "need": "Deere & Company shows current investment activity in service advisor advanced diagnostic tools."
+      }
+     ]
+    }
+   ],
+   "topByTopic": {
+    "Precision agriculture sensing": {
+     "id": "A5010236478",
+     "name": "Melissa C. Cantor",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 16,
+     "works5y": 49,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Precision agriculture sensing",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.24,
+       "oaLabel": "Smart Agriculture and AI",
+       "depth": 1.0,
+       "topicPapers": 15,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Deere & Company shows current investment activity in intelligent mobile equipment technologies."
+      }
+     ]
+    },
+    "Autonomous vehicle perception": {
+     "id": "A5100624503",
+     "name": "Yiqi Zhang",
+     "department": null,
+     "score": 0.14,
+     "hIndex": 20,
+     "works5y": 77,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Autonomous vehicle perception",
+       "needWeight": 0.7,
+       "strength": 1,
+       "facultyWeight": 0.25,
+       "oaLabel": "Autonomous Vehicle Technology and Safety",
+       "depth": 1.0,
+       "topicPapers": 30,
+       "activity": 1.0,
+       "term": 0.14,
+       "need": "Deere & Company shows current investment activity in intelligent mobile equipment technologies."
+      }
+     ]
+    },
+    "Predictive maintenance analytics": {
+     "id": "A5003487011",
+     "name": "Asok Ray",
+     "department": null,
+     "score": 0.14,
+     "hIndex": 47,
+     "works5y": 27,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Predictive maintenance analytics",
+       "needWeight": 0.7,
+       "strength": 1,
+       "facultyWeight": 0.12,
+       "oaLabel": "Machine Fault Diagnosis Techniques",
+       "depth": 1.0,
+       "topicPapers": 98,
+       "activity": 1.0,
+       "term": 0.14,
+       "need": "Deere & Company shows current investment activity in service advisor advanced diagnostic tools."
+      }
+     ]
+    }
+   },
+   "matchCount": 128,
+   "inactiveCount": 100
+  },
+  "googl": {
+   "name": "Alphabet Inc.",
+   "needTopics": [
+    "Cybersecurity for industrial control",
+    "Grid-scale energy storage"
+   ],
+   "unmatchedTopics": [],
+   "matches": [
+    {
+     "id": "A5100706364",
+     "name": "Donghai Wang",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 89,
+     "works5y": 69,
+     "lastPub": 2025,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Grid-scale energy storage",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.15,
+       "oaLabel": "Advanced battery technologies research",
+       "depth": 1.0,
+       "topicPapers": 50,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Alphabet Inc. shows current investment activity in data center and energy infrastructure acquisition (intersect)."
+      }
+     ]
+    },
+    {
+     "id": "A5043303205",
+     "name": "Derek M. Hall",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 16,
+     "works5y": 61,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Grid-scale energy storage",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.32,
+       "oaLabel": "Advanced battery technologies research",
+       "depth": 1.0,
+       "topicPapers": 39,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Alphabet Inc. shows current investment activity in data center and energy infrastructure acquisition (intersect)."
+      }
+     ]
+    },
+    {
+     "id": "A5029869679",
+     "name": "Feifei Shi",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 43,
+     "works5y": 41,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 3,
+     "terms": [
+      {
+       "topic": "Grid-scale energy storage",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.17,
+       "oaLabel": "Advanced battery technologies research",
+       "depth": 1.0,
+       "topicPapers": 16,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Alphabet Inc. shows current investment activity in data center and energy infrastructure acquisition (intersect)."
+      }
+     ]
+    },
+    {
+     "id": "A5009804304",
+     "name": "Christopher A. Gorski",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 48,
+     "works5y": 33,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Grid-scale energy storage",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.17,
+       "oaLabel": "Advanced battery technologies research",
+       "depth": 1.0,
+       "topicPapers": 20,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Alphabet Inc. shows current investment activity in data center and energy infrastructure acquisition (intersect)."
+      }
+     ]
+    },
+    {
+     "id": "A5070888512",
+     "name": "Kaiqiang Qin",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 23,
+     "works5y": 19,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Grid-scale energy storage",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.38,
+       "oaLabel": "Advanced battery technologies research",
+       "depth": 1.0,
+       "topicPapers": 17,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Alphabet Inc. shows current investment activity in data center and energy infrastructure acquisition (intersect)."
+      }
+     ]
+    },
+    {
+     "id": "A5067259101",
+     "name": "Ridge M. Bachman",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 5,
+     "works5y": 16,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Grid-scale energy storage",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.88,
+       "oaLabel": "Advanced battery technologies research",
+       "depth": 1.0,
+       "topicPapers": 14,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Alphabet Inc. shows current investment activity in data center and energy infrastructure acquisition (intersect)."
+      }
+     ]
+    }
+   ],
+   "topByTopic": {
+    "Cybersecurity for industrial control": {
+     "id": "A5049435924",
+     "name": "Áron Lászka",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 31,
+     "works5y": 56,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Cybersecurity for industrial control",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.18,
+       "oaLabel": "Smart Grid Security and Resilience",
+       "depth": 1.0,
+       "topicPapers": 36,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Alphabet Inc. shows current investment activity in acquisition of wiz (ai‑focused cybersecurity)."
+      }
+     ]
+    },
+    "Grid-scale energy storage": {
+     "id": "A5100706364",
+     "name": "Donghai Wang",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 89,
+     "works5y": 69,
+     "lastPub": 2025,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Grid-scale energy storage",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.15,
+       "oaLabel": "Advanced battery technologies research",
+       "depth": 1.0,
+       "topicPapers": 50,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "Alphabet Inc. shows current investment activity in data center and energy infrastructure acquisition (intersect)."
+      }
+     ]
+    }
+   },
+   "matchCount": 64,
+   "inactiveCount": 22
+  },
+  "ibm": {
+   "name": "International Business Machines Corporation",
+   "needTopics": [
+    "Quantum sensing"
+   ],
+   "unmatchedTopics": [],
+   "matches": [
+    {
+     "id": "A5022157274",
+     "name": "Sanju Gupta",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 29,
+     "works5y": 34,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Quantum sensing",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.29,
+       "oaLabel": "Diamond and Carbon-based Materials Research",
+       "depth": 1.0,
+       "topicPapers": 57,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "International Business Machines Corporation shows current investment activity in quantum computing (spend: $10B)."
+      }
+     ]
+    },
+    {
+     "id": "A5026784274",
+     "name": "James P. Ashton",
+     "department": null,
+     "score": 0.1685,
+     "hIndex": 7,
+     "works5y": 9,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Quantum sensing",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.27,
+       "oaLabel": "Diamond and Carbon-based Materials Research",
+       "depth": 0.702,
+       "topicPapers": 7,
+       "activity": 1.0,
+       "term": 0.1685,
+       "need": "International Business Machines Corporation shows current investment activity in quantum computing (spend: $10B)."
+      }
+     ]
+    },
+    {
+     "id": "A5055044491",
+     "name": "Michael Labella",
+     "department": null,
+     "score": 0.144,
+     "hIndex": 14,
+     "works5y": 11,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Quantum sensing",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.15,
+       "oaLabel": "Diamond and Carbon-based Materials Research",
+       "depth": 0.6,
+       "topicPapers": 6,
+       "activity": 1.0,
+       "term": 0.144,
+       "need": "International Business Machines Corporation shows current investment activity in quantum computing (spend: $10B)."
+      }
+     ]
+    },
+    {
+     "id": "A5029862159",
+     "name": "Jyotirmay Dwivedi",
+     "department": null,
+     "score": 0.144,
+     "hIndex": 4,
+     "works5y": 8,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Quantum sensing",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.6,
+       "oaLabel": "Diamond and Carbon-based Materials Research",
+       "depth": 0.6,
+       "topicPapers": 6,
+       "activity": 1.0,
+       "term": 0.144,
+       "need": "International Business Machines Corporation shows current investment activity in quantum computing (spend: $10B)."
+      }
+     ]
+    },
+    {
+     "id": "A5100453685",
+     "name": "Tao Wang",
+     "department": null,
+     "score": 0.1399,
+     "hIndex": 22,
+     "works5y": 18,
+     "lastPub": 2025,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Quantum sensing",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.11,
+       "oaLabel": "Diamond and Carbon-based Materials Research",
+       "depth": 0.583,
+       "topicPapers": 6,
+       "activity": 1.0,
+       "term": 0.1399,
+       "need": "International Business Machines Corporation shows current investment activity in quantum computing (spend: $10B)."
+      }
+     ]
+    },
+    {
+     "id": "A5021122025",
+     "name": "Andrew Robert Graves",
+     "department": null,
+     "score": 0.121,
+     "hIndex": 7,
+     "works5y": 15,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": null,
+     "terms": [
+      {
+       "topic": "Quantum sensing",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.24,
+       "oaLabel": "Diamond and Carbon-based Materials Research",
+       "depth": 0.504,
+       "topicPapers": 5,
+       "activity": 1.0,
+       "term": 0.121,
+       "need": "International Business Machines Corporation shows current investment activity in quantum computing (spend: $10B)."
+      }
+     ]
+    }
+   ],
+   "topByTopic": {
+    "Quantum sensing": {
+     "id": "A5022157274",
+     "name": "Sanju Gupta",
+     "department": null,
+     "score": 0.24,
+     "hIndex": 29,
+     "works5y": 34,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Quantum sensing",
+       "needWeight": 0.6,
+       "strength": 2,
+       "facultyWeight": 0.29,
+       "oaLabel": "Diamond and Carbon-based Materials Research",
+       "depth": 1.0,
+       "topicPapers": 57,
+       "activity": 1.0,
+       "term": 0.24,
+       "need": "International Business Machines Corporation shows current investment activity in quantum computing (spend: $10B)."
+      }
+     ]
+    }
+   },
+   "matchCount": 29,
+   "inactiveCount": 54
+  },
+  "tsla": {
+   "name": "Tesla, Inc.",
+   "needTopics": [
+    "Battery electrode materials",
+    "Supply chain optimization"
+   ],
+   "unmatchedTopics": [],
+   "matches": [
+    {
+     "id": "A5100434847",
+     "name": "Qing Wang",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 123,
+     "works5y": 413,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Battery electrode materials",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.08,
+       "oaLabel": "Advancements in Battery Materials",
+       "depth": 1.0,
+       "topicPapers": 104,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Tesla, Inc. shows current investment activity in battery pack supply chain enhancement (battery technology)."
+      }
+     ]
+    },
+    {
+     "id": "A5108058571",
+     "name": "Hongyuan Zhao",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 50,
+     "works5y": 99,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 0,
+     "terms": [
+      {
+       "topic": "Battery electrode materials",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.27,
+       "oaLabel": "Advancements in Battery Materials",
+       "depth": 1.0,
+       "topicPapers": 50,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Tesla, Inc. shows current investment activity in battery pack supply chain enhancement (battery technology)."
+      }
+     ]
+    },
+    {
+     "id": "A5100664786",
+     "name": "Zhilong Wang",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 40,
+     "works5y": 97,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Battery electrode materials",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.1,
+       "oaLabel": "Advancements in Battery Materials",
+       "depth": 1.0,
+       "topicPapers": 22,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Tesla, Inc. shows current investment activity in battery pack supply chain enhancement (battery technology)."
+      }
+     ]
+    },
+    {
+     "id": "A5021014430",
+     "name": "Changhao Li",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 31,
+     "works5y": 80,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Battery electrode materials",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.11,
+       "oaLabel": "Advancements in Battery Materials",
+       "depth": 1.0,
+       "topicPapers": 14,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Tesla, Inc. shows current investment activity in battery pack supply chain enhancement (battery technology)."
+      }
+     ]
+    },
+    {
+     "id": "A5080749296",
+     "name": "Bowen Li",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 21,
+     "works5y": 76,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Battery electrode materials",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.1,
+       "oaLabel": "Advancements in Battery Materials",
+       "depth": 1.0,
+       "topicPapers": 10,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Tesla, Inc. shows current investment activity in battery pack supply chain enhancement (battery technology)."
+      }
+     ]
+    },
+    {
+     "id": "A5006211396",
+     "name": "Hongtao Sun",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 39,
+     "works5y": 73,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Battery electrode materials",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.42,
+       "oaLabel": "Advancements in Battery Materials",
+       "depth": 1.0,
+       "topicPapers": 60,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Tesla, Inc. shows current investment activity in battery pack supply chain enhancement (battery technology)."
+      }
+     ]
+    }
+   ],
+   "topByTopic": {
+    "Supply chain optimization": {
+     "id": "A5050434501",
+     "name": "Abdullah Konak",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 30,
+     "works5y": 61,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 1,
+     "terms": [
+      {
+       "topic": "Supply chain optimization",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.12,
+       "oaLabel": "Facility Location and Emergency Management",
+       "depth": 1.0,
+       "topicPapers": 21,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Tesla, Inc. shows current investment activity in battery pack supply chain enhancement (battery technology)."
+      }
+     ]
+    },
+    "Battery electrode materials": {
+     "id": "A5100434847",
+     "name": "Qing Wang",
+     "department": null,
+     "score": 0.12,
+     "hIndex": 123,
+     "works5y": 413,
+     "lastPub": 2026,
+     "active": true,
+     "industryCollabs": 2,
+     "terms": [
+      {
+       "topic": "Battery electrode materials",
+       "needWeight": 0.6,
+       "strength": 1,
+       "facultyWeight": 0.08,
+       "oaLabel": "Advancements in Battery Materials",
+       "depth": 1.0,
+       "topicPapers": 104,
+       "activity": 1.0,
+       "term": 0.12,
+       "need": "Tesla, Inc. shows current investment activity in battery pack supply chain enhancement (battery technology)."
+      }
+     ]
+    }
+   },
+   "matchCount": 124,
+   "inactiveCount": 74
+  }
+ }
+}

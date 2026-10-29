@@ -1,0 +1,175 @@
+---
+import Base from '../layouts/Base.astro';
+import runs from '../data/runs.json';
+import matches from '../data/matches.json';
+
+const all = runs.ranked.concat(runs.pending);
+const companies = Object.entries(matches.companies)
+  .map(([cid, c]) => ({ cid, ...c, inRun: all.some((r) => r.cid === cid) }))
+  .sort((a, b) => b.matchCount - a.matchCount || a.name.localeCompare(b.name));
+const noNeeds = all.filter((r) => !matches.companies[r.cid]);
+const cov = matches.coverage;
+const gaps = cov.filter((t) => t.companies.length && !t.faculty);
+const covered = cov.filter((t) => t.companies.length && t.faculty);
+const supplyOnly = cov.filter((t) => !t.companies.length && t.faculty);
+const nameOf = (cid: string) => matches.companies[cid]?.name ?? cid;
+const state = (t: typeof cov[number]) => (t.companies.length ? (t.faculty ? 'met' : 'gap') : t.faculty ? 'supply' : 'idle');
+const n = matches.source.facultyCount;
+
+// Worked example: the company whose top researcher has the strongest match, followed step by step.
+const ex = companies.filter((c) => c.matches.length).sort((a, b) => b.matches[0].score - a.matches[0].score)[0];
+const exF = ex?.matches[0];
+const exT = exF?.terms.slice().sort((a, b) => b.term - a.term)[0];
+const exCov = exT && cov.find((t) => t.label === exT.topic);
+---
+<Base title="Faculty match: Penn State researchers for each company | Nittany AI" description="Which Penn State researchers work on the topics each company is investing in, how the match is computed, and what the faculty data cannot tell you yet.">
+<header class="head">
+  <p class="eyebrow" data-reveal data-intro>Faculty match · {n} Penn State authors · {matches.source.needCount} company needs</p>
+  <h1 data-split data-intro>Who at Penn State works on what these companies are investing in.</h1>
+  <p class="sub" data-reveal data-intro data-delay="0.2">Each company need is tagged with research topics. Each researcher carries the same topics from their OpenAlex publication record. A match is the overlap, weighted by how strong the company's signal is and how much of the researcher's work sits in that topic.</p>
+  <p class="formula mono" data-reveal data-intro data-delay="0.3">match = Σ over shared topics ( need weight × need strength / 5 × depth × activity ), depth = min(1, the researcher's papers on the topic ÷ 10), activity = min(1, their papers since 2022 ÷ 5)</p>
+</header>
+
+{ex && exF && exT && (
+<section class="how" aria-labelledby="how-h">
+  <h2 id="how-h" data-split>How a researcher is found: one real match, step by step</h2>
+  <ol class="steps">
+    <li data-reveal><span class="mono k">company need</span>
+      <div><b>{ex.name}</b><p>{exT.need} Strength {exT.strength} of 5, from the engine's verified evidence.</p></div></li>
+    <li data-reveal><span class="mono k">research topic</span>
+      <div><b>{exT.topic}</b><p>The need is tagged with one of forty shared research topics, weight {exT.needWeight}. Companies and researchers are described in the same forty topics, so they can be compared.</p></div></li>
+    <li data-reveal><span class="mono k">OpenAlex topic</span>
+      <div><b>{exT.oaLabel ?? 'mapped by search'}</b><p>Each of the forty topics is searched in OpenAlex, the open catalogue of scholarly papers, and mapped to its closest OpenAlex research topic.</p></div></li>
+    <li data-reveal><span class="mono k">Penn State authors</span>
+      <div><b>{exCov?.faculty ?? 'n/a'} researchers on file for this topic</b><p>OpenAlex lists authors whose latest affiliation is University Park, the Applied Research Laboratory or Hershey Medical Center and whose papers include that topic. The 25 most published per topic are kept.</p></div></li>
+    <li data-reveal><span class="mono k">topic depth</span>
+      <div><b>{exF.name}: {exT.topicPapers} papers on this topic</b><p>Depth is papers on the topic, with full weight at ten. A topic counts only if it is among the researcher's eight biggest and covers at least 5% of their work. Counting papers rather than the share of a career keeps a prolific professor, whose work spans many topics, above a newcomer with three papers on one.</p></div></li>
+    <li data-reveal><span class="mono k">match score</span>
+      <div><b class="mono">{exT.needWeight} × {exT.strength}/5 × {exT.depth} × {exT.activity} = {exT.term.toFixed(3)}</b><p>Summed over every topic the two share{exF.terms.length > 1 ? `, ${exF.terms.length} terms here,` : ''} for a total of {exF.score.toFixed(3)}. The last factor is activity: {exF.works5y} papers since 2022, full weight at 5. Someone with none scores zero, so a former student with one old paper cannot top the list. Higher means more overlap, not more willingness: nobody's interest in industry work is inferred.</p></div></li>
+  </ol>
+  <p class="mono step-foot"><a href={`/dossier/${ex.cid}/#faculty`}>See {ex.name}'s full list</a> · <a href={`https://openalex.org/${exF.id}`} target="_blank" rel="noopener">{exF.name} on OpenAlex</a></p>
+</section>
+)}
+
+<section class="cov" aria-labelledby="cov-h">
+  <div class="cov-head">
+    <h2 id="cov-h" data-split>Forty research topics, and which ones have Penn State faculty on file</h2>
+    <ul class="legend mono" aria-label="Legend">
+      <li><span class="sw met"></span>needed and covered ({covered.length})</li>
+      <li><span class="sw gap"></span>needed, no faculty on file ({gaps.length})</li>
+      <li><span class="sw supply"></span>faculty, no company need yet ({supplyOnly.length})</li>
+      <li><span class="sw idle"></span>neither</li>
+    </ul>
+  </div>
+  <ol class="grid">
+    {cov.map((t) => (
+      <li class={`cell ${state(t)}`} data-reveal>
+        <span class="mono cid">{t.id}</span>
+        <span class="lbl">{t.label}</span>
+        <span class="mono nums"><span>{t.faculty} faculty</span> <span>{t.companies.length} {t.companies.length === 1 ? "company" : "companies"}</span></span>
+        {t.companies.length > 0 && <span class="mono who">{t.companies.map(nameOf).join(', ')}</span>}
+      </li>
+    ))}
+  </ol>
+</section>
+
+<section class="list" aria-labelledby="list-h">
+  <h2 id="list-h" data-split>Matches by company</h2>
+  <p class="sub">Top researchers per company. Open a company for the full arithmetic, the need behind each topic, and the researcher's OpenAlex record. Matches come from a company's tagged research needs, so a company can have matches before its score lands.</p>
+  <ul>
+    {companies.filter((c) => c.matchCount).map((c) => (
+      <li><a class="lrow crow" href={c.inRun ? `/dossier/${c.cid}/#faculty` : undefined}>
+        <span class="name">{c.name}</span>
+        <span class="mono people">{c.matches.slice(0, 3).map((m) => m.name).join(' · ')}</span>
+        <span class="mono count">{c.matchCount} <span class="arr" aria-hidden="true">&rarr;</span></span>
+      </a></li>
+    ))}
+  </ul>
+  {companies.some((c) => !c.matchCount) && (
+    <p class="mono unmatched">No faculty on file yet for: {companies.filter((c) => !c.matchCount).map((c, i, a) => (
+      <>{c.inRun ? <a href={`/dossier/${c.cid}/#faculty`}>{c.name}</a> : c.name}{i < a.length - 1 ? ', ' : ''}</>
+    ))}. <a href="#missing">Why these are missing</a></p>
+  )}
+</section>
+
+<section id="missing" class="missing" aria-labelledby="missing-h">
+  <h2 id="missing-h" data-split>What the faculty data cannot tell you yet</h2>
+  <p class="sub">Read these before reaching out to anyone listed here. Each one is a known gap, not a judgement about a researcher.</p>
+  <dl>
+    <div class="m-row" data-reveal><dt>{gaps.length} needed topics have nobody on file</dt>
+      <dd>{gaps.map((t) => t.label).join(', ')}. Some have no clean OpenAlex topic to search by, so the faculty builder could not resolve them; a missing name here means "not found by the builder", not "nobody at Penn State".</dd></div>
+    <div class="m-row" data-reveal><dt>Departments are not on file</dt>
+      <dd>{matches.nulls.department} of {n} researchers have no department. OpenAlex does not carry one; it needs a Penn State directory lookup that has not been built.</dd></div>
+    <div class="m-row" data-reveal><dt>Openness to industry is never guessed</dt>
+      <dd>Willingness, active grants and patents are blank for all {n}. The engine refuses to infer them; Corporate Engagement or the researcher's department has to confirm.</dd></div>
+    <div class="m-row" data-reveal><dt>{matches.inactiveFaculty} of {n} authors have no papers since 2022</dt>
+      <dd>OpenAlex keeps a person's last known Penn State affiliation after they leave, so the list includes former students and staff. They score zero here and are left out of every ranking; the rest are weighted by how much they have published recently.</dd></div>
+    <div class="m-row" data-reveal><dt>Prior industry work is partial</dt>
+      <dd>{n - matches.nulls.prior_industry_collabs} of {n} researchers have a counted list of company co-affiliations from recent papers; the rest are blank, not zero.</dd></div>
+    <div class="m-row" data-reveal><dt>No co-authorship link to the companies yet</dt>
+      <dd>{matches.copubLinked} of {matches.source.needCount} company needs carry a direct "this researcher has published with this company" link. That signal exists in the engine but is not wired into the handoff.</dd></div>
+    <div class="m-row" data-reveal><dt>{noNeeds.length ? `${noNeeds.map((r) => r.name).join(' and ')} cannot be matched` : 'Every company has tagged needs'}</dt>
+      <dd>{noNeeds.length ? 'They have no research topics tagged in the company-needs handoff, so there is nothing to overlap with.' : 'All companies in the run carry at least one topic.'}</dd></div>
+    <div class="m-row" data-reveal><dt>Topic tags are matched by name</dt>
+      <dd>A researcher's OpenAlex topic is mapped to the closest of the forty topics by search, and authors are not disambiguated. A surprising name usually means a loose topic mapping; check the publication record before acting.</dd></div>
+    <div class="m-row" data-reveal><dt>Match quality has not been measured</dt>
+      <dd>There are no hand-labeled company and researcher pairs yet, so nobody can say how often the top match is the right person. Treat the ranking as a shortlist to read, not an answer.</dd></div>
+  </dl>
+</section>
+</Base>
+
+<style>
+  .head { padding: clamp(40px, 7vw, 88px) 0 0; }
+  .head h1 { max-width: 20ch; }
+  .formula { margin: 22px 0 0; padding: 12px 16px; border-left: 3px solid var(--accent); background: var(--raised); font-size: 13px; color: var(--ink); max-width: 80ch; }
+  .how { margin-top: 72px; }
+  .how h2 { max-width: 26ch; }
+  .steps { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--ink); counter-reset: s; }
+  .steps li { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 32px; padding: 16px 0; border-bottom: 1px solid var(--line); position: relative; }
+  .steps .k { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding-top: 3px; }
+  .steps b { font-size: 17px; letter-spacing: -.01em; }
+  .steps p { margin: 4px 0 0; color: var(--muted); max-width: 66ch; }
+  .step-foot { font-size: 12.5px; margin-top: 14px; }
+  .cov { margin-top: 72px; }
+  .cov-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 40px; }
+  .cov-head h2 { max-width: 24ch; }
+  .legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+  .sw { display: inline-block; width: 10px; height: 10px; margin-right: 8px; border: 1px solid var(--line-strong); vertical-align: -1px; }
+  .grid { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--line); }
+  .cell { display: grid; align-content: start; gap: 4px; padding: 12px 14px 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-height: 112px; position: relative; }
+  .cell::before { content: ''; position: absolute; left: 0; top: 0; right: 0; height: 3px; }
+  .cid { font-size: 11px; color: var(--faint); }
+  .lbl { font-weight: 600; font-size: 14.5px; line-height: 1.25; letter-spacing: -.005em; }
+  .nums { font-size: 11.5px; color: var(--muted); }
+  .who { font-size: 11px; color: var(--faint); }
+  .met::before, .sw.met { background: var(--verified); }
+  .gap::before, .sw.gap { background: var(--quarantined); }
+  .supply::before, .sw.supply { background: var(--accent); }
+  .gap { background: var(--quarantined-soft); }
+  .gap .cid, .gap .who { color: var(--muted); }
+  .idle .lbl { color: var(--muted); font-weight: 500; }
+  .list { margin-top: 80px; }
+  .list ul { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid var(--ink); }
+  .crow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) 60px; gap: 4px 20px; align-items: baseline; }
+  .crow:not([href]) { cursor: default; }
+  .name { font-weight: 600; font-size: 17px; }
+  .people { font-size: 12.5px; color: var(--muted); }
+  .count { text-align: right; font-size: 16px; }
+  .unmatched { font-size: 12.5px; color: var(--muted); margin: 18px 0 0; max-width: 100ch; line-height: 1.8; }
+  .missing { margin-top: 80px; }
+  .missing dl { margin: 24px 0 0; border-top: 1px solid var(--ink); }
+  .m-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 6px 48px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .m-row dt { font-weight: 600; }
+  .m-row dd { margin: 0; color: var(--muted); }
+  @media (max-width: 760px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+    .cell { min-height: 0; padding: 10px; }
+    .lbl { font-size: 13.5px; }
+    .who { display: none; }
+    .crow { grid-template-columns: minmax(0, 1fr) 40px; }
+    .people { grid-column: 1; grid-row: 2; }
+    .count { grid-row: 1 / 3; grid-column: 2; }
+    .m-row { grid-template-columns: 1fr; }
+    .steps li { grid-template-columns: 1fr; }
+  }
+</style>

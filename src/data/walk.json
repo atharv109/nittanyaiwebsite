@@ -1,0 +1,69 @@
+{
+ "tesla": {
+  "company": {
+   "id": "tsla",
+   "claims": 751,
+   "verified": 313
+  },
+  "claim": {
+   "evidenceId": "709153334cc391acee0c0fa9b4aedd9668194971df07afd44dcaba57559a7c35:https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm",
+   "excerpt": "Tesla completed its investment of approximately $2.00 billion to acquire shares of Class A common stock of SpaceX on March 12, 2026.",
+   "implication": "The sizable stake deepens strategic ties with SpaceX, potentially enabling joint technology development and cost synergies.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm",
+   "host": "sec.gov",
+   "source": "filings",
+   "published": "2026-04-30",
+   "eventDate": "2026-03-12",
+   "kind": "fact",
+   "uncertainty": "med",
+   "fidelity": "substring",
+   "factCheck": "overreach",
+   "factCheckConfidence": "med",
+   "verifiedBy": [
+    "ollama"
+   ],
+   "droppedInference": null,
+   "copies": 1
+  },
+  "judge": {
+   "score": 2.3,
+   "capped": true,
+   "citedIn": []
+  },
+  "needs": {
+   "total": 1,
+   "citingClaim": 0
+  }
+ },
+ "bloom": {
+  "company": {
+   "id": "bloom-energy",
+   "claims": 1140,
+   "verified": 768
+  },
+  "claim": {
+   "evidenceId": "9a9e18fc145a44040416a3a2d4afa6c9a3638f05aaf7842b9d1ed74dcd9e0dc8:https://news.google.com/rss/articles/CBMilgFBVV95cUxPTGZVMXlqbUhUaXVGa1NxVGMtcm1BUHV6UXFmcUtJTUhMa1BPa0JkXzNKLUJ1Wkk1bDVwdTQ5TXVYMlJYTVNYMEFFTm45eHhxRlhOY09zcnFubXZfUzFEYXdtbTU2eFJUbzJFX19HT1d4SnJUTDFTYUJQX2hiRUxIYi12ZGkzX1kwNlhKV0ZXRTZidUtvemfSAZsBQVVfeXFMTW5FUnlNdTVJdWZySGdLTlUwNWpfM0RuRU8wSlIxcG9EVlBjTnhzUFRHUENCTnhfaDlqX3FDOEdreFhycXR0NDRDV0FVamhBSnNUYTAyeS1paTVqbnEzMWNrRWc5c0dtUkN2UU91X0xHTmJsQjNzY2Eyb2dpa01lWUlPTXFyLW9seXIxU2dKVmd0bDdhQXpYQ0RMazQ?oc=5",
+   "excerpt": "Bloom Energy rises 12% after partnering with European AI infrastructure upstart in $2.6 billion deal",
+   "implication": "",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPTGZVMXlqbUhUaXVGa1NxVGMtcm1BUHV6UXFmcUtJTUhMa1BPa0JkXzNKLUJ1Wkk1bDVwdTQ5TXVYMlJYTVNYMEFFTm45eHhxRlhOY09zcnFubXZfUzFEYXdtbTU2eFJUbzJFX19HT1d4SnJUTDFTYUJQX2hiRUxIYi12ZGkzX1kwNlhKV0ZXRTZidUtvemfSAZsBQVVfeXFMTW5FUnlNdTVJdWZySGdLTlUwNWpfM0RuRU8wSlIxcG9EVlBjTnhzUFRHUENCTnhfaDlqX3FDOEdreFhycXR0NDRDV0FVamhBSnNUYTAyeS1paTVqbnEzMWNrRWc5c0dtUkN2UU91X0xHTmJsQjNzY2Eyb2dpa01lWUlPTXFyLW9seXIxU2dKVmd0bDdhQXpYQ0RMazQ?oc=5",
+   "host": "news.google.com",
+   "source": "",
+   "published": "2026-05-21",
+   "eventDate": null,
+   "kind": "fact",
+   "uncertainty": "med",
+   "fidelity": "substring",
+   "factCheck": "overreach",
+   "factCheckConfidence": "high",
+   "verifiedBy": [],
+   "droppedInference": "Bloom Energy is expanding its AI infrastructure business through a major partnership that the market views positively.",
+   "copies": 3
+  },
+  "field": {
+   "name": "Fuel Cell Production and Capacity Expansion",
+   "claims": 3,
+   "latest": "2026-05-21"
+  },
+  "topic": "Solid oxide fuel cells"
+ }
+}

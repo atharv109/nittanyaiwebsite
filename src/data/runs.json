@@ -1,0 +1,4289 @@
+{
+ "generatedAt": "2026-10-28",
+ "totals": {
+  "scored": 13,
+  "pending": 3,
+  "documents": 12499,
+  "verified": 6834,
+  "uncapped": 5,
+  "median": 4.0
+ },
+ "ranked": [
+  {
+   "cid": "ibm",
+   "name": "International Business Machines",
+   "ticker": "IBM",
+   "area": "quantum computing",
+   "pending": false,
+   "ev": 2871,
+   "verified": 1555,
+   "fresh": 9,
+   "bySource": {
+    "catalyst": {
+     "total": 1,
+     "verified": 1,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 2865,
+     "verified": 1553,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 5,
+     "verified": 1,
+     "label": "LinkedIn employees"
+    }
+   },
+   "score": 6.7,
+   "capped": false,
+   "dissent": "[]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 2,
+     "justification": "Only the broad field of quantum computing is named, with no concrete problems, methods, datasets, or goals stated anywhere in the records: ev25 notes IBM 'has deployed over 90 quantum systems' (a capability statement, not a research direction) and ev5 is a high-uncertainty implication that quantum computing 'has the potential to create over $500B in value at tech maturity'. The opportunity's area field is blank, so this matches the anchor for a broad field named only, with no specific problems or goals."
+    },
+    {
+     "dim": "committed",
+     "score": 5,
+     "justification": "The records document multiple sustained industry engagements and explicit standing commitments to industry partners: IBM 'will be the preferred services and customer financing provider to Lenovo' (ev33), the Red Hat acquisition was approved by both boards and structured as a distinct unit (ev46, ev45) with expected free-cash-flow and gross-margin accretion within 12 months (ev43), and IBM reported '$35 Billion in Signings YTD' (ev78). This satisfies the anchor for multiple or sustained industry engagements and explicit standing commitments to industry partners."
+    },
+    {
+     "dim": "openness",
+     "score": 3,
+     "justification": "The evidence shows ongoing, case-by-case engagement with new counterparties — '$35 Billion in Signings YTD' (ev78) and a large addressable market for outside service providers (ev47) — with no stated preference for or restriction against particular partner types. Nothing in the records shows IBM actively welcoming small or unfunded partners or explicitly soliciting new collaborations with described working modes, so the neutral, case-by-case anchor fits best."
+    },
+    {
+     "dim": "timing",
+     "score": 3,
+     "justification": "No availability or capacity information for a pilot window appears anywhere in the records; the most recent items merely show continuing corporate activity, such as the press release dated July 23, 2025 regarding Q2 2025 financial results (ev24) and the Form 8-K reporting an earliest event dated October 21, 2026 (ev73). This matches the anchor for no availability information present."
+    },
+    {
+     "dim": "corroboration",
+     "score": 4,
+     "justification": "Multiple distinct verified filings and disclosures agree on details: Red Hat transaction facts are consistent across ev43, ev45, ev46 and ev49; the $.20 par value recurs across ev14, ev39 and ev54; the 7.125% debentures due 2096 appear in both ev26 and ev60; and the 93.6% shareholder ratification of the independent auditor (ev13) adds external validation. However, all records originate from IBM's own disclosures rather than fully independent third parties, so this reaches the 'two or more sources agree' anchor but not the multiple-current-independent-sources anchor."
+    }
+   ],
+   "fields": [
+    {
+     "name": "Quantum Computing",
+     "date": "May 28, 20"
+    },
+    {
+     "name": "Research & Development (R&D)",
+     "date": "May 14, 20"
+    },
+    {
+     "name": "Hybrid Cloud Platform",
+     "date": "2020-10-08"
+    },
+    {
+     "name": "Cloud Services",
+     "date": "2014-05-14"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021.htm",
+     "date": "2026-10-21",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report : October 21, 2026 (Date of earliest event reported)",
+     "implication": "IBM's most recent Form 8‑K filing reports an event dated October 21, 2026, indicating its ongoing regulatory disclosures."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926097089/tm2623193d1_8k.htm",
+     "date": "2026-08-10",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Notes were offered by means of a prospectus supplement.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926097089/tm2623193d1_8k.htm",
+     "date": "2026-08-10",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Underwriting Agreement dated August 10, 2026 among International Business Machines Corporation and CIBC World Markets Inc., RBC Dominion Securities Inc., Scotia Capital Inc. and TD Securities Inc., as the Representatives of the Underwriters",
+     "implication": "IBM engaged CIBC World Markets, RBC Dominion Securities, Scotia Capital and TD Securities to underwrite the note offering."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926097089/tm2623193d1_8k.htm",
+     "date": "2026-08-10",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "C$2,750,000,000 aggregate principal amount of debt securities of the Registrant (the “Notes”)",
+     "implication": "IBM raised approximately CAD 2.75 billion by issuing a new series of debt securities."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926097089/tm2623193d1_8k.htm",
+     "date": "2026-08-10",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report: August 10, 2026 (Date of earliest event reported)",
+     "implication": "The filing reports that the earliest event covered by this Form 8‑K occurred on August 10 2026."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000077/ibm-20260722.htm",
+     "date": "2026-07-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "FORM 8-K CURRENT REPORT PURSUANT TO SECTION 13 OR 15 (d) OF THE SECURITIES EXCHANGE ACT OF 1934 Date of Report : July 22, 2026 (Date of earliest event reported)",
+     "implication": "IBM filed a current report on July 22, 2026, indicating it is complying with SEC reporting requirements and providing timely disclosure of material events."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000070/ibm-20260714.htm",
+     "date": "2026-07-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 14, 2026, International Business Machines Corporation (the “company”) issued a letter to IBM investors providing certain information regarding its expected financial results for the fiscal quarter ended June 30, 2026.",
+     "implication": "IBM disclosed its upcoming quarterly results to shareholders ahead of the official filing, showing a commitment to transparency with investors."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000043/ibm-20260428.htm",
+     "date": "2026-04-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Management Proposal on 2026 Long-Term Performance Plan: For 443,997,153 (75.8 %) Against 141,393,340 (24.2 %).",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000043/ibm-20260428.htm",
+     "date": "2026-04-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On April 28, 2026, the IBM 2026 Long-Term Performance Plan (the “Plan”) was approved by the stockholders of International Business Machines Corporation (\"IBM\" or the \"Company\") at its 2026 Annual Meeting of Stockholders.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000036/ibm-20260422.htm",
+     "date": "2026-04-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report : April 22, 2026 (Date of earliest event reported)",
+     "implication": "The filing indicates that the earliest event covered in this 8‑K occurred on April 22, 2026."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000006/ibm-20260127.htm",
+     "date": "2026-03-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On January 30, 2026, IBM announced that Ramon Laguarta, current Chairman and Chief Executive Officer of PepsiCo, Inc., has been elected to the IBM Board of Directors, effective March 1, 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000015/ibm-20260301.htm",
+     "date": "2026-03-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report: March 1, 2026 (Date of earliest event reported).",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465923010504/tm235234d2_8k.htm",
+     "date": "2026-02-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Performance Share Units will be paid out in February 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926009343/tm264790d2_8k.htm",
+     "date": "2026-01-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Underwriting Agreement dated January 29, 2026 among International Business Machines Corporation and Citigroup Global Markets Limited, BNP PARIBAS, Deutsche Bank AG, London Branch, Goldman Sachs & Co. LLC, HSBC Bank plc, Merrill Lynch International, Mizuho International plc, Canad",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926009343/tm264790d2_8k.htm",
+     "date": "2026-01-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report: January 29, 2026 (Date of earliest event reported)",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000004/ibm-20260128.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report : January 28, 2026 (Date of earliest event reported)",
+     "implication": "IBM filed this Form 8‑K on January 28, 2026, indicating that the earliest event disclosed occurred on that same day."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231x10kex21.htm",
+     "date": "2025-12-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "IBM United Kingdom Limited United Kingdom 100",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231x10kex21.htm",
+     "date": "2025-12-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "IBM Brasil—Industria, Maquinas e Servicos Limitada Brazil 100",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231x10kex21.htm",
+     "date": "2025-12-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Red Hat Austria GmbH Austria 100",
+     "implication": "IBM’s acquisition of Red Hat includes 100% ownership of the Austrian entity, extending Red Hat’s operations under IBM’s control in Europe."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231x10kex21.htm",
+     "date": "2025-12-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "IBM Australia Limited Australia 100",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231x10kex21.htm",
+     "date": "2025-12-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "IBM Argentina Sociedad de Responsabilidad Limitada Argentina 100",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114325000063/ibm-20251022.htm",
+     "date": "2025-10-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report: October 22, 2025 (Date of earliest event reported)",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114325000061/ibm-20251022.htm",
+     "date": "2025-10-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report : October 22, 2025 (Date of earliest event reported)",
+     "implication": "IBM’s most recent Form 8‑K filing reports events that occurred as of October 22 2025."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114325000051/ibm-20250723.htm",
+     "date": "2025-07-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Earnings Presentation of the Registrant, dated July 23, 2025",
+     "implication": "The earnings presentation slides were furnished as Exhibit 99.2, confirming that IBM disclosed its Q2 2025 results publicly on that date."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114325000051/ibm-20250723.htm",
+     "date": "2025-07-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Prepared Remarks of Earnings Presentation on July 23, 2025",
+     "implication": ""
+    }
+   ]
+  },
+  {
+   "cid": "corning",
+   "name": "Corning Incorporated",
+   "ticker": "GLW",
+   "area": "materials / glass",
+   "pending": false,
+   "ev": 1082,
+   "verified": 782,
+   "fresh": 31,
+   "bySource": {
+    "": {
+     "total": 279,
+     "verified": 246,
+     "label": ""
+    },
+    "catalyst": {
+     "total": 3,
+     "verified": 3,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 422,
+     "verified": 176,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 4,
+     "verified": 0,
+     "label": "LinkedIn employees"
+    },
+    "news_rss": {
+     "total": 114,
+     "verified": 106,
+     "label": "news_rss"
+    },
+    "openalex": {
+     "total": 260,
+     "verified": 251,
+     "label": "publications"
+    }
+   },
+   "score": 6.1000000000000005,
+   "capped": false,
+   "dissent": "[{\"dim\": \"specificity\", \"scores\": [3, 4]}, {\"dim\": \"committed\", \"scores\": [4, 5]}, {\"dim\": \"corroboration\", \"scores\": [4, 5]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 3,
+     "justification": "The opportunity references several material science subtopics—glass durability, optical communication fiber, and quantum key distribution—as evidenced by reports such as \"broken screens are forcing Indians to replace smartphones sooner than planned\" (ev360) and “High repair costs and drop anxiety driving Indian consumers toward durable smartphones” (ev362). These indicate a focus on concrete material problems, yet no single, fully detailed goal is stated."
+    },
+    {
+     "dim": "committed",
+     "score": 4,
+     "justification": "Corporate‑led academic collaborations are evident: a Nigerian researcher received a Corning‑endowed doctoral fellowship, illustrating a direct industry–researcher partnership (ev97). This demonstrates at least one sustained industry engagement with university talent."
+    },
+    {
+     "dim": "openness",
+     "score": 2,
+     "justification": "[uncited] No explicit statements about partnership preferences or restrictions are found, but multiple research collaborations across diverse topics (e.g., glass, fiber optics, quantum communications) suggest a neutral stance toward new industry partners. The lack of any prohibition implies openness on a case‑by‑case basis."
+    },
+    {
+     "dim": "timing",
+     "score": 2,
+     "justification": "[uncited] No record provides faculty availability or scheduling information, so we cannot determine if faculty is free during the pilot window."
+    },
+    {
+     "dim": "corroboration",
+     "score": 4,
+     "justification": "Multiple independent sources confirm Corning’s ongoing research collaborations and industry partnership initiatives. For instance, corporate filings (ev1), news reports (ev59), and research consortium announcements (ev97) all corroborate the same initiatives, indicating agreement among distinct sources."
+    }
+   ],
+   "fields": [
+    {
+     "name": "Artificial Intelligence / AI Connectivity",
+     "date": "2026-07-29"
+    },
+    {
+     "name": "Solar Energy / Photovoltaic",
+     "date": "2026-07-28"
+    },
+    {
+     "name": "Fiber Optics / Optical Communications",
+     "date": "2026-06-12"
+    },
+    {
+     "name": "Display (Optical) Technology",
+     "date": "2026-01-01"
+    },
+    {
+     "name": "Automotive Glass Solutions",
+     "date": "2025-01-01"
+    },
+    {
+     "name": "Quantum Communications / Photonics",
+     "date": "2016"
+    }
+   ],
+   "alumni": [
+    {
+     "name": "Dawne M. Moffatt-Fairbanks",
+     "role": "Director, Thermal & Materials Engineering, Manufacturing Technology & Engineering, Corning Incorporated",
+     "route": "direct",
+     "total": 15,
+     "area": "materials",
+     "dims": {
+      "role_proximity": {
+       "score": 2,
+       "justification": "[area: materials] role \"Director, Thermal & Materials Engineering, Manufacturing Technology & Engineering, Corning Incorporated\" shares area term(s) ['materials']."
+      },
+      "influence": {
+       "score": 5,
+       "justification": "[area: materials] role \"Director, Thermal & Materials Engineering, Manufacturing Technology & Engineering, Corning Incorporated\" matches seniority marker \"cto\"."
+      },
+      "psu_tie": {
+       "score": 3,
+       "justification": "[area: materials] 1 citeable PSU link(s) supplied."
+      },
+      "recency": {
+       "score": 5,
+       "justification": "[area: materials] profile note dated 2026-10-22 (0d ago)."
+      }
+     }
+    },
+    {
+     "name": "Ronald Verkleeren",
+     "role": "Senior Vice President, Emerging Innovations Group, Corning Incorporated",
+     "route": "second_degree",
+     "total": 13,
+     "area": "materials",
+     "dims": {
+      "role_proximity": {
+       "score": 1,
+       "justification": "[area: materials] role \"Senior Vice President, Emerging Innovations Group, Corning Incorporated\" shares no area terms."
+      },
+      "influence": {
+       "score": 4,
+       "justification": "[area: materials] role \"Senior Vice President, Emerging Innovations Group, Corning Incorporated\" matches seniority marker \"vice\"."
+      },
+      "psu_tie": {
+       "score": 3,
+       "justification": "[area: materials] 1 citeable PSU link(s) supplied."
+      },
+      "recency": {
+       "score": 5,
+       "justification": "[area: materials] profile note dated 2026-10-22 (0d ago)."
+      }
+     }
+    }
+   ],
+   "evidence": [
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM2gwQWg5Z1lJQkRwY25adWxOa0dXdlRxRDJCZllDWVZfdlRqTXpsbXN2dHN5NzJIV0pEdXh3WGQzNzNESlFHaURGNWpGMDVPd01kaGlHd1FFRjE2QjdJNS1RQzQwWU44T1VPWEVMTWJMWl9wR1ZGUHBUQWFpcHk1TGw4cU0?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-15",
+     "verifiedBy": [],
+     "excerpt": "Inaugural Delbert E. Day Lecture to be held Oct. 15",
+     "implication": "This indicates Missouri S&T is hosting an event connected to Delbert E. Day, but the document does not provide a Corning-specific business update."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM2gwQWg5Z1lJQkRwY25adWxOa0dXdlRxRDJCZllDWVZfdlRqTXpsbXN2dHN5NzJIV0pEdXh3WGQzNzNESlFHaURGNWpGMDVPd01kaGlHd1FFRjE2QjdJNS1RQzQwWU44T1VPWEVMTWJMWl9wR1ZGUHBUQWFpcHk1TGw4cU0?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-15",
+     "verifiedBy": [],
+     "excerpt": "Inaugural Delbert E. Day Lecture to be held Oct. 15 Missouri S&T",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM2gwQWg5Z1lJQkRwY25adWxOa0dXdlRxRDJCZllDWVZfdlRqTXpsbXN2dHN5NzJIV0pEdXh3WGQzNzNESlFHaURGNWpGMDVPd01kaGlHd1FFRjE2QjdJNS1RQzQwWU44T1VPWEVMTWJMWl9wR1ZGUHBUQWFpcHk1TGw4cU0?oc=5",
+     "date": "2026-10-15",
+     "verifiedBy": [],
+     "excerpt": "Inaugural Delbert E. Day Lecture to be held Oct. 15",
+     "implication": "This indicates an event is scheduled, but the text does not show a company-specific operational or financial impact for Corning."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM2gwQWg5Z1lJQkRwY25adWxOa0dXdlRxRDJCZllDWVZfdlRqTXpsbXN2dHN5NzJIV0pEdXh3WGQzNzNESlFHaURGNWpGMDVPd01kaGlHd1FFRjE2QjdJNS1RQzQwWU44T1VPWEVMTWJMWl9wR1ZGUHBUQWFpcHk1TGw4cU0?oc=5",
+     "date": "2026-10-15",
+     "verifiedBy": [],
+     "excerpt": "Inaugural Delbert E. Day Lecture to be held Oct. 15",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM2gwQWg5Z1lJQkRwY25adWxOa0dXdlRxRDJCZllDWVZfdlRqTXpsbXN2dHN5NzJIV0pEdXh3WGQzNzNESlFHaURGNWpGMDVPd01kaGlHd1FFRjE2QjdJNS1RQzQwWU44T1VPWEVMTWJMWl9wR1ZGUHBUQWFpcHk1TGw4cU0?oc=5",
+     "date": "2026-10-15",
+     "verifiedBy": [],
+     "excerpt": "Inaugural Delbert E. Day Lecture to be held Oct. 15",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQQUgya0VIRWZmUXZjQjZlYWhabS14emxFZkRUVmFORDFRZ1JnZW54Y0FMN1EtRzFIQmpILXk3OG9MbmVTeHR0NjZIcUQ1QmtpdHdwMFJaVjhndGpSaDI1X25HVlRPTkYwX19kdDBuNENUanUzV3laLUtNNDNrWXJRbXhnNUZBNDFnaGxFQXlGUEdpUE41LTFuOENiS2hUTW41ekVvd0Z0TG1iaGs?oc=5",
+     "date": "2026-10-07",
+     "verifiedBy": [],
+     "excerpt": "Vertical Research Downgrades Owens Corning to Sell From Hold, $106 Price Target",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPdGJTLXo4WFlpUDBOX1ZYTkhodEZDckFyTk1lbzcxZjF0VllTSDN0STlaZ19mOEc0ZkpEcms1R1BvaFZ6SHdyNGJOS0VWd2lKbW9XZmZEeS0yMGhGNjlHTThFa09fNWxCR04tTUg1Zk5rUEVPU3huRkxnSk00R05tSVRzOUNNYWNUOXZETkFrTXBpalkxWUR1WThaMFQzbGkyRkRGOW9kR0t4N3pzREtNdTFFbm1hYU1ENUczdk1WeXlNR2M?oc=5",
+     "date": "2026-10-07",
+     "verifiedBy": [],
+     "excerpt": "Owens Corning (NYSE:OC) Stock Rating Lowered by Vertical Research",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORFo4WmhuMS1GWGxId0k2dWxfa0dHTHJsNmVlNnlPRmltM2NnYWhrNGlIckstNmdEbk5YUy1KdTh4QmJlY29QNTM1OGh4X0JfTFlNUk5FczJsRTlmRUxEOFJKV2YyaS1Vam9nd2RRVDhTVlUxaVFWRElmWUNmMWt1T2NKUWVaNXpzRWRYVEtvT3V4STBiT0lv?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-07",
+     "verifiedBy": [],
+     "excerpt": "Corning Surges 93% Year to Date",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOXy01VzdqMjVyaGdwUVdkOHF0UGFGRG4yREdhVGY4ajdyOEg4RFNjZUJBYWJKcTlsMkVMSFVLZGw4ZEdLNmJSSDZFcnV3Yk9vLWZNM01wS3VYdlN0N1pHdWdPMy13UGZFdzRBRjl0Nk1uZFJJZXVXeVpfR0JzakI0QmkwaHZ3YTFYQjVveHozNzFRQkpMTlBnc1ptMzJuUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-05",
+     "verifiedBy": [],
+     "excerpt": "UBS Adjusts Price Target on Corning to $201 From $196, Keeps Buy Rating",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOXy01VzdqMjVyaGdwUVdkOHF0UGFGRG4yREdhVGY4ajdyOEg4RFNjZUJBYWJKcTlsMkVMSFVLZGw4ZEdLNmJSSDZFcnV3Yk9vLWZNM01wS3VYdlN0N1pHdWdPMy13UGZFdzRBRjl0Nk1uZFJJZXVXeVpfR0JzakI0QmkwaHZ3YTFYQjVveHozNzFRQkpMTlBnc1ptMzJuUQ?oc=5",
+     "date": "2026-10-05",
+     "verifiedBy": [],
+     "excerpt": "UBS Adjusts Price Target on Corning to $201 From $196, Keeps Buy Rating",
+     "implication": "UBS increased its valuation target for Corning while maintaining a positive stance, signaling continued analyst confidence in the stock."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPeEpQazg3d25aeEZndE8xMll0dmtGT1U4Y1pSd0hncFhRbmNCd1pncllIN3YtN2I4RlVBd2NoSzhqZ2MyVFg1NEJObXpSSmt1VTM2SmtDWkJpTHQxUlJWeVc4QUlSQ1lOU0JLTlBZc1pwY2dHUncwSFJBOEF2Q3puRUxBWkpXZWw5MnFJc3gxRzRES2Q4OXRCVDNuTmJIMlBZZXQtaGJNMVBuSS1DMkNfOVhTVnk5SHJjT3dLT3ExQnVwcF9hMGZJUXh4djFfaDNGVk5lOG9iQ0QxWHY4bzJGSGJiUXQwb0NoQ092TmIyaGYwNnZFWWpKcUtB?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-09-14",
+     "verifiedBy": [],
+     "excerpt": "Corning, Cellectis, Biodexa Pharmaceuticals And Other Big Stocks Moving Lower In Monday’s Pre-Market Sess",
+     "implication": "The headline indicates Corning was among stocks trading lower in pre-market activity on Monday."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNR2M5b0Q1OXNyV1E5NnBjbTJ4Sk04cUY1WFozUWFDRkhyaHFWTldETDlMMXZ6MjJIUVAwd3FFWWJLVW9IeHJsaTI3bzJ2MFdiY2Z5YTcxZ0V4UmtqVkpzTXlnQ0toUjVzaDExUkctSVRxSnJjQkZaalRyTmxiVFN4cUN0Sy1tUGRyOF9STmRDTFhFSVJNOUE?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-09-14",
+     "verifiedBy": [],
+     "excerpt": "Here's Why Owens Corning (OC) Fell More Than Broader Market",
+     "implication": "Owens Corning underperformed the broader market on the day referenced by the article."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNR2M5b0Q1OXNyV1E5NnBjbTJ4Sk04cUY1WFozUWFDRkhyaHFWTldETDlMMXZ6MjJIUVAwd3FFWWJLVW9IeHJsaTI3bzJ2MFdiY2Z5YTcxZ0V4UmtqVkpzTXlnQ0toUjVzaDExUkctSVRxSnJjQkZaalRyTmxiVFN4cUN0Sy1tUGRyOF9STmRDTFhFSVJNOUE?oc=5",
+     "date": "2026-09-14",
+     "verifiedBy": [],
+     "excerpt": "Here's Why Owens Corning (OC) Fell More Than Broader Market",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPeEpQazg3d25aeEZndE8xMll0dmtGT1U4Y1pSd0hncFhRbmNCd1pncllIN3YtN2I4RlVBd2NoSzhqZ2MyVFg1NEJObXpSSmt1VTM2SmtDWkJpTHQxUlJWeVc4QUlSQ1lOU0JLTlBZc1pwY2dHUncwSFJBOEF2Q3puRUxBWkpXZWw5MnFJc3gxRzRES2Q4OXRCVDNuTmJIMlBZZXQtaGJNMVBuSS1DMkNfOVhTVnk5SHJjT3dLT3ExQnVwcF9hMGZJUXh4djFfaDNGVk5lOG9iQ0QxWHY4bzJGSGJiUXQwb0NoQ092TmIyaGYwNnZFWWpKcUtB?oc=5",
+     "date": "2026-09-14",
+     "verifiedBy": [],
+     "excerpt": "Corning, Cellectis, Biodexa Pharmaceuticals And Other Big Stocks Moving Lower In Monday’s Pre-Market Sess",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPeEpQazg3d25aeEZndE8xMll0dmtGT1U4Y1pSd0hncFhRbmNCd1pncllIN3YtN2I4RlVBd2NoSzhqZ2MyVFg1NEJObXpSSmt1VTM2SmtDWkJpTHQxUlJWeVc4QUlSQ1lOU0JLTlBZc1pwY2dHUncwSFJBOEF2Q3puRUxBWkpXZWw5MnFJc3gxRzRES2Q4OXRCVDNuTmJIMlBZZXQtaGJNMVBuSS1DMkNfOVhTVnk5SHJjT3dLT3ExQnVwcF9hMGZJUXh4djFfaDNGVk5lOG9iQ0QxWHY4bzJGSGJiUXQwb0NoQ092TmIyaGYwNnZFWWpKcUtB?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-09-14",
+     "verifiedBy": [],
+     "excerpt": "Corning ... moving lower in Monday’s pre‑market session",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/24741/000120677426000517/glw4684541-8k.htm",
+     "date": "2026-09-09",
+     "verifiedBy": [],
+     "excerpt": "expects to discuss, among other topics, the Company’s recent business performance, progress on its Springboard plan, market trends and demand drivers across its businesses",
+     "implication": "The company is signaling that its conference remarks may include operational performance and strategic-plan updates."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/24741/000120677426000517/glw4684541-8k.htm",
+     "date": "2026-09-09",
+     "verifiedBy": [],
+     "excerpt": "As previously disclosed, on September 9, 2026, Edward A. Schlesinger, Executive Vice President and Chief Financial Officer of Corning Incorporated (the “Company”), will be speaking at the Citi 2026 Global TMT Conference, starting at 8:10 AM (ET)",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNYWhYbVpxQ0NNYm9KMk40N2pHbEZNLUJOek1zd2ZCdHhOb2E2eUNaRWJ1SVNfSG1COFV4eEh1OXQ5NzlyZFQ0ek90LVZMR0I1VEhPSzRSb2piTy0wWHRibzZvXzBEUElLY0Y4VFNLbHlZT2NuM3FZOTV4cXV2ekZUZ2poZXFKTzNDS1oxcngxNGFkdkdXa1VPNkxRZHRUUEJtUkE?oc=5",
+     "date": "2026-08-11",
+     "verifiedBy": [],
+     "excerpt": "Corning: The Pullback We Asked For Arrived - An Upgrade To Buy (NYSE:GLW)",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNYWhYbVpxQ0NNYm9KMk40N2pHbEZNLUJOek1zd2ZCdHhOb2E2eUNaRWJ1SVNfSG1COFV4eEh1OXQ5NzlyZFQ0ek90LVZMR0I1VEhPSzRSb2piTy0wWHRibzZvXzBEUElLY0Y4VFNLbHlZT2NuM3FZOTV4cXV2ekZUZ2poZXFKTzNDS1oxcngxNGFkdkdXa1VPNkxRZHRUUEJtUkE?oc=5",
+     "date": "2026-08-11",
+     "verifiedBy": [],
+     "excerpt": "Corning: The Pullback We Asked For Arrived - An Upgrade To Buy",
+     "implication": "The document is presenting a bullish re-rating of Corning, suggesting the author sees the recent pullback as a buying opportunity."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxObTIxYTA1V2ZNSXJXYVNQeUFvT0plRjRNMTFFTTJGT0phQVhTazdZdkNjc243RTdMWGhxS2ExUUhlRVlKazJka3g1ZUNPdFBFMXZ3dWR0RTFMSm0tNGo2MGpsRkxmT0g4bHoxSk1LMEg5amUwVjMySFprMkNLMFMxUy1hY1ctUGlPdDB5UWdnOWNsQ1BGSjdrMW40b3doaDFtZ2c?oc=5",
+     "date": "2026-07-28",
+     "verifiedBy": [],
+     "excerpt": "Corning Beats Q2 Earnings Estimates on Optical and Solar Growth",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMVFOYURwVUdUWWlZSElGY0x0aUNycW9wb3JQUVB0RkZZWXY5ZFN3b0RjQjZpZ3RUWHRBcDNGOXdlNy1rRDJpZWhkWHR0clVZUk9ySjhaSnE0ZkdrVWZSUHZGeHRtdU55WEVjcDFOMkJBakxua0dveDc2djNnMktoVnB0UU1JeGVYdDFYTVlKQnVTeWx4Tm9iR1VNbnRGX0Z3ZHNvRzlJak1ZODhIOEppdllrVUhYWmtCVUpB?oc=5",
+     "date": "2026-07-28",
+     "verifiedBy": [],
+     "excerpt": "Corning Beats Q2 Earnings Estimates on Optical and Solar Growth",
+     "implication": "Corning reported quarterly results strong enough to beat analyst estimates, supported by demand in its optical and solar businesses."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMVFOYURwVUdUWWlZSElGY0x0aUNycW9wb3JQUVB0RkZZWXY5ZFN3b0RjQjZpZ3RUWHRBcDNGOXdlNy1rRDJpZWhkWHR0clVZUk9ySjhaSnE0ZkdrVWZSUHZGeHRtdU55WEVjcDFOMkJBakxua0dveDc2djNnMktoVnB0UU1JeGVYdDFYTVlKQnVTeWx4Tm9iR1VNbnRGX0Z3ZHNvRzlJak1ZODhIOEppdllrVUhYWmtCVUpB?oc=5",
+     "date": "2026-07-28",
+     "verifiedBy": [],
+     "excerpt": "Corning Beats Q2 Earnings Estimates on Optical and Solar Growth",
+     "implication": "Corning reported strong second-quarter results, supported by growth in optical and solar businesses."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/24741/000002474126000253/glw-20260728.htm",
+     "date": "2026-07-28",
+     "verifiedBy": [],
+     "excerpt": "Item 2.02. Results of Operations and Financial Condition",
+     "implication": "The filing concerns Corning's disclosure of quarterly operating results and financial condition rather than an operational event."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://www.sec.gov/Archives/edgar/data/24741/000002474126000253/glw-20260728.htm",
+     "date": "2026-07-28",
+     "verifiedBy": [],
+     "excerpt": "Date of Report: (Date of earliest event reported) July 28, 2026",
+     "implication": "This anchors the 8-K to a specific reporting date and shows the filing was triggered by an event on that day."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxONTBlX1RZWUFiQXpVQWVVRTE2Nlc3Z1ZJSEEtaXpHUFNXcGVRY1hFd1FnaHNhak11bWcwRURVLTRGYkFuRG8tMV85c3pIOExfR3A5dnQyV3ZkYXF4M1oxQi1pTTJUdDhKN20xdnd1RU53TXJHWnQ3TDNtQWlYdDA3ODZkazM1UWc1bXFiLTg4SXItODZqQ0FjLURkQUd1SUNaZF9vVzBHVy1GNUs3ZjF0NDZ1OTc2ZTkzTjM5Tl9FZmozcGtuTEY1OVYzQUprbDQ0bFE?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-07-23",
+     "verifiedBy": [],
+     "excerpt": "Corning honors 105-year-old Eileen Hultzman, longest-standing retiree",
+     "implication": ""
+    }
+   ]
+  },
+  {
+   "cid": "air-products",
+   "name": "Air Products",
+   "ticker": "APD",
+   "area": "NEOM hydrogen",
+   "pending": false,
+   "ev": 785,
+   "verified": 363,
+   "fresh": 4,
+   "bySource": {
+    "catalyst": {
+     "total": 2,
+     "verified": 2,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 776,
+     "verified": 360,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 7,
+     "verified": 1,
+     "label": "LinkedIn employees"
+    }
+   },
+   "score": 5.3,
+   "capped": true,
+   "dissent": "[{\"dim\": \"specificity\", \"scores\": [3, 4]}, {\"dim\": \"committed\", \"scores\": [4, 5]}, {\"dim\": \"timing\", \"scores\": [3, 4]}, {\"dim\": \"corroboration\", \"scores\": [2, 4]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 3,
+     "justification": "Evidence ev78 describes “The NEOM green hydrogen project in Saudi Arabia is approaching 80 percent completion,” indicating a specific subfield (green hydrogen) and concrete problem area (project completion) without detailed methods or datasets."
+    },
+    {
+     "dim": "committed",
+     "score": 4,
+     "justification": "Evidence ev78 shows an active collaboration between Air Products and the NEOM project, demonstrating a demonstrated track record of an industry engagement."
+    },
+    {
+     "dim": "openness",
+     "score": 2,
+     "justification": "[uncited] No evidence indicates preference for or against particular industry partners; the records suggest a neutral stance on new collaborations."
+    },
+    {
+     "dim": "timing",
+     "score": 2,
+     "justification": "[uncited] No evidence about faculty availability or scheduling is present."
+    },
+    {
+     "dim": "corroboration",
+     "score": 2,
+     "justification": "The NEOM project information appears only in one fact record (ev78), providing a single source with no additional independent confirmation."
+    }
+   ],
+   "fields": [
+    {
+     "name": "Liquid Natural Gas Process Technology",
+     "date": "November 1"
+    },
+    {
+     "name": "Coal Gasification Technology Acquisition",
+     "date": "July 26, 2"
+    },
+    {
+     "name": "Industrial Gas Production",
+     "date": "January 3,"
+    },
+    {
+     "name": "Syngas Joint Venture",
+     "date": "January 26"
+    },
+    {
+     "name": "Green Hydrogen Projects",
+     "date": "2025-02-24"
+    },
+    {
+     "name": "Semiconductor Gases Supply",
+     "date": "2015-07-30"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000000296926000034/apd-20260730.htm",
+     "date": "2026-07-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Melissa N. Schaeffer Executive Vice President and Chief Financial Officer",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000000296926000018/apd-20260430.htm",
+     "date": "2026-04-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Melissa N. Schaeffer Executive Vice President and Chief Financial Officer",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312526029381/d884680d8k.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Each of the nominees for director was elected to serve until the Company’s 2027 Annual Meeting of Shareholders and until his or her successor is elected and qualified.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312526029381/d884680d8k.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "There were 202,627,255 shares of common stock represented at the meeting by valid proxies or voted at the meeting, which was approximately 91.03% of the shares of common stock entitled to vote at the meeting and which constituted a quorum.",
+     "implication": "A strong shareholder participation level confirmed the meeting’s legitimacy and quorum requirements."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312526029381/d884680d8k.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On January 28, 2026, Air Products and Chemicals, Inc. (the “Company”) held its 2026 Annual Meeting of Shareholders (the “Annual Meeting”).",
+     "implication": "The company successfully convened its annual shareholders meeting, allowing it to conduct required governance actions."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525297255/d42847dex991.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Ms. Davis will continue to serve as Chair of the Management Development and Compensation Committee and as a member of the Corporate Governance and Nominating Committee of Air Products’ board until the Company’s Annual Meeting of Shareholders on January 28, 2026.",
+     "implication": "Her expertise will still guide key board committees through the transition period, providing continuity in governance."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525297255/d42847dex991.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Lisa A. Davis has decided to not stand for re-election at the Company’s 2026 Annual Meeting of Shareholders on January 28, 2026 and to retire from the board following the conclusion of the Annual Meeting.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000000296925000055/apd-exhibit231x30sep25.htm",
+     "date": "2025-11-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "We consent to the incorporation by reference in Registration Statement Nos. 333-141336, 333-141337, 333-149813, 333-158101, 333-158102, 333-165563, 333-172889, 333-172890, 333-180122, 333-180123, 333-188643, 333-196000, 333-204387, 333-204388, 333-211476, 333-225016, 333-232847, ",
+     "implication": "Air Products’ audited financial statements and internal‑control report are being incorporated into multiple securities registration filings, confirming compliance with SEC disclosure requirements."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000000296925000051/apd-20251106.htm",
+     "date": "2025-11-06",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Melissa N. Schaeffer Executive Vice President and Chief Financial Officer",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525297255/d42847dex991.htm",
+     "date": "2025-09-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Air Products had fiscal 2025 sales of $12 billion from operations in approximately 50 countries.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525183782/d63516dex991.htm",
+     "date": "2025-09-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "He will serve as a member of the Audit and Finance Committee.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525183782/d63516dex991.htm",
+     "date": "2025-09-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Board of Directors has elected Howard Ungerleider as a director of the Company, effective September 1, 2025.",
+     "implication": "The company will gain a seasoned executive with extensive chemicals industry experience, which could strengthen its strategic oversight and governance."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000000296925000042/apd-20250731.htm",
+     "date": "2025-07-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Melissa N. Schaeffer Executive Vice President and Chief Financial Officer",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000000296925000025/apd-20250501.htm",
+     "date": "2025-05-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Melissa N. Schaeffer Executive Vice President and Chief Financial Officer",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525033509/d830166dex991.htm",
+     "date": "2025-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Louisiana Clean Energy Complex is also progressing, with startup expected in 2028.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525033509/d830166dex991.htm",
+     "date": "2025-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The NEOM green hydrogen project in Saudi Arabia is approaching 80 percent completion, with green ammonia production expected to commence at the end of 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525033509/d830166dex991.htm",
+     "date": "2025-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Air Products has terminated a project in Texas for the production of carbon monoxide due to unfavorable project economics.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525033509/d830166dex991.htm",
+     "date": "2025-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Air Products has cancelled its plans to construct a 35 metric ton per day facility to produce green liquid hydrogen in Massena, New York, and related liquid hydrogen distribution and dispensing operations.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525033509/d830166dex991.htm",
+     "date": "2025-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Air Products has terminated the agreement with World Energy for the Sustainable Aviation Fuel expansion project in Paramount, California, and is managing its overall exit from the site.",
+     "implication": "The company is exiting a U.S. SAF project, eliminating future revenue and related capital outlays at that site."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525033509/d830166dex991.htm",
+     "date": "2025-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Air Products expects to record a pre-tax charge not to exceed $3.1 billion in its fiscal 2025 second quarter, primarily to write down assets and terminate contractual commitments.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525026169/d812755d8k.htm",
+     "date": "2025-02-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The offer and sale of the Notes is expected to close on or about February 14, 2025, subject to customary closing conditions.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525020026/d812080dex991.htm",
+     "date": "2025-02-04",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Wayne T. Smith Named Board Chairman and Dennis H. Reilley Named Board Vice Chairman.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525020828/d926234d8k.htm",
+     "date": "2025-01-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "As previously disclosed, the Board then named Wayne T. Smith as its Chairman and Dennis H. Reilley as its Vice Chairman.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525020828/d926234d8k.htm",
+     "date": "2025-01-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On January 31, 2025, the board of directors (the “Board”) of Air Products and Chemicals, Inc. (the “Company”) approved the amendment and restatement of the Company’s Bylaws (as amended and restated, the “Bylaws”), which took effect immediately.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2969/000119312525013460/d849404d8k.htm",
+     "date": "2025-01-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The nine directors elected at the Annual Meeting are Tonit M. Calaway, Lisa A. Davis, Jessica Trocchi Graziano, Bhavesh V. Patel, Wayne T. Smith, Alfred Stern, Paul Hilal, Andrew Evans and Dennis Reilley.",
+     "implication": "The board composition was reaffirmed, providing continuity and the inclusion of Mantle Ridge’s nominees."
+    }
+   ]
+  },
+  {
+   "cid": "googl",
+   "name": "Alphabet Inc.",
+   "ticker": "GOOGL",
+   "area": "AI / Anthropic",
+   "pending": false,
+   "ev": 1075,
+   "verified": 473,
+   "fresh": 7,
+   "bySource": {
+    "catalyst": {
+     "total": 6,
+     "verified": 6,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 1068,
+     "verified": 467,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 1,
+     "verified": 0,
+     "label": "LinkedIn employees"
+    }
+   },
+   "score": 4.3,
+   "capped": true,
+   "dissent": "[]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 2,
+     "justification": "The only direction-like material in the records is ev34's broad reference to AI ('The AI era is giving us an incredible opportunity to innovate at scale across our core products'), which names a broad field with no specific problems, methods, datasets, or goals; other forward-looking statements are similarly generic (ev4: 'The Alphabet structure is working well, and Google and the Other Bets are thriving.'). No concrete research problems or collaboration goals are stated anywhere in the evidence."
+    },
+    {
+     "dim": "committed",
+     "score": 1,
+     "justification": "No record shows intent to work with external research or industry/faculty partners. The evidence covers internal and administrative matters only — Schmidt's transition out of the Executive Chairman role (ev1), executive equity awards set by the LDICC (ev27), and a $40 billion at-the-market equity program (ev30). The closest external-facing item is a director's board chairmanship at Recursion Pharmaceuticals (ev32), which is a governance role, not a sponsored project, internship, or other research engagement; no track record of such engagements appears in the records."
+    },
+    {
+     "dim": "openness",
+     "score": 1,
+     "justification": "No record solicits new collaborations or describes working modes such as consulting, capstones, or sponsored research. The external communications in the records are investor-directed — Alphabet urging shareholders to perform due diligence regarding the Tutanota mini-tender (ev9) and disclaiming any affiliation with it (ev8) — with no signal that the company welcomes new academic or industry partners."
+    },
+    {
+     "dim": "timing",
+     "score": 3,
+     "justification": "The records contain no availability information for the pilot window or any engagement window; they only report filing and event dates, e.g. ev42 ('Date of Report (Date of earliest event reported) May 11, 2026') and ev46 ('Date of Report (Date of earliest event reported) June 5, 2026.'), with no statement of capacity or readiness to engage."
+    },
+    {
+     "dim": "corroboration",
+     "score": 4,
+     "justification": "Two or more independent filings agree on details: ev7 and ev10 both state Alphabet is 'a collection of companies, the largest of which is Google' (with ev5 and ev7 agreeing on the September 1998 founding), ev23 and ev24 both show Anat Ashkenazi signing as Senior Vice President and Chief Financial Officer, and ev29 and ev43 both record ratification of Ernst & Young as independent auditor. However, what is corroborated is administrative and governance detail rather than any collaboration-relevant claim, and the set spans several years (ev17 is dated October 26, 2020) and includes high-uncertainty records (ev34, ev50), so it falls short of multiple current independent sources that are fully up to date."
+    }
+   ],
+   "fields": [
+    {
+     "name": "AI development and research",
+     "date": "June 5, 20"
+    },
+    {
+     "name": "Technical infrastructure capital expenditures",
+     "date": "2025-12-31"
+    },
+    {
+     "name": "Data center and energy infrastructure acquisition (Intersect)",
+     "date": "2025-12-01"
+    },
+    {
+     "name": "Acquisition of Wiz (AI‑focused cybersecurity)",
+     "date": "2025-03-18"
+    },
+    {
+     "name": "Capital expenditures FY2023-24 (overall)",
+     "date": "2024-12-31"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:GOOGL#catalyst:1",
+     "date": "2026-10-26",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "stock set a fresh 52-week low on 2026-10-26",
+     "implication": ""
+    },
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:GOOGL#catalyst:1",
+     "date": "2026-10-26",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "stock set a fresh 52-week low on 2026-10-26",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000059/goog-20260602.htm",
+     "date": "2026-06-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The number of GSUs will be calculated by dividing the GSU award amount by the average closing price of Alphabet’s Class C capital stock during the month of June 2026.",
+     "implication": "The actual number of shares awarded will depend on the stock price in June 2026, potentially limiting dilution if the share price is high."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000059/goog-20260602.htm",
+     "date": "2026-06-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Ms. Saraci will be granted the following restricted stock units (“GSUs”): (1) GSUs in the amount of $280,000, which vests in 1/20th monthly increments starting in July 2026, and (2) GSUs in the amount of $440,000, which vests in 1/32nd monthly increments starting in July 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000059/goog-20260602.htm",
+     "date": "2026-06-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On June 5, 2026, Alphabet Inc. (“Alphabet”) announced the appointment of Marsida Saraci, Vice President and Controller, as its Principal Accounting Officer, effective immediately.",
+     "implication": "The new principal accounting officer will oversee Alphabet’s financial reporting and internal controls, potentially influencing future accounting policies and disclosures."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+     "date": "2026-06-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported) June 5, 2026.",
+     "implication": "The events described in this Form 8‑K occurred on June 5, 2026."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+     "date": "2026-06-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A shareholder proposal regarding an enhanced disclosure on climate goals was not approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+     "date": "2026-06-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The ratification of the appointment of Ernst & Young LLP as Alphabet’s independent registered public accounting firm for the fiscal year ending December 31, 2026 was approved.",
+     "implication": "Ernst & Young will audit Alphabet's FY2026 financial statements, ensuring compliance with accounting standards."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526259830/d36818d8k.htm",
+     "date": "2026-06-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Depositary Shares Offerings each closed on June 5, 2026.",
+     "implication": "The capital raise was completed on the filing date, meaning the new preferred securities are now outstanding."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526257724/d83560d8k.htm",
+     "date": "2026-06-03",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On June 3, 2026, the Underwriters exercised each option in full. The underwriters of the Depositary Shares Offering simultaneously exercised in full their options to acquire 50,000,000 additional depositary shares.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000059/goog-20260602.htm",
+     "date": "2026-06-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported) June 2, 2026",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526259830/d36818d8k.htm",
+     "date": "2026-06-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The cap price of the Series A Capped Calls will initially be $532.6704 per share of Class A Common Stock, and the cap price of the Series B Capped Calls will initially be $527.7974 per share of Class C Capital Stock.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526257724/d83560d8k.htm",
+     "date": "2026-06-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On June 2, 2026, the Company entered into an underwriting agreement (the “Underwriting Agreement”) with Goldman Sachs & Co. LLC, J.P. Morgan Securities LLC and Morgan Stanley & Co. LLC as the representatives (the “Representatives”) of the underwriters (the “Underwriters”), pursua",
+     "implication": "Alphabet raised capital by selling roughly 50.9 million shares of its Class A and Class C stock at prices around $350 per share."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526257724/d83560d8k.htm",
+     "date": "2026-06-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On June 1, 2026, the Company entered into a securities purchase agreement (the “Purchase Agreement”) with an affiliate of Berkshire Hathaway Inc. (“Berkshire Hathaway”) for the sale of 14,212,035 shares of Class A Common Stock at a price per share of approximately $351.81 and 14,",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526257724/d83560d8k.htm",
+     "date": "2026-06-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On June 1, 2026, Alphabet Inc. (“Alphabet” or the “Company”) entered into an equity distribution agreement (the “Equity Distribution Agreement”) with Goldman Sachs & Co. LLC, J.P. Morgan Securities LLC, and Morgan Stanley & Co. LLC (each, a “Manager” and collectively, the “Manage",
+     "implication": "Alphabet now has the ability to raise up to $40 billion of equity via a flexible at‑the‑market program, giving it substantial financing capacity."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526234488/d144566d8k.htm",
+     "date": "2026-05-21",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Notes consist of ¥135,500,000,000 aggregate principal amount of 1.965% notes due 2029.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526234488/d144566d8k.htm",
+     "date": "2026-05-21",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Notes consist of ¥135,500,000,000 aggregate principal amount of 1.965% notes due 2029, ¥200,500,000,000 aggregate principal amount of 2.412% notes due 2031, ¥123,200,000,000 aggregate principal amount of 2.822% notes due 2033, ¥64,900,000,000 aggregate principal amount of 3.1",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+     "date": "2026-05-11",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "€1,500,000,000 aggregate principal amount of 3.200% notes due 2030",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+     "date": "2026-05-11",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported) May 11, 2026",
+     "implication": "The filing reports that the earliest event covered by this 8‑K occurred on May 11, 2026, establishing the timing of Alphabet’s senior‑notes offering."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+     "date": "2026-05-11",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Canadian Notes consist of C$1,500,000,000 aggregate principal amount of 3.650% notes due 2031, C$2,000,000,000 aggregate principal amount of 4.000% notes due 2033, C$2,250,000,000 aggregate principal amount of 4.350% notes due 2036 and C$2,750,000,000 aggregate principal amou",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm",
+     "date": "2026-05-11",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Euro Notes consist of €1,500,000,000 aggregate principal amount of 3.200% notes due 2030, €1,750,000,000 aggregate principal amount of 3.450% notes due 2032, €1,500,000,000 aggregate principal amount of 3.625% notes due 2034, €1,750,000,000 aggregate principal amount of 4.100",
+     "implication": "Alphabet issued a ladder of euro‑denominated senior notes with varying coupons and maturities, providing flexibility in interest‑rate exposure and long‑term financing."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/goog-20260429.htm",
+     "date": "2026-04-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Alphabet is making reference to non-GAAP financial information in both the press release and the conference call.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/goog-20260429.htm",
+     "date": "2026-04-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported) April 29, 2026",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000034/goog-20260407.htm",
+     "date": "2026-04-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Ms. Ashkenazi was granted PSUs with a target value of $10,000,000, and GSUs in the amount of $20,000,000.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000034/goog-20260407.htm",
+     "date": "2026-04-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The GSU awards also include a transitional amount, on top of the annual target value, to maintain target total compensation following the discontinuation of the SVP Bonus program in 2025.",
+     "implication": ""
+    }
+   ]
+  },
+  {
+   "cid": "f",
+   "name": "Ford Motor Company",
+   "ticker": "F",
+   "area": "Blue Oval / electrification",
+   "pending": false,
+   "ev": 2,
+   "verified": 2,
+   "fresh": 0,
+   "bySource": {
+    "catalyst": {
+     "total": 2,
+     "verified": 2,
+     "label": "market catalyst"
+    }
+   },
+   "score": 4.2,
+   "capped": true,
+   "dissent": "[{\"dim\": \"openness\", \"scores\": [3, 1]}, {\"dim\": \"corroboration\", \"scores\": [4, 2]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 1,
+     "justification": "Evidence ev1 and ev2 provide only stock performance and earnings timing, with no mention of a research direction, so the most appropriate anchor is the absence of a specific goal."
+    },
+    {
+     "dim": "committed",
+     "score": 1,
+     "justification": "Neither ev1 nor ev2 indicate intent to collaborate with industry partners, so the anchor for no evidence of intent is selected."
+    },
+    {
+     "dim": "openness",
+     "score": 2,
+     "justification": "The available records (ev1 and ev2) give no indication of restrictions or preferences regarding industry partners, thus a neutral stance is the best match."
+    },
+    {
+     "dim": "timing",
+     "score": 3,
+     "justification": "There is no information in ev1 or ev2 about availability, so the anchor for no availability information is used."
+    },
+    {
+     "dim": "corroboration",
+     "score": 4,
+     "justification": "Both ev1 and ev2 are independent verified sources that agree on the stock details, satisfying the criterion of multiple independent sources agreeing on details."
+    }
+   ],
+   "fields": [],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:F#catalyst:1",
+     "date": null,
+     "verifiedBy": [
+      "openrouter"
+     ],
+     "excerpt": "next earnings report expected within 1 days",
+     "implication": ""
+    },
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:F#catalyst:0",
+     "date": null,
+     "verifiedBy": [
+      "openrouter"
+     ],
+     "excerpt": "stock moved -5.9% over the last 7 trading days",
+     "implication": ""
+    }
+   ]
+  },
+  {
+   "cid": "bloom-energy",
+   "name": "Bloom Energy",
+   "ticker": "BE",
+   "area": "energy / fuel cells",
+   "pending": false,
+   "ev": 1140,
+   "verified": 768,
+   "fresh": 97,
+   "bySource": {
+    "": {
+     "total": 317,
+     "verified": 286,
+     "label": ""
+    },
+    "catalyst": {
+     "total": 1,
+     "verified": 1,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 619,
+     "verified": 299,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 6,
+     "verified": 5,
+     "label": "LinkedIn employees"
+    },
+    "news_rss": {
+     "total": 197,
+     "verified": 177,
+     "label": "news_rss"
+    }
+   },
+   "score": 4.0,
+   "capped": false,
+   "dissent": "[{\"dim\": \"openness\", \"scores\": [4, 3]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 2,
+     "justification": "[uncited] This opportunity clearly identifies several concrete problems—AI-powered data‑center power demand, 800 V DC‑native fuel‑cell deployment, and cost‑reduction for large AI workloads—alongside technology solutions and deployment goals, making it highly specific."
+    },
+    {
+     "dim": "committed",
+     "score": 2,
+     "justification": "[uncited] Bloom Energy has an established track record with major industry partners; it supplied up to 2.8 GW of fuel cells under an expanded Oracle deal and has secured other large‑scale multi‑year contracts, demonstrating sustained industry engagement."
+    },
+    {
+     "dim": "openness",
+     "score": 2,
+     "justification": "[uncited] Bloom Energy’s recent initiatives, such as the rapid 55‑day deployment for Oracle and the launch of Power Connect to accelerate installations, show the company is actively embracing new solutions and partners beyond its current portfolio. The firm also positions itself as flexible and adaptable, encouraging collaboration with a range of partners."
+    },
+    {
+     "dim": "timing",
+     "score": 2,
+     "justification": "[uncited] No explicit statement indicates that the faculty is unavailable for the pilot window; only current activity (deployments, partnerships) is reported, so we assume no confirmed availability but no blocking information."
+    },
+    {
+     "dim": "corroboration",
+     "score": 2,
+     "justification": "[uncited] Multiple independent, up‑to‑date sources confirm Bloom Energy’s industry engagements, product offerings, and financial performance—evidence from press releases, market analysis, and corporate filings—all corroborate the opportunity details."
+    }
+   ],
+   "fields": [
+    {
+     "name": "AI Data Center Power Generation for Oracle and Other Partners",
+     "date": "2026-09-28"
+    },
+    {
+     "name": "Onsite Power Solutions Collaboration with Hitachi in Japan",
+     "date": "2026-09-24"
+    },
+    {
+     "name": "DC-Native 800V Power Systems",
+     "date": "2026-09-16"
+    },
+    {
+     "name": "Power Connect Deployment Accelerator",
+     "date": "2026-08-28"
+    },
+    {
+     "name": "Fuel Cell Production and Capacity Expansion",
+     "date": "2026-05-21"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQ1JWRG9NM0dBTHRQTHpNalJCLVY3ZFAxZnUzUzhXSF9TbFhDRTVFbjJEdE8xV1A3UU5mNG5vSE95d2lHQ19MR2NCWlFDMThXVjBHRXBVQWlJcFlRV3JKZllQX0xvSlFDRFRZMVhMWktnSmVJS0hDOVEzdFU4VWRfdzFNbzBfVVBaYmNGcEZVYTc3QUtOUFpocEh2TUVCSXRkUEw1SHd0Y29xSFRfTnRPUXRNeTVSY09LRmZmWHAyRFJzWjUyS0E?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Should You Buy Before Thursday's Report?",
+     "implication": "The company is approaching an earnings-related catalyst that could move the stock depending on the report's results."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeThaR0tjNm1LUFRXaVpIb2VUQ21SRXJmRk4wWUlmQjBPRXNfUzNSUmJybm5tb1VYRmt3dFNBWGFfWnhyN1hsT0hGM19rSkh1bHZBZFZVU2k2ZHlmZ3JHS0VUblVUcHdxTTQ1a2x3S0pRUVVWcmtCMGplbkRqWXF1V2RWOTkwbW5fdEhkcUVFVlN5YjRNYXVlWTJqUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-22",
+     "verifiedBy": [],
+     "excerpt": "Negative Cash Flows In Q3 Dampen Sentiment",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeThaR0tjNm1LUFRXaVpIb2VUQ21SRXJmRk4wWUlmQjBPRXNfUzNSUmJybm5tb1VYRmt3dFNBWGFfWnhyN1hsT0hGM19rSkh1bHZBZFZVU2k2ZHlmZ3JHS0VUblVUcHdxTTQ1a2x3S0pRUVVWcmtCMGplbkRqWXF1V2RWOTkwbW5fdEhkcUVFVlN5YjRNYXVlWTJqUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-22",
+     "verifiedBy": [],
+     "excerpt": "Bloom Energy Q4 Guidance Comes Above Estimates",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeThaR0tjNm1LUFRXaVpIb2VUQ21SRXJmRk4wWUlmQjBPRXNfUzNSUmJybm5tb1VYRmt3dFNBWGFfWnhyN1hsT0hGM19rSkh1bHZBZFZVU2k2ZHlmZ3JHS0VUblVUcHdxTTQ1a2x3S0pRUVVWcmtCMGplbkRqWXF1V2RWOTkwbW5fdEhkcUVFVlN5YjRNYXVlWTJqUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-22",
+     "verifiedBy": [],
+     "excerpt": "BE Stock Drops After-Hours",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNR2FGbkhraXdLT0cySFp3bXR1U3JJSV93cG13QXMxZWFwQXF3YXBUQlloYnZhRGdockNNZmdPNGxod1F5M3Bwa2ttMjVXZ1VJMlhxV3REanI4dUFjV0YtQXVrU1BkekdtaEVrVF9uZHZXWDhhU3VxbkNQMjU3STZ2RFpoWF9sR2gyaFdNMDE2ZFJnYlFoSnJXX1lxY1pMNi1tZ3hZ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Bloom Energy shares fall despite beating Q3 estimates",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNR2FGbkhraXdLT0cySFp3bXR1U3JJSV93cG13QXMxZWFwQXF3YXBUQlloYnZhRGdockNNZmdPNGxod1F5M3Bwa2ttMjVXZ1VJMlhxV3REanI4dUFjV0YtQXVrU1BkekdtaEVrVF9uZHZXWDhhU3VxbkNQMjU3STZ2RFpoWF9sR2gyaFdNMDE2ZFJnYlFoSnJXX1lxY1pMNi1tZ3hZ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-22",
+     "verifiedBy": [],
+     "excerpt": "Bloom Energy shares fall despite beating Q3 estimates",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVTJ3U1l3LXBKdDR5Ui1XSkl2NkRFS2ducjhSamhRQWpRYnV2V0ZnM3o5a2kyWVo3U3FOU0stS1ZITWpRN19BQ3U5LW1ldlFKb3JsRXdvalBHbXZCT185VGtvVGRhejBZaVB1ekN6enBTRFYyNmwtU096cm1aT05CSXpqeU1GZGQtd3NkRmxYbXNFa1Q0RGVB?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Bloom Energy Lifts Outlook, Logs Higher Profit",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMVR4VlFQVHFQTERCNmpHSlg0X3o4Y1d4ejlDcjU2RGJDdDFGbHhlNHpfTTVEOW11MUlWbXFLYVVvWkJ1TXVobUpzem9qZDdzUUdOQUt4a2tLWlllTEI3S0RJc3EzakZTcXdJbVduZ24xSHdmcWZqWlZpZjJVT3BwWnlEQjBfd2VDUlpBeUFOdUtTLTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "FuelCell Drops 6%, Plug Power Falls 3%",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMVR4VlFQVHFQTERCNmpHSlg0X3o4Y1d4ejlDcjU2RGJDdDFGbHhlNHpfTTVEOW11MUlWbXFLYVVvWkJ1TXVobUpzem9qZDdzUUdOQUt4a2tLWlllTEI3S0RJc3EzakZTcXdJbVduZ24xSHdmcWZqWlZpZjJVT3BwWnlEQjBfd2VDUlpBeUFOdUtTLTQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Bloom Energy Sinks 9% as Pre-Earnings Rally Reverses",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9BMHNxUEh3RnZZdzdsOUszM01PcHJrZVZ0WnpHSTVTUDRTaTVNVXZJR3BCNlBjWG0zdVlkbGkyT28xbnZUMnRhQ1RIVFJmM1dzQ1NkSFNhaFJyWTl3QU80dFZreUdOQVh4dU5FNDdTLUp1SFBUY3BoSA?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-15",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Bloom Energy Is an AI Power Supply Bottleneck Bellwether. Why the Stock Is Falling.",
+     "implication": "The article frames Bloom Energy as a key indicator of AI power-supply constraints and notes its stock is declining."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9zQ0cyd20zLWYwSHV4UjRPN0dHZG11UjcyNkhKbnZqLUxiSjFudXZCVlFXOEZHUTJYUVFIZEk3SGFxSFF2MlVCVzJhcWJBSWdueUZsRzREdmljR3lkNnM5a2RHbTJtcTZrUmFGVFZ2c0puaTFxWUpUakJUaTNVRjA?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-12",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Statement Regarding October 12 Blog Post",
+     "implication": "Bloom Energy is issuing a public response to something it says was published in an October 12 blog post, indicating potential reputational or factual issues it wants to address."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9zQ0cyd20zLWYwSHV4UjRPN0dHZG11UjcyNkhKbnZqLUxiSjFudXZCVlFXOEZHUTJYUVFIZEk3SGFxSFF2MlVCVzJhcWJBSWdueUZsRzREdmljR3lkNnM5a2RHbTJtcTZrUmFGVFZ2c0puaTFxWUpUakJUaTNVRjA?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-12",
+     "verifiedBy": [],
+     "excerpt": "Statement Regarding October 12 Blog Post Bloom Energy",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9zQ0cyd20zLWYwSHV4UjRPN0dHZG11UjcyNkhKbnZqLUxiSjFudXZCVlFXOEZHUTJYUVFIZEk3SGFxSFF2MlVCVzJhcWJBSWdueUZsRzREdmljR3lkNnM5a2RHbTJtcTZrUmFGVFZ2c0puaTFxWUpUakJUaTNVRjA?oc=5",
+     "date": "2026-10-12",
+     "verifiedBy": [],
+     "excerpt": "Statement Regarding October 12 Blog Post Bloom Energy",
+     "implication": "Bloom Energy is publicly responding to or clarifying points made in its October 12 blog post, indicating the company is actively managing its messaging around that content."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9zQ0cyd20zLWYwSHV4UjRPN0dHZG11UjcyNkhKbnZqLUxiSjFudXZCVlFXOEZHUTJYUVFIZEk3SGFxSFF2MlVCVzJhcWJBSWdueUZsRzREdmljR3lkNnM5a2RHbTJtcTZrUmFGVFZ2c0puaTFxWUpUakJUaTNVRjA?oc=5",
+     "date": "2026-10-12",
+     "verifiedBy": [],
+     "excerpt": "Statement Regarding October 12 Blog Post",
+     "implication": "Bloom Energy is formally responding to a prior blog post and signaling that the issue was important enough to warrant a public statement."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9zQ0cyd20zLWYwSHV4UjRPN0dHZG11UjcyNkhKbnZqLUxiSjFudXZCVlFXOEZHUTJYUVFIZEk3SGFxSFF2MlVCVzJhcWJBSWdueUZsRzREdmljR3lkNnM5a2RHbTJtcTZrUmFGVFZ2c0puaTFxWUpUakJUaTNVRjA?oc=5",
+     "date": "2026-10-12",
+     "verifiedBy": [],
+     "excerpt": "Statement Regarding October 12 Blog Post",
+     "implication": "Bloom Energy is publicly addressing and clarifying content from a specific October 12 blog post."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026024896/bloom_energyx-xclassxaxc.htm",
+     "date": "2026-10-09",
+     "verifiedBy": [],
+     "excerpt": "The Warrant is fully vested with respect to the Warrant Shares and is immediately exercisable in whole or in part at the option of the Warrantholder at any time or from time to time from the Issuance Date until 5:00 p.m., Eastern time (the “Close of Business”), on October 9, 2026",
+     "implication": "The holder can exercise the warrant at any time up to October 9, 2026, after which the right expires."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMnhzUlAzbUJVWmRQaDVhRWxobzZSaE90N0c1RXVDeFVXdDZFd2tTOG1vaFRUMlFPMGdQMFJ6NHptRzlXQ3ctQ2xQeTR4NDVfWUdzc1FZTXlqQW92eV91ZFR2Z2NJSzJqMVBGOHdKY0tCTTVGQUNBQVRvX25NcF8wbE1LTkZzWHE1d1ZBdkVwbGRfd0s5SWVsZkJ3OUwwcUpoNjhuRW5jYWIxN3ZrbkxaU0hzem1Mckp1UU5pUjRxT3I4ME9USVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "Plug Power Sits Out",
+     "implication": "Plug Power's lack of movement contrasts with Bloom Energy's gain, highlighting relative performance differences."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMnhzUlAzbUJVWmRQaDVhRWxobzZSaE90N0c1RXVDeFVXdDZFd2tTOG1vaFRUMlFPMGdQMFJ6NHptRzlXQ3ctQ2xQeTR4NDVfWUdzc1FZTXlqQW92eV91ZFR2Z2NJSzJqMVBGOHdKY0tCTTVGQUNBQVRvX25NcF8wbE1LTkZzWHE1d1ZBdkVwbGRfd0s5SWVsZkJ3OUwwcUpoNjhuRW5jYWIxN3ZrbkxaU0hzem1Mckp1UU5pUjRxT3I4ME9USVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "FuelCell Jumps 7%",
+     "implication": "The broader FuelCell sector's 7% gain may boost market interest in hydrogen technologies, indirectly benefiting Bloom Energy."
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMnhzUlAzbUJVWmRQaDVhRWxobzZSaE90N0c1RXVDeFVXdDZFd2tTOG1vaFRUMlFPMGdQMFJ6NHptRzlXQ3ctQ2xQeTR4NDVfWUdzc1FZTXlqQW92eV91ZFR2Z2NJSzJqMVBGOHdKY0tCTTVGQUNBQVRvX25NcF8wbE1LTkZzWHE1d1ZBdkVwbGRfd0s5SWVsZkJ3OUwwcUpoNjhuRW5jYWIxN3ZrbkxaU0hzem1Mckp1UU5pUjRxT3I4ME9USVE?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "Bloom Energy Climbs 3%",
+     "implication": ""
+    },
+    {
+     "source": "news_rss",
+     "sourceKey": "news_rss",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZEkweGdNNzl2SnJMbFRpNGlyaElWamtVSWVWNHQ1WnJTc0hkdjZJR05iU3ZTWUl2b2lUUnhsTlFzSURqSFo2ZGF0Uk5PX1lmcTFlNkY5cU9tMlpvbElaU3B6VmdpWDFXT19nWUFVaS1HWXNETjFMZm9GMzQwYi15cUN5aVpTRlMwTDJPSkhwUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "Bloom Energy climbs 3% as hydrogen stocks rally",
+     "implication": "The modest share‑price increase suggests renewed investor optimism for Bloom Energy tied to the broader hydrogen market rally."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZEkweGdNNzl2SnJMbFRpNGlyaElWamtVSWVWNHQ1WnJTc0hkdjZJR05iU3ZTWUl2b2lUUnhsTlFzSURqSFo2ZGF0Uk5PX1lmcTFlNkY5cU9tMlpvbElaU3B6VmdpWDFXT19nWUFVaS1HWXNETjFMZm9GMzQwYi15cUN5aVpTRlMwTDJPSkhwUQ?oc=5",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "FuelCell Jumps 7%",
+     "implication": "The broader hydrogen sector is rallying, which may create tailwinds for Bloom Energy's market perception and sales opportunities."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZEkweGdNNzl2SnJMbFRpNGlyaElWamtVSWVWNHQ1WnJTc0hkdjZJR05iU3ZTWUl2b2lUUnhsTlFzSURqSFo2ZGF0Uk5PX1lmcTFlNkY5cU9tMlpvbElaU3B6VmdpWDFXT19nWUFVaS1HWXNETjFMZm9GMzQwYi15cUN5aVpTRlMwTDJPSkhwUQ?oc=5",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "Bloom Energy Climbs 3%",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZEkweGdNNzl2SnJMbFRpNGlyaElWamtVSWVWNHQ1WnJTc0hkdjZJR05iU3ZTWUl2b2lUUnhsTlFzSURqSFo2ZGF0Uk5PX1lmcTFlNkY5cU9tMlpvbElaU3B6VmdpWDFXT19nWUFVaS1HWXNETjFMZm9GMzQwYi15cUN5aVpTRlMwTDJPSkhwUQ?oc=5",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "FuelCell Jumps 7%, Bloom Energy Climbs 3% as Hydrogen Stocks Rally",
+     "implication": "The article frames Bloom Energy as part of a broader rally in hydrogen-related stocks, suggesting investor sentiment is improving across the sector."
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZEkweGdNNzl2SnJMbFRpNGlyaElWamtVSWVWNHQ1WnJTc0hkdjZJR05iU3ZTWUl2b2lUUnhsTlFzSURqSFo2ZGF0Uk5PX1lmcTFlNkY5cU9tMlpvbElaU3B6VmdpWDFXT19nWUFVaS1HWXNETjFMZm9GMzQwYi15cUN5aVpTRlMwTDJPSkhwUQ?oc=5",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "Bloom Energy Climbs 3% as Hydrogen Stocks Rally",
+     "implication": ""
+    },
+    {
+     "source": "",
+     "sourceKey": "",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZEkweGdNNzl2SnJMbFRpNGlyaElWamtVSWVWNHQ1WnJTc0hkdjZJR05iU3ZTWUl2b2lUUnhsTlFzSURqSFo2ZGF0Uk5PX1lmcTFlNkY5cU9tMlpvbElaU3B6VmdpWDFXT19nWUFVaS1HWXNETjFMZm9GMzQwYi15cUN5aVpTRlMwTDJPSkhwUQ?oc=5",
+     "date": "2026-10-02",
+     "verifiedBy": [],
+     "excerpt": "FuelCell Jumps 7%, Bloom Energy Climbs 3% as Hydrogen Stocks Rally; Plug Power Sits Out",
+     "implication": "Bloom Energy's share price moved higher in sympathy with a broader hydrogen-stock rally."
+    }
+   ]
+  },
+  {
+   "cid": "msft",
+   "name": "Microsoft Corporation",
+   "ticker": "MSFT",
+   "area": "AI / OpenAI",
+   "pending": false,
+   "ev": 1996,
+   "verified": 1119,
+   "fresh": 6,
+   "bySource": {
+    "catalyst": {
+     "total": 6,
+     "verified": 6,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 1985,
+     "verified": 1113,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 5,
+     "verified": 0,
+     "label": "LinkedIn employees"
+    }
+   },
+   "score": 4.0,
+   "capped": false,
+   "dissent": "[{\"dim\": \"committed\", \"scores\": [3, 5]}, {\"dim\": \"corroboration\", \"scores\": [2, 4]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 2,
+     "justification": "[uncited] The opportunity is noted only as a broader partnership in AI/ML without detailed research directions or objectives."
+    },
+    {
+     "dim": "committed",
+     "score": 2,
+     "justification": "[uncited] Evidence shows a statement of intent to collaborate with OpenAI via a partnership blog, but no record of an existing engagement or track‑record of collaboration."
+    },
+    {
+     "dim": "openness",
+     "score": 2,
+     "justification": "[uncited] The provided evidence does not present any company‑type or financial‑size restrictions and contains no bias toward existing affiliates, indicating a neutral stance toward potential partners."
+    },
+    {
+     "dim": "timing",
+     "score": 2,
+     "justification": "[uncited] No availability information or scheduling constraints are recorded in the evidence for the current or upcoming term."
+    },
+    {
+     "dim": "corroboration",
+     "score": 2,
+     "justification": "[uncited] The partnership claim appears only in a single self‑reported company blog post, with no external independent source confirming the details."
+    }
+   ],
+   "fields": [
+    {
+     "name": "Microsoft-OpenAI partnership",
+     "date": "2025-10-28"
+    },
+    {
+     "name": "GitHub acquisition",
+     "date": "2018-06-04"
+    },
+    {
+     "name": "LinkedIn acquisition",
+     "date": "2016-06-13"
+    },
+    {
+     "name": "Azure cloud platform enhancements",
+     "date": "2014-04-24"
+    },
+    {
+     "name": "Office 365 subscription growth",
+     "date": "2014-04-24"
+    },
+    {
+     "name": "Skype acquisition",
+     "date": "2011-10-20"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:MSFT#catalyst:1",
+     "date": "2026-10-13",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "stock set a fresh 52-week high on 2026-10-13",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-20260729.htm",
+     "date": "2026-07-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Alice L. Jolla Corporate Vice President and Chief Accounting Officer",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Activision Publishing, Inc. United States",
+     "implication": "Activision Publishing, Inc. operates as a U.S. subsidiary, further indicating Microsoft's control over its gaming publishing operations."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Activision Blizzard, Inc. United States",
+     "implication": "Activision Blizzard, Inc. is listed as a U.S. subsidiary, reflecting Microsoft's ownership of the major gaming publisher."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "LinkedIn Ireland Unlimited Company Ireland",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "LinkedIn Corporation United States",
+     "implication": "LinkedIn Corporation operates as a U.S. subsidiary, indicating Microsoft's ownership of the professional networking platform."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Microsoft Online, Inc. United States",
+     "implication": "Microsoft Online, Inc. is a U.S. subsidiary, reflecting the company's domestic online services structure."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Microsoft Ireland Operations Limited Ireland",
+     "implication": "The company has an operations subsidiary in Ireland, underscoring its operational footprint in the EU."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Microsoft Global Finance Unlimited Company Ireland",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Microsoft Ireland Research Unlimited Company Ireland",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Name Where Incorporated Microsoft Ireland Research Unlimited Company Ireland",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-ex21.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The following is a list of subsidiaries of Microsoft Corporation as of June 30, 2026, omitting subsidiaries which, considered in the aggregate, would not constitute a significant subsidiary.",
+     "implication": "Shows that Microsoft’s corporate structure includes these subsidiaries as of mid‑2026, reflecting its current global presence."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526258667/d26760d8k.htm",
+     "date": "2026-06-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On June 2, 2026, Reid Hoffman, a member of the Board of Directors of Microsoft Corporation (the “Company”) since 2017, informed the Company of his decision not to stand for re-election at the Company’s 2026 annual shareholder meeting (the “Annual Meeting”).",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm",
+     "date": "2026-05-13",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On May 14, 2026, Microsoft Corporation (the “Company”) issued a press release to announce that the Company’s Board of Directors appointed Carmine Di Sibio to its Board of Directors, effective May 13, 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191457/msft-20260429.htm",
+     "date": "2026-04-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Alice L. Jolla Corporate Vice President and Chief Accounting Officer",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-20260128.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "2.625% Notes due 2033",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-20260128.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "3.125% Notes due 2028",
+     "implication": "Microsoft has outstanding 3.125% senior notes maturing in 2028, reflecting its debt profile."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+     "date": "2025-12-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Voted to ratify the appointment of Deloitte & Touche LLP as the Company’s independent registered public accounting firm for fiscal year 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+     "date": "2025-12-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Did not approve a shareholder proposal concerning a report on risks of censorship in generative artificial intelligence.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+     "date": "2025-12-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Did not approve a shareholder proposal concerning a European Security Program Censorship risk audit.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+     "date": "2025-12-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "At the Annual Meeting, the Company’s shareholders approved the Company’s 2026 Stock Plan (the “2026 Stock Plan”).",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+     "date": "2025-12-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On December 5, 2025, Microsoft Corporation (the “Company” or “Microsoft”) held its 2025 Annual Shareholders Meeting (the “Annual Meeting”).",
+     "implication": "Shareholders gathered to vote on corporate matters, establishing deadlines for decisions that will be effective for the company’s upcoming fiscal year."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-20251028.htm",
+     "date": "2025-10-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Microsoft Corporation is also furnishing an investor presentation titled \"First Quarter Fiscal Year 2026 Results.\"",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-20251028.htm",
+     "date": "2025-10-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On October 28, 2025, Microsoft Corporation posted a blog titled \"The next chapter of the Microsoft-OpenAI partnership.\"",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525225125/d863209d8k.htm",
+     "date": "2025-09-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Carlos A. Rodriguez, a member of the Board of Directors of Microsoft Corporation (the “Company”), informed the Company of his decision not to stand for re-election at the Company’s 2025 annual shareholder meeting (the “Annual Meeting”). Mr. Rodriguez will continue to serve as a d",
+     "implication": ""
+    }
+   ]
+  },
+  {
+   "cid": "aapl",
+   "name": "Apple Inc.",
+   "ticker": "AAPL",
+   "area": "Vision Pro / vision",
+   "pending": false,
+   "ev": 515,
+   "verified": 132,
+   "fresh": 13,
+   "bySource": {
+    "catalyst": {
+     "total": 6,
+     "verified": 6,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 509,
+     "verified": 126,
+     "label": "SEC filings"
+    }
+   },
+   "score": 3.9000000000000004,
+   "capped": true,
+   "dissent": "[{\"dim\": \"openness\", \"scores\": [3, 1]}, {\"dim\": \"corroboration\", \"scores\": [4, 2]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 1,
+     "justification": "[uncited] No research direction, problem area, or technology focus is mentioned in the provided evidence."
+    },
+    {
+     "dim": "committed",
+     "score": 1,
+     "justification": "[uncited] There is no indication of a faculty intent to collaborate with industry partners within the records."
+    },
+    {
+     "dim": "openness",
+     "score": 2,
+     "justification": "[uncited] The evidence does not state any preference for particular company sizes or discourage new partners; the updates are neutral regarding new collaborations."
+    },
+    {
+     "dim": "timing",
+     "score": 2,
+     "justification": "[uncited] None of the records provide explicit availability information for a faculty member, leaving the availability status unknown."
+    },
+    {
+     "dim": "corroboration",
+     "score": 4,
+     "justification": "Multiple independent sources confirm the appointment of a new CFO (ev4 and ev16) and other leadership changes, indicating corroborated information."
+    }
+   ],
+   "fields": [
+    {
+     "name": "3D Touch",
+     "date": "2015-10-28"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:AAPL#catalyst:1",
+     "date": "2026-10-22",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "stock set a fresh 52-week high on 2026-10-22",
+     "implication": ""
+    },
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:AAPL#catalyst:1",
+     "date": "2026-10-22",
+     "verifiedBy": [
+      "openrouter"
+     ],
+     "excerpt": "stock set a fresh 52-week high on 2026-10-22",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126015711/ef20071035_8k.htm",
+     "date": "2026-09-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Art Levinson, current Chair of the Board, will become Lead Independent Director on the Transition Date.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm",
+     "date": "2026-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A shareholder proposal entitled “China Entanglement Audit” was not approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm",
+     "date": "2026-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A management proposal to approve the Apple Inc. Non-Employee Director Stock Plan, as Amended and Restated was approved.",
+     "implication": "The amended stock plan will be used to grant equity awards to non‑employee directors going forward."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm",
+     "date": "2026-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "An advisory resolution to approve executive compensation was approved.",
+     "implication": "Shareholders accepted the company’s executive pay package for the coming fiscal year."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm",
+     "date": "2026-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A management proposal to ratify the appointment of Ernst & Young LLP as Apple’s independent registered public accounting firm for fiscal year 2026 was approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm",
+     "date": "2026-02-24",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The 2026 Annual Meeting of Shareholders (the “Annual Meeting”) of Apple Inc. (“Apple”) was held on February 24, 2026.",
+     "implication": "Apple’s shareholders formally approved corporate actions and elected directors on February 24, 2026."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126000199/ef20060722_8k.htm",
+     "date": "2026-01-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Apple’s Board of Directors appointed Ben Borders, 45, as Apple’s Principal Accounting Officer, effective January 1, 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "date": "2025-12-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "During 2025, the Company repurchased 402 million shares of its common stock for $89.3 billion.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "date": "2025-10-17",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "As of October 17, 2025, there were 22,429 shareholders of record.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "date": "2025-09-27",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "As of September 27, 2025, the Company had approximately 166,000 full-time equivalent employees.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "date": "2025-09-27",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Effective tax rate 15.6 %",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "date": "2025-09-27",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "iPhone $ 209,586",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "date": "2025-09-27",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Total net sales $ 416,161",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125027340/ef20052355_8k.htm",
+     "date": "2025-07-25",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Apple’s Board of Directors appointed Sabih Khan, 58, as Apple’s Chief Operating Officer, effective July 25, 2025.",
+     "implication": "The appointment introduces a new senior executive who will oversee Apple's operations starting July 25, 2025."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125025275/ef20051741_8k.htm",
+     "date": "2025-07-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Apple’s design team will then transition to reporting directly to Mr. Cook after Mr. Williams retires late in the year.",
+     "implication": "After Williams’ retirement, Tim Cook will directly oversee the design team, centralizing design leadership under the CEO."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125018400/ef20048691_8k.htm",
+     "date": "2025-05-12",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On May 12, 2025, Apple Inc. (“Apple”) consummated the issuance and sale of $1,500,000,000 aggregate principal amount of its 4.000% Notes due 2028 (the “2028 Notes”),",
+     "implication": "Apple raised $1.5 billion of financing through senior unsecured 4 % notes that will mature in 2028, increasing its long‑term debt load."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125018400/ef20048691_8k.htm",
+     "date": "2025-05-05",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "pursuant to an underwriting agreement (the “Underwriting Agreement”) dated May 5, 2025 among Apple and Goldman Sachs & Co. LLC, Barclays Capital Inc., BofA Securities, Inc. and J.P. Morgan Securities LLC, as representatives of the several underwriters named therein.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+     "date": "2025-04-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On April 23, 2025, the Commission fined the Company €500 million in the Article 5(4) Investigation and issued a cease and desist order requiring the Company to remove technical and commercial restrictions that prevent developers from steering users to alternative distribution cha",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm",
+     "date": "2025-02-25",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A management proposal to ratify the appointment of Ernst & Young LLP as Apple’s independent registered public accounting firm for fiscal year 2025 was approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125000228/ef20040370_8k.htm",
+     "date": "2025-01-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Mr. Parekh’s annual salary was increased to $1 million, effective January 1, 2025.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125000228/ef20040370_8k.htm",
+     "date": "2025-01-01",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Apple’s Board of Directors appointed Kevan Parekh, 53, as Apple’s Senior Vice President, Chief Financial Officer, effective January 1, 2025.",
+     "implication": "Apple will have a new CFO starting in 2025, indicating a leadership transition in its finance function."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "date": "2024-09-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Accumulated deficit ( 19,154 )",
+     "implication": "Apple reported a negative retained earnings balance, indicating cumulative losses or share‑based compensation impacts."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+     "date": "2024-09-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Total shareholders’ equity $ 56,950",
+     "implication": "The equity attributable to shareholders was roughly $57 billion, reflecting the net residual interest after liabilities."
+    }
+   ]
+  },
+  {
+   "cid": "deere",
+   "name": "Deere & Company",
+   "ticker": "DE",
+   "area": "Bear Flag autonomy",
+   "pending": false,
+   "ev": 1021,
+   "verified": 637,
+   "fresh": 3,
+   "bySource": {
+    "filings": {
+     "total": 1020,
+     "verified": 637,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 1,
+     "verified": 0,
+     "label": "LinkedIn employees"
+    }
+   },
+   "score": 3.9000000000000004,
+   "capped": true,
+   "dissent": "[]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 2,
+     "justification": "The records only establish broad fields, never a concrete research direction for this opportunity. Deere's boilerplate repeatedly describes it as a world leader in advanced products and services for agriculture and related sectors (ev57, ev58), and ev2 names the 'John Deere Construction & Forestry Company' subsidiary, so agriculture, construction and forestry are named as broad domains. However, no record states any specific problem, method, dataset, or goal — the recurring 'world leader in providing advanced products, technology and services' language (ev11, ev71) is entirely generic. This matches the anchor for a broad field named only, with no specific problems or goals."
+    },
+    {
+     "dim": "committed",
+     "score": 1,
+     "justification": "No record shows any intent to work with industry or academic partners on this opportunity. The evidence is exclusively internal corporate matters: full ownership of subsidiaries (ev1: '100 percent of the voting securities of the companies named is owned directly or indirectly by Deere & Company'), debt financings (ev50, ev51), board appointments (ev20, ev21), and periodic investor disclosures (ev23, ev33). There is no sponsored project, internship, co-op, partnership program, or stated collaboration intent anywhere in the records, matching the lowest anchor: no evidence of intent to work with partners."
+    },
+    {
+     "dim": "openness",
+     "score": 1,
+     "justification": "All documented external engagement is confined to existing corporate stakeholders and channels — investor earnings calls and webcasts (ev10, ev14, ev65) and wholly-owned affiliates (ev1, ev9) — with no record soliciting or welcoming new partners or describing working modes such as consulting, capstone, or sponsored research. ev115 further indicates Deere has no publicly accessible LinkedIn page, limiting open external visibility. The evidence therefore supports only the lowest anchor: engagement restricted to existing affiliations, with no openness signals toward new collaborators."
+    },
+    {
+     "dim": "timing",
+     "score": 3,
+     "justification": "The records contain only filing and disclosure dates — e.g., 'Date of Report: July 7, 2025' (ev22) and 'Date of Report: February 19, 2026' (ev29) — plus recurring disclosure cadences such as the AEM report timing (ev32). None of this speaks to availability for the pilot window or engagement capacity. This matches the anchor for no availability information present."
+    },
+    {
+     "dim": "corroboration",
+     "score": 3,
+     "justification": "Corporate facts are repeated consistently across many separate Deere filings spanning years — the world-leader positioning appears in ev13, ev57, ev58, ev60 and ev71, and the NYSE 'DE' listing in ev34 and ev41 — but every record is a self-reported company disclosure (SEC filings and press releases) with no independent third-party source corroborating anything relevant to the opportunity, and some records are stale (ev30: debentures that came due in 2022). Multiple consistent but company-authored sources, without independent corroboration of opportunity-relevant claims, fit the middle anchor."
+    }
+   ],
+   "fields": [
+    {
+     "name": "Intelligent Mobile Equipment Technologies",
+     "date": "June 1, 20"
+    },
+    {
+     "name": "Service Advisor Advanced Diagnostic Tools",
+     "date": "2010-06-17"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926098904/de-20260820x8k.htm",
+     "date": "2026-08-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On Thursday, August 20, 2026, the Company made available a presentation providing a review of its third quarter of fiscal year 2026 in connection with its investor earnings call.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926083910/de-20260710x8k.htm",
+     "date": "2026-07-10",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Interest on the Notes is payable on January 15 and July 15 of each year, beginning on January 15, 2027.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926083910/de-20260710x8k.htm",
+     "date": "2026-07-10",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Issuer may redeem the Notes in whole or in part, upon at least 15 days’ notice but not more than 45 days’ notice, at any time prior to maturity at the applicable redemption price described in the Final Prospectus Supplement dated July 10, 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926083910/de-20260710x8k.htm",
+     "date": "2026-07-10",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Notes will be fully and unconditionally guaranteed (the “Guarantee” and, together with the Notes, the “Securities”) on a senior unsecured basis by the Guarantor.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926083910/de-20260710x8k.htm",
+     "date": "2026-07-10",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 10, 2026, Deere Funding Canada Corporation (the “Issuer”) agreed to sell $300,000,000 aggregate principal amount of 4.850% Notes due July 15, 2031 (the “Notes”).",
+     "implication": "The company is raising $300 million of senior unsecured debt that will mature in July 2031, increasing its long‑term financing capacity."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926068930/de-20260526x8k.htm",
+     "date": "2026-05-26",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Mr. Stockton’s decision not to stand for re-election is not the result of any disagreement with the Company, its operations, policies, or practices.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926064747/de-20260521x8k.htm",
+     "date": "2026-05-21",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report: May 21, 2026 (Date of earliest event reported)",
+     "implication": "The filing reports events that occurred as early as May 21, 2026."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926064747/de-20260521x8k.htm",
+     "date": "2026-05-21",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On Thursday, May 21, 2026, the Company made available a presentation providing a review of its second quarter of fiscal 2026 in connection with its investor earnings call.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465925098401/de-20251002x8k.htm",
+     "date": "2026-04-09",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Interest on the Notes is payable on April 9 and October 9 of each year, beginning on April 9, 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926028536/de-20260312x8k.htm",
+     "date": "2026-03-12",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "If a grantee’s employment is terminated for any reason during the first three years of the Performance Period, all of the grantee’s PSUs will be forfeited.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926028536/de-20260312x8k.htm",
+     "date": "2026-03-12",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Name Target Value John C. May $25,000,000 Ryan D. Campbell $5,000,000 Deanna M. Kovar $5,000,000",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926028536/de-20260312x8k.htm",
+     "date": "2026-03-12",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On March 12, 2026, upon recommendation of the Compensation Committee, the Board of Directors of Deere & Company (the “Company”) approved grants of one-time awards of performance-based restricted stock units (“PSUs”) to the Company’s named executive officers listed below as well a",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926021272/de-20260225x8k.htm",
+     "date": "2026-02-25",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A shareholder proposal regarding shareholder right to act by written consent was not approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926021272/de-20260225x8k.htm",
+     "date": "2026-02-25",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A shareholder proposal regarding a report on the return on investment of emission reduction goals was not approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926021272/de-20260225x8k.htm",
+     "date": "2026-02-25",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Deloitte & Touche LLP was ratified as the Company’s independent registered public accounting firm for the 2026 fiscal year.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926021272/de-20260225x8k.htm",
+     "date": "2026-02-25",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The shareholders approved, on an advisory basis, the compensation paid to the Company’s named executive officers.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926021272/de-20260225x8k.htm",
+     "date": "2026-02-25",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "All director nominees were elected for terms expiring at the 2027 annual meeting of shareholders.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926017239/de-20260219x8k.htm",
+     "date": "2026-02-19",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report: February 19, 2026 (Date of earliest event reported)",
+     "implication": "The earliest event covered in this filing occurred on February 19, 2026, aligning with the press release and presentation dates."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926017239/de-20260219x8k.htm",
+     "date": "2026-02-19",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On Thursday, February 19, 2026, the Company made available a presentation providing a review of its first quarter of fiscal 2026 in connection with its investor earnings call.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926005771/de-20260120x8k.htm",
+     "date": "2026-02-19",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On January 21, 2026, the Company appointed Ryan D. Campbell to serve as acting Chief Financial Officer (principal financial officer and principal accounting officer) on an interim basis, effective February 19, 2026, until the Company appoints a permanent replacement.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926005771/de-20260120x8k.htm",
+     "date": "2026-01-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report: January 20, 2026 (Date of earliest event reported)",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465925118224/de-20251203xex99d1.htm",
+     "date": "2025-12-04",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Cargill Chair and CEO Brian Sikes joins Deere & Company's Board of Directors",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465925116130/de-20251126x8k.htm",
+     "date": "2025-11-26",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On Wednesday, November 26, 2025, the Company made available a presentation providing a review of its fourth quarter of fiscal 2025 in connection with its investor earnings call.",
+     "implication": "Deere & Company supplied detailed Q4 2025 information to analysts and investors via a presentation on the same day as the press release."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000155837025011829/de-20250827x8k.htm",
+     "date": "2025-11-03",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On the effective date, Mr. Reed will cease to be the President, Worldwide Ag & Turf Division, Production & Precision Ag, Sales and Marketing Regions of the Americas and Australia.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465925098401/de-20251002x8k.htm",
+     "date": "2025-10-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Issuer may redeem the Notes in whole or in part, upon at least 15 days’ notice but not more than 45 days’ notice, at any time prior to maturity.",
+     "implication": ""
+    }
+   ]
+  },
+  {
+   "cid": "ge-vernova",
+   "name": "GE Vernova",
+   "ticker": "GEV",
+   "area": "energy infrastructure",
+   "pending": false,
+   "ev": 163,
+   "verified": 59,
+   "fresh": 10,
+   "bySource": {
+    "catalyst": {
+     "total": 6,
+     "verified": 6,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 156,
+     "verified": 53,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 1,
+     "verified": 0,
+     "label": "LinkedIn employees"
+    }
+   },
+   "score": 3.8,
+   "capped": true,
+   "dissent": "[]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 1,
+     "justification": "No research direction, problem area, or engagement goal appears anywhere in the records. Every verified fact concerns routine corporate matters: auditor ratification (ev1), the CFO succession to Claire McDonough effective January 1, 2027 (ev2), and indexed stock performance (ev22). Nothing names concrete problems, methods, datasets, or industries, so the evidence matches the lowest anchor: no research direction given."
+    },
+    {
+     "dim": "committed",
+     "score": 1,
+     "justification": "No record shows any intent to partner with faculty or academic researchers. The filings describe governance and disclosure events only: election of three Class II directors (ev10), the annual meeting of stockholders held May 14, 2025 (ev19), and the Q2 2025 earnings release furnished to investors (ev14). There is no sponsored project, internship, partnership, or engagement of any kind mentioned."
+    },
+    {
+     "dim": "openness",
+     "score": 1,
+     "justification": "The records reflect only existing, closed relationships: mailing of the spin-off Information Statement to GE common stockholders (ev8), the advisory vote on executive-compensation frequency (ev5), and earnings materials furnished rather than filed (ev15). No statement welcomes new partners, solicits collaborations, or describes working modes, so no openness to new collaborators can be established from this evidence."
+    },
+    {
+     "dim": "timing",
+     "score": 3,
+     "justification": "No availability information is present. The records supply only filing and event dates, such as the Form 8-K dated July 23, 2025 (ev13), the earliest event reported May 14, 2025 (ev18), and the September 10, 2024 signature by General Counsel Rachel Gonzalez (ev21); nothing addresses capacity or availability for an engagement window."
+    },
+    {
+     "dim": "corroboration",
+     "score": 4,
+     "justification": "Multiple distinct verified filings agree on details: the 58 Charles Street, Cambridge, MA headquarters appears in ev12 and ev16; the NYSE listing under ticker GEV appears in ev11 and ev17; Deloitte & Touche LLP auditor ratifications appear in ev1 and ev6; and Form 8-K filings signed by Matthew J. Potvin appear in ev3 and ev7. Two or more sources agree on these details, though they corroborate corporate identity and governance facts rather than any engagement claims."
+    }
+   ],
+   "fields": [],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:GEV#catalyst:2",
+     "date": "2026-10-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "stock set a fresh 52-week low on 2026-10-23",
+     "implication": ""
+    },
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:GEV#catalyst:2",
+     "date": "2026-10-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "stock set a fresh 52-week low on 2026-10-23",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000153/gev-20260825.htm",
+     "date": "2026-08-25",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Effective January 1, 2027, Claire McDonough will become Chief Financial Officer of GE Vernova, succeeding Mr. Parks.",
+     "implication": "McDonough will assume responsibility for the company’s finance function starting in 2027, bringing experience from her previous CFO role at Rivian Automotive."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gev-20260722.htm",
+     "date": "2026-07-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 22, 2026, GE Vernova Inc. (the \"Company\") released its second-quarter 2026 financial results on its investor relations website at www.gevernova.com/investors.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000004/gev-20260121.htm",
+     "date": "2026-06-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Ms. Zingoni will serve as an advisor and be available to assist with the transition until she leaves the Company on June 30, 2026.",
+     "implication": "Her advisory role will provide continuity and knowledge transfer during the leadership transition."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000115/gev-20260520.htm",
+     "date": "2026-05-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Our stockholders approved the compensation of our named executive officers in an advisory vote",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000115/gev-20260520.htm",
+     "date": "2026-05-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Our stockholders elected three Class II directors to each serve a three-year term until our 2029 annual meeting of stockholders or until his or her successor has been elected and qualified",
+     "implication": "The board will include the three newly elected directors for the next three years, influencing corporate governance and strategic decisions."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000115/gev-20260520.htm",
+     "date": "2026-05-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Our stockholders ratified the appointment of Deloitte & Touche LLP as our independent auditor for the fiscal year ending December 31, 2026",
+     "implication": "Deloitte & Touche LLP will continue to audit GE Vernova’s 2026 financial statements, providing continuity of audit oversight."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000115/gev-20260520.htm",
+     "date": "2026-05-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A stockholder proposal requesting a report assessing sustainability goals on the basis of net-present-value and return-on-investment calculation was not approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000115/gev-20260520.htm",
+     "date": "2026-05-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Our stockholders approved the compensation of our named executive officers in an advisory vote, based on the following voting results.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000063/gev-20260422.htm",
+     "date": "2026-04-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported) April 22, 2026",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000114036126003735/ef20064707_8k.htm",
+     "date": "2026-02-04",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Notes are GE Vernova’s senior unsecured and unsubordinated debt obligations.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000114036126003735/ef20064707_8k.htm",
+     "date": "2026-02-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The net proceeds of the Offering are intended to be used for general corporate purposes, including financing a portion of the purchase price of GE Vernova’s acquisition of the remaining 50% percent stake of Prolec GE that closed on February 2, 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000012/gev-20260128.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On January 28, 2026, GE Vernova Inc. (the \"Company\") released its fourth-quarter 2025 financial results on its investor relations website at www.gevernova.com/investors.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000004/gev-20260121.htm",
+     "date": "2026-01-21",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Board of Directors approved the appointment of Mr. Eric Gray, to serve as the Company’s Chief Executive Officer, Power Segment effective January 21, 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000004/gev-20260121.htm",
+     "date": "2026-01-21",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Mavi Zingoni has notified GE Vernova Inc. (the “Company”) that she will resign from her position as the Chief Executive Officer, Power Segment and as an officer of the Company effective as of January 21, 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000159/gev-20251022.htm",
+     "date": "2025-10-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On October 22, 2025, GE Vernova Inc. (the \"Company\") released its third-quarter 2025 financial results on its investor relations website at www.gevernova.com/investors.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000132/gev-20250723.htm",
+     "date": "2025-07-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 23, 2025, GE Vernova Inc. (the \"Company\") released its second-quarter 2025 financial results on its investor relations website at www.gevernova.com/investors.",
+     "implication": "Investors can review the company’s Q2 2025 performance as of the filing date."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000132/gev-20250723.htm",
+     "date": "2025-07-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported) July 23, 2025",
+     "implication": "The company reported that an event occurred on July 23, 2025, establishing the filing date of this Form 8‑K."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000132/gev-20250723.htm",
+     "date": "2025-07-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 23, 2025, GE Vernova Inc. (the \"Company\") released its second-quarter 2025 financial results on its investor relations website at www.gevernova.com/investors.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000115/gev-20250514.htm",
+     "date": "2025-05-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "GE Vernova Inc. (“GE Vernova,” “we,” or “our”) held its annual meeting of stockholders on May 14, 2025 (the “Annual Meeting”).",
+     "implication": "The company convened its shareholders to vote on corporate matters on that date."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000115/gev-20250514.htm",
+     "date": "2025-05-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported) May 14, 2025",
+     "implication": "The earliest event disclosed in this filing occurred on May 14, 2025."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000115/gev-20250514.htm",
+     "date": "2025-05-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Our stockholders ratified the appointment of Deloitte & Touche LLP as our independent auditor for the fiscal year ending December 31, 2025.",
+     "implication": "Deloitte & Touche LLP will audit GE Vernova’s 2025 financial statements, ensuring compliance and credibility."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000115/gev-20250514.htm",
+     "date": "2025-05-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Our stockholders approved, in an advisory vote, the frequency of future advisory votes on named executive officers compensation as every 1 year.",
+     "implication": "Compensation votes will be held annually, providing regular shareholder oversight."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681025000115/gev-20250514.htm",
+     "date": "2025-05-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Our stockholders approved the compensation of our named executive officers in an advisory vote.",
+     "implication": ""
+    }
+   ]
+  },
+  {
+   "cid": "xom",
+   "name": "Exxon Mobil Corporation",
+   "ticker": "XOM",
+   "area": "lithium",
+   "pending": false,
+   "ev": 25,
+   "verified": 21,
+   "fresh": 9,
+   "bySource": {
+    "catalyst": {
+     "total": 1,
+     "verified": 1,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 24,
+     "verified": 20,
+     "label": "SEC filings"
+    }
+   },
+   "score": 3.8,
+   "capped": true,
+   "dissent": "[{\"dim\": \"corroboration\", \"scores\": [4, 2]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 1,
+     "justification": "[uncited] The records provide information about notes issuance and dates but do not mention any research focus, problem areas, or specific methods, indicating a generic statement with no defined direction."
+    },
+    {
+     "dim": "committed",
+     "score": 1,
+     "justification": "[uncited] None of the evidence indicates intent or action to collaborate with industry partners; the records only discuss financial instruments, not partnership engagement."
+    },
+    {
+     "dim": "openness",
+     "score": 1,
+     "justification": "[uncited] There is no evidence of openness or willingness to engage with new partners; the records do not mention partnerships or solicitations."
+    },
+    {
+     "dim": "timing",
+     "score": 3,
+     "justification": "No records provide clarity on the company’s availability for the pilot window; the only time‑related record (ev21) references an earnings report schedule, not availability."
+    },
+    {
+     "dim": "corroboration",
+     "score": 4,
+     "justification": "Multiple distinct records (ev1, ev17, ev18, ev19) report consistent information about the company’s financial activities, indicating agreement across independent sources."
+    }
+   ],
+   "fields": [],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000013/xom-20261016.htm",
+     "date": "2026-10-16",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported): October 16, 2026",
+     "implication": "The earliest event disclosed in this filing occurred on October 16, 2026, showing the report pertains to that date."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000119312526373026/d82162d8k.htm",
+     "date": "2026-09-27",
+     "verifiedBy": [
+      "openrouter",
+      "ollama"
+     ],
+     "excerpt": "On September 27, 2026, all then‑outstanding Notes will be repurchased for cash at a price equal to 100% of the principal amount plus the Make‑Whole Amount, together with accrued and unpaid interest",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000119312526402986/d15072d8k.htm",
+     "date": "2026-09-25",
+     "verifiedBy": [
+      "openrouter"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported): September 25, 2026",
+     "implication": "The earliest event disclosed in this filing occurred on September 25, 2026, which contradicts a prior claim that the earliest event was October 16, 2026."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000119312526402986/d15072d8k.htm",
+     "date": "2026-09-23",
+     "verifiedBy": [
+      "ollama",
+      "groq"
+     ],
+     "excerpt": "The Notes are to be fully and unconditionally guaranteed by the Company",
+     "implication": "The parent company assumes full liability for the new notes, which could affect its credit profile and balance‑sheet risk."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000119312526402986/d15072d8k.htm",
+     "date": "2026-09-23",
+     "verifiedBy": [
+      "openrouter",
+      "ollama"
+     ],
+     "excerpt": "On September 23, 2026, ExxonMobil Holdings Corporation, a Texas corporation, and Exxon Mobil Corporation, a New Jersey corporation and a subsidiary of the Company, entered into an underwriting agreement with RBC Capital Markets, LLC, Deutsche Bank Securities Inc., J.P. Morgan Sec",
+     "implication": "ExxonMobil raised approximately $185.9 million through the issuance of floating‑rate notes, increasing its overall debt exposure."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000119312526373026/d82162d8k.htm",
+     "date": "2026-08-28",
+     "verifiedBy": [
+      "groq",
+      "openrouter"
+     ],
+     "excerpt": "On August 28, 2026, XTO Energy Inc., a wholly‑owned subsidiary of ExxonMobil Holdings Corporation, issued redemption notices to holders of its 6.10% Senior Notes due 2036, 6.75% Senior Notes due 2037 and 6.375% Senior Notes due 2038 calling for redemption of all outstanding Notes",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000119312526373026/d82162d8k.htm",
+     "date": "2026-08-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported): August 28, 2026",
+     "implication": "The report indicates the earliest event occurred on August 28, 2026, updating the timeline for the company's disclosures."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000006/xom-20260731.htm",
+     "date": "2026-07-31",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "The Registrant hereby furnishes the information set forth in its News Release, dated July 31, 2026, announcing second quarter 2026 results.",
+     "implication": "ExxonMobil disclosed its Q2 2026 financial performance, giving investors up‑to‑date information on earnings and operations."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000003/xom-20260707.htm",
+     "date": "2026-07-07",
+     "verifiedBy": [
+      "openrouter"
+     ],
+     "excerpt": "Date of Report (Date of earliest event reported): July 7, 2026",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000119312526402986/d15072d8k.htm",
+     "date": "2026-07-01",
+     "verifiedBy": [
+      "groq",
+      "openrouter"
+     ],
+     "excerpt": "The Notes were issued pursuant to an indenture dated March 20, 2014, as supplemented and amended by a first supplemental indenture dated June 26, 2020 and a second supplemental indenture dated July 1, 2026 among the Company, Exxon Mobil and the Trustee",
+     "implication": "The existing debt framework has been updated as recently as July 2026, showing ongoing management of the company’s long‑term financing arrangements."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000013/xom-20261016.htm",
+     "date": "2026-10-16",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "1.408% Notes due 2039",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000013/xom-20261016.htm",
+     "date": "2026-10-16",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "0.835% Notes due 2032",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000013/xom-20261016.htm",
+     "date": "2026-10-16",
+     "verifiedBy": [
+      "openrouter"
+     ],
+     "excerpt": "0.524% Notes due 2028",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000119312526373026/d82162d8k.htm",
+     "date": "2026-08-28",
+     "verifiedBy": [
+      "ollama",
+      "groq"
+     ],
+     "excerpt": "This Current Report on Form 8‑K does not constitute a redemption notice and is qualified in its entirety by reference to the Redemption Notices",
+     "implication": "The filing is informational only and does not itself trigger redemption; formal notices are the attached exhibits."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000006/xom-20260731.htm",
+     "date": "2026-07-31",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "1.408% Notes due 2039",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000006/xom-20260731.htm",
+     "date": "2026-07-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "0.835% Notes due 2032",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000006/xom-20260731.htm",
+     "date": "2026-07-31",
+     "verifiedBy": [
+      "openrouter"
+     ],
+     "excerpt": "0.524% Notes due 2028",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000003/xom-20260707.htm",
+     "date": "2026-07-07",
+     "verifiedBy": [
+      "openrouter"
+     ],
+     "excerpt": "1.408% Notes due 2039",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000003/xom-20260707.htm",
+     "date": "2026-07-07",
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "0.835% Notes due 2032",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/2115436/000211543626000003/xom-20260707.htm",
+     "date": "2026-07-07",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "0.524% Notes due 2028",
+     "implication": ""
+    },
+    {
+     "source": "market catalyst",
+     "sourceKey": "catalyst",
+     "url": "market:XOM#catalyst:0",
+     "date": null,
+     "verifiedBy": [
+      "groq"
+     ],
+     "excerpt": "next earnings report expected within 3 days",
+     "implication": ""
+    }
+   ]
+  },
+  {
+   "cid": "amazon",
+   "name": "Amazon.com, Inc.",
+   "ticker": "AMZN",
+   "area": "AI / Anthropic",
+   "pending": false,
+   "ev": 1073,
+   "verified": 610,
+   "fresh": 12,
+   "bySource": {
+    "catalyst": {
+     "total": 1,
+     "verified": 1,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 1069,
+     "verified": 609,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 3,
+     "verified": 0,
+     "label": "LinkedIn employees"
+    }
+   },
+   "score": 2.3,
+   "capped": false,
+   "dissent": "[{\"dim\": \"committed\", \"scores\": [1, 2]}, {\"dim\": \"openness\", \"scores\": [1, 3]}, {\"dim\": \"corroboration\", \"scores\": [1, 3]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 1,
+     "justification": "[uncited] No evidence indicates a defined research topic, subfield, or concrete problem areas for Amazon:anthropic in the provided records."
+    },
+    {
+     "dim": "committed",
+     "score": 1,
+     "justification": "[uncited] The evidence contains no statements of intent or track record of collaboration with industry on this opportunity."
+    },
+    {
+     "dim": "openness",
+     "score": 1,
+     "justification": "[uncited] There is no documentation of preference for partner size or active solicitation of new collaborations in the records."
+    },
+    {
+     "dim": "timing",
+     "score": 2,
+     "justification": "[uncited] The records provide no availability information for faculty. 3 indicates no availability data present."
+    },
+    {
+     "dim": "corroboration",
+     "score": 1,
+     "justification": "[uncited] Only a single, unrelated source is present, no independent evidence confirming a collaboration between Amazon and Anthropic."
+    }
+   ],
+   "fields": [
+    {
+     "name": "Artificial Intelligence (OpenAI investment)",
+     "date": "2026-03-31"
+    },
+    {
+     "name": "Cloud Computing Services",
+     "date": "2013-04-25"
+    },
+    {
+     "name": "Digital Content Distribution (Kindle, MP3, Video)",
+     "date": "2011-04-26"
+    },
+    {
+     "name": "E-commerce Fulfillment and Logistics",
+     "date": "2009-10-22"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm",
+     "date": "2026-09-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The aggregate public offering price of the Notes was £4.242 billion and the estimated net proceeds from the offering were approximately £4.235 billion, after deducting underwriting discounts from the public offering price and before deducting offering expenses payable by us.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm",
+     "date": "2026-09-14",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On September 14, 2026, Amazon.com, Inc. (the “Company”) closed the sale of £1,250,000,000 aggregate principal amount of its 5.200% notes due 2029 (the “2029 Notes”), £1,000,000,000 aggregate principal amount of its 5.550% notes due 2032 (the “2032 Notes”), £1,000,000,000 aggregat",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm",
+     "date": "2026-09-09",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Underwriting Agreement, dated as of September 9, 2026, among Amazon.com, Inc. and the several underwriters named therein.",
+     "implication": "The company entered into a new underwriting agreement in September 2026 to facilitate a large debt issuance."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
+     "date": "2026-09-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "In 2026, she was also granted a restricted stock unit award under the Company’s 1997 Stock Incentive Plan with respect to 103 shares of common stock of the Company, vesting over 1.9 years.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
+     "date": "2026-09-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Kristin Mandia, an employee of the Company, is the sister-in-law of Mr. Mandia. Ms. Mandia’s annual salary is $185,000.",
+     "implication": "The relationship between a director and an employee could raise nepotism concerns, though the salary is reported as comparable to peers."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
+     "date": "2026-09-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Mr. Mandia also entered into an indemnification agreement with the Company in the same form as its other directors have entered, which is filed as an exhibit to Amendment No. 1, filed April 21, 1997, to the Company’s Registration Statement on Form S-1 (Registration No. 333-23795)",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
+     "date": "2026-09-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Mr. Mandia was granted a restricted stock unit award under the Company’s 1997 Stock Incentive Plan for 4,086 shares of common stock of the Company, to vest in three equal annual installments beginning on November 15, 2027, assuming continued service as a director.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
+     "date": "2026-09-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On September 8, 2026, the Board of Directors of Amazon.com, Inc. (the “Company”) elected Kevin R. Mandia as a director of the Company and also appointed him to the Audit Committee and Security Committee of the Board.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm",
+     "date": "2026-07-30",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 30, 2026, Amazon.com, Inc. announced its second quarter 2026 financial results.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926082293/tm2619352d4_8k.htm",
+     "date": "2026-07-09",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 9, 2026, Amazon.com, Inc. (the “Company”) closed the sale of $750,000,000 aggregate principal amount of its floating rate notes due 2029 (the “Floating Rate Notes”), $3,500,000,000 aggregate principal amount of its 4.600% notes due 2029 (the “2029 Notes”), $4,250,000,000 ",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926082293/tm2619352d4_8k.htm",
+     "date": "2026-07-09",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The aggregate public offering price of the Notes was $24.923 billion and the estimated net proceeds from the offering were approximately $24.867 billion, after deducting underwriting discounts from the public offering price and before deducting offering expenses payable by us.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926073562/tm2613616d5_8k.htm",
+     "date": "2026-06-12",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The aggregate public offering price of the Notes was C$13.967 billion and the estimated net proceeds from the offering were approximately C$13.934 billion, after deducting underwriting discounts from the public offering price and before deducting offering expenses payable by us.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926073562/tm2613616d5_8k.htm",
+     "date": "2026-06-12",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On June 12, 2026, Amazon.com, Inc. (the “Company”) closed the sale of C$1,250,000,000 aggregate principal amount of its 3.400% notes due 2029 (the “2029 Notes”), C$2,500,000,000 aggregate principal amount of its 3.700% notes due 2031 (the “2031 Notes”), C$2,000,000,000 aggregate ",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926072140/tm2613616d4_8k.htm",
+     "date": "2026-06-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Borrowings under the DDTL Facility will be used for general corporate purposes.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926072140/tm2613616d4_8k.htm",
+     "date": "2026-06-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Delayed draw term loans will bear interest, at the Company’s option, at either (i) a floating rate per annum equal to a base rate (the “Alternate Base Rate”) plus an applicable margin or (ii) a per annum rate equal to a term SOFR rate (the “Term SOFR Rate”) plus an applicable mar",
+     "implication": "Amazon can choose between two benchmark rates, allowing it to manage interest‑rate risk based on market conditions."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926072140/tm2613616d4_8k.htm",
+     "date": "2026-06-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Commitments to provide the DDTL Facility will expire on September 30, 2026 unless fully borrowed prior to such date.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926072140/tm2613616d4_8k.htm",
+     "date": "2026-06-08",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The DDTL Credit Agreement provides the Company with a $17.5 billion senior unsecured delayed draw term loan credit facility (the “DDTL Facility”).",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
+     "date": "2026-05-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A shareholder proposal requesting a report on impact of climate commitments was not approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
+     "date": "2026-05-20",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "A shareholder proposal requesting a report on charitable partnerships was not approved.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amzn-20260429.htm",
+     "date": "2026-04-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On April 29, 2026, Amazon.com, Inc. announced its first quarter 2026 financial results.",
+     "implication": "The company publicly disclosed its Q1 2026 performance, providing investors with the latest earnings information."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926021050/tm267374d1_8k.htm",
+     "date": "2026-03-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Amazon Sub’s agreement to invest $15.0 billion in OpenAI’s Series C Preferred Stock in connection with OpenAI’s current funding round, which Amazon Sub is obligated to purchase on March 31, 2026, subject to certain closing conditions.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926028556/tm266670d9_8k.htm",
+     "date": "2026-03-16",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Notes were issued pursuant to an Indenture dated as of November 29, 2012 between the Company and Wells Fargo Bank, National Association, as trustee (the “Prior Trustee”), as amended and supplemented by Supplemental Indenture No. 1, dated as of April 13, 2022, among the Compan",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926028556/tm266670d9_8k.htm",
+     "date": "2026-03-16",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The aggregate public offering price of the Notes was €14.473 billion and the estimated net proceeds from the offering were approximately €14.447 billion, after deducting underwriting discounts from the public offering price and before deducting offering expenses payable by us.",
+     "implication": "The company expects to receive about €14.45 billion in cash from the bond issuance, providing significant liquidity for corporate purposes."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926028556/tm266670d9_8k.htm",
+     "date": "2026-03-16",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On March 16, 2026, Amazon.com, Inc. (the “Company”) closed the sale of €1,750,000,000 aggregate principal amount of its floating rate notes due 2028 (the “Floating Rate Notes”), €1,250,000,000 aggregate principal amount of its 2.800% notes due 2028 (the “2028 Notes”), €2,000,000,",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926028556/tm266670d9_8k.htm",
+     "date": "2026-03-11",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Underwriting Agreement, dated as of March 11, 2026, among Amazon.com, Inc. and the several underwriters named therein.",
+     "implication": "Underwriters were formally engaged on March 11, 2026 to manage the €14.473 billion bond offering."
+    }
+   ]
+  },
+  {
+   "cid": "tsla",
+   "name": "Tesla, Inc.",
+   "ticker": "TSLA",
+   "area": "Dojo / AI",
+   "pending": false,
+   "ev": 751,
+   "verified": 313,
+   "fresh": 13,
+   "bySource": {
+    "catalyst": {
+     "total": 1,
+     "verified": 1,
+     "label": "market catalyst"
+    },
+    "filings": {
+     "total": 749,
+     "verified": 312,
+     "label": "SEC filings"
+    },
+    "linkedin_company_employees": {
+     "total": 1,
+     "verified": 0,
+     "label": "LinkedIn employees"
+    }
+   },
+   "score": 2.3,
+   "capped": true,
+   "dissent": "[{\"dim\": \"corroboration\", \"scores\": [1, 4]}]",
+   "dims": [
+    {
+     "dim": "specificity",
+     "score": 1,
+     "justification": "[uncited] No evidence of a specific research direction or concrete problem area is present. Corporate filings only discuss corporate governance and financials, not research agendas."
+    },
+    {
+     "dim": "committed",
+     "score": 1,
+     "justification": "[uncited] No evidence indicates an intention or track record of collaborating with industry partners. Corporate disclosures omit any partnership or collaboration activity."
+    },
+    {
+     "dim": "openness",
+     "score": 1,
+     "justification": "[uncited] No indication that the faculty is open to new industry collaborations. The filings contain only corporate information with no references to external partner outreach."
+    },
+    {
+     "dim": "timing",
+     "score": 2,
+     "justification": "[uncited] No information about current availability or pilot window participation. The data set lacks any schedule or availability statement."
+    },
+    {
+     "dim": "corroboration",
+     "score": 1,
+     "justification": "[uncited] Only corporate filings are present, none of which pertain to faculty–industry engagements. Thus there is essentially no corroboration regarding such activity."
+    }
+   ],
+   "fields": [
+    {
+     "name": "SpaceX equity investment (aerospace technology)",
+     "date": "2026-03-12"
+    },
+    {
+     "name": "Model 3 vehicle production scaling (automotive manufacturing)",
+     "date": "2017-08-11"
+    },
+    {
+     "name": "Battery pack supply chain enhancement (battery technology)",
+     "date": "2017-07-03"
+    }
+   ],
+   "alumni": [],
+   "evidence": [
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/tsla-20261021.htm",
+     "date": "2026-10-21",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On October 21, 2026, Tesla, Inc. released its financial results for the quarter ended September 30, 2026 by posting its Third Quarter 2026 Update on its website.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026063820/tsla-20260929.htm",
+     "date": "2026-09-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Tesla does not currently plan to draw on the Facilities in 2026.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm",
+     "date": "2026-07-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 22, 2026, Tesla, Inc. released its financial results for the quarter ended June 30, 2026 by posting its Second Quarter 2026 Update on its website.",
+     "implication": "The company provided its Q2 2026 financial performance, indicating ongoing reporting of its operational results."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/tsla-20260422.htm",
+     "date": "2026-04-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On April 22, 2026, Tesla, Inc. released its financial results for the quarter ended March 31, 2026 by posting its First Quarter 2026 Update on its website.",
+     "implication": "The company disclosed its Q1 2026 performance, providing investors with recent financial data."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026022956/tsla-20260402.htm",
+     "date": "2026-04-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of report (Date of earliest event reported): April 2, 2026",
+     "implication": "The earliest event disclosed in this filing occurred on April 2, 2026, indicating the company is reporting a recent development."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm",
+     "date": "2026-03-12",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Tesla completed its investment of approximately $2.00 billion to acquire shares of Class A common stock of SpaceX on March 12, 2026.",
+     "implication": "The sizable stake deepens strategic ties with SpaceX, potentially enabling joint technology development and cost synergies."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003837/tsla-20260128.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On January 28, 2026, Tesla, Inc. released its financial results for the fiscal quarter and year ended December 31, 2025 by posting its Fourth Quarter and Full Year 2025 Update on its website.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-2025x12x31xex417.htm",
+     "date": "2026-01-28",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "As of January 28, 2026, Tesla, Inc. had one class of common stock registered under Section 12 of the Securities Exchange Act of 1934.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm",
+     "date": "2026-01-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "As of January 23, 2026, there were 3,752,431,984 shares of the registrant’s Common Stock outstanding.",
+     "implication": "A large share count may dilute existing ownership but also provides liquidity for employee equity plans."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026000016/tsla-20260102.htm",
+     "date": "2026-01-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of report (Date of earliest event reported): January 2, 2026",
+     "implication": "The 8‑K filing reports an event that occurred on January 2, 2026."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025034692/tsla-20250709.htm",
+     "date": "2025-11-06",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The board of directors (the “Board”) of Tesla, Inc. (“Tesla”) has designated November 6, 2025 as the date of Tesla’s 2025 annual meeting of shareholders (the “2025 Annual Meeting”).",
+     "implication": "Tesla’s 2025 annual meeting is scheduled for early November, setting the timeline for shareholder voting and corporate governance matters."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025045861/tsla-20251022.htm",
+     "date": "2025-10-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On October 22, 2025, Tesla, Inc. released its financial results for the quarter ended September 30, 2025 by posting its Third Quarter 2025 Update on its website.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025034692/tsla-20250709.htm",
+     "date": "2025-07-31",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "The Board has fixed the new deadline for the submission of proposals to be included in the proxy statement for the 2025 Annual Meeting as July 31, 2025.",
+     "implication": "Shareholders must submit proxy proposals by the end of July, giving Tesla sufficient time to prepare the proxy statement."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035738/tsla-20250723.htm",
+     "date": "2025-07-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 23, 2025, Tesla, Inc. released its financial results for the quarter ended June 30, 2025 by posting its Second Quarter 2025 Update on its website.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025026148/tsla-20250515.htm",
+     "date": "2025-05-15",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Mr. Hartung has waived any entitlement to cash compensation, until further notice to Tesla otherwise, and has joined the remainder of our Board in waiving equity compensation until such time as new determinations are made by the Board with respect to equity compensation.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025026148/tsla-20250515.htm",
+     "date": "2025-05-15",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On May 15, 2025, John R. (Jack) Hartung was appointed to serve as a member of the Board of Directors (the “Board”) of Tesla, Inc. (“Tesla”), as well as a member of the Audit Committee of the Board, effective as of June 1, 2025.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018851/tsla-20250422.htm",
+     "date": "2025-04-22",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On April 22, 2025, Tesla, Inc. released its financial results for the quarter ended March 31, 2025 by posting its First Quarter 2025 Update on its website.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025016070/tsla-20250402.htm",
+     "date": "2025-04-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of report (Date of earliest event reported): April 2, 2025.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025003063/tsla-2024x12x31xex472.htm",
+     "date": "2025-01-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "As of January 29, 2025, Tesla, Inc. had one class of common stock registered under Section 12 of the Securities Exchange Act of 1934.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025002993/tsla-20250129.htm",
+     "date": "2025-01-29",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On January 29, 2025, Tesla, Inc. released its financial results for the fiscal quarter and year ended December 31, 2024 by posting its Fourth Quarter and Full Year 2024 Update on its website.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925042659/tm252787d2_10ka.htm",
+     "date": "2024-12-13",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On December 13, 2024, the Delaware Court entered a final judgment rescinding the 2018 CEO Performance Award.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024043432/tsla-20241023.htm",
+     "date": "2024-10-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On October 23, 2024, Tesla, Inc. released its financial results for the quarter ended September 30, 2024 by posting its Third Quarter 2024 Update on its website.",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024041816/tsla-20241002.htm",
+     "date": "2024-10-02",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of report (Date of earliest event reported): October 2, 2024",
+     "implication": "The filing reports an event that occurred on October 2, 2024, demonstrating Tesla’s compliance with timely disclosure requirements."
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024032603/tsla-20240723.htm",
+     "date": "2024-07-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "Date of report (Date of earliest event reported): July 23, 2024",
+     "implication": ""
+    },
+    {
+     "source": "SEC filings",
+     "sourceKey": "filings",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024032603/tsla-20240723.htm",
+     "date": "2024-07-23",
+     "verifiedBy": [
+      "ollama"
+     ],
+     "excerpt": "On July 23, 2024, Tesla, Inc. released its financial results for the quarter ended June 30, 2024 by posting its Second Quarter 2024 Update on its website.",
+     "implication": "The company disclosed its Q2 2024 performance, fulfilling its reporting obligations and providing investors with up‑to‑date financial information."
+    }
+   ]
+  }
+ ],
+ "pending": [
+  {
+   "cid": "cat",
+   "name": "Caterpillar Inc.",
+   "ticker": "CAT",
+   "area": "793 EV mining",
+   "pending": true,
+   "ev": 0,
+   "verified": 0,
+   "fresh": 0,
+   "bySource": {},
+   "score": null,
+   "capped": null,
+   "dissent": null,
+   "dims": [],
+   "fields": [],
+   "alumni": [],
+   "evidence": []
+  },
+  {
+   "cid": "gm",
+   "name": "General Motors",
+   "ticker": "GM",
+   "area": "Ultium",
+   "pending": true,
+   "ev": 0,
+   "verified": 0,
+   "fresh": 0,
+   "bySource": {},
+   "score": null,
+   "capped": null,
+   "dissent": null,
+   "dims": [],
+   "fields": [],
+   "alumni": [],
+   "evidence": []
+  },
+  {
+   "cid": "intc",
+   "name": "Intel Corporation",
+   "ticker": "INTC",
+   "area": "foundry",
+   "pending": true,
+   "ev": 0,
+   "verified": 0,
+   "fresh": 0,
+   "bySource": {},
+   "score": null,
+   "capped": null,
+   "dissent": null,
+   "dims": [],
+   "fields": [],
+   "alumni": [],
+   "evidence": []
+  }
+ ]
+}
